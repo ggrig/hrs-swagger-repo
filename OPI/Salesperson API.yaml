@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Salesperson API
+  version: 1.0.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/Salesperson/1.0.0.0
+  - url: https://api.example.com
+paths:
+  /salesperson:
+    post:
+      summary: Create Salesperson
+      description: Creates a new salesperson entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Timestamp:
+                  type: string
+                  description: The timestamp of the salesperson
+                Code:
+                  type: string
+                  description: The code of the salesperson
+                Description:
+                  type: string
+                  description: The description of the salesperson
+                FaxExtension:
+                  type: string
+                  description: The fax extension of the salesperson
+                PhoneExtension:
+                  type: string
+                  description: The phone extension of the salesperson
+                ContactMail:
+                  type: string
+                  description: The contact email of the salesperson
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://oauth.example.com/authorize
+          scopes:
+            write: Grants write access to create salespersons

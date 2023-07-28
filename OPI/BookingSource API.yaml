@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  title: BookingSource API
+  version: 1.0.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/BookingSource/1.0.0.0
+  - url: https://api.example.com
+paths:
+  /booking-source:
+    post:
+      summary: Create Booking Source
+      description: Creates a new booking source.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                No:
+                  type: string
+                  description: The booking source number
+                Category:
+                  type: string
+                  description: The category of the booking source
+                Name:
+                  type: string
+                  description: The name of the booking source
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://oauth.example.com/authorize
+          scopes:
+            write: Grants write access to create booking sources

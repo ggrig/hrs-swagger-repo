@@ -1,0 +1,146 @@
+swagger: '2.0'
+info:
+  description: Student which was created in AST or TMS
+  version: 1.0.1
+  title: adding Student to BC
+  # put the contact info for your development or API team
+  contact:
+    email: thomas@marquardt-informatik.koeln
+
+# tags are used for organizing operations
+tags:
+- name: developers
+  description: Operations available to regular developers
+
+paths:
+  /opportunity:
+    post:
+      tags:
+      - developers
+      summary: adds a student record into BC
+      operationId: addStudent
+      description: adds a student record into BC
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: student
+        description: Student to add
+        schema:
+          $ref: '#/definitions/Student'
+      responses:
+        200:
+          description: Created Contact
+          schema:
+            $ref: '#/definitions/StudentResult'
+definitions:
+  Student:
+    type: object
+    required:
+    - studentId
+    - accountId
+    - studentName
+    - studentEmail
+    - language
+    properties:
+      accountId:
+        type: string
+        example: 0012000000ZRUqYAAX
+        description: Id of the SalesForce Account in Salesforce
+      studentId:
+        type: number
+        format: int32
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      studentFirstName:
+        type: string
+        example: Chri_name
+      studentLastName:
+        type: string
+        example: Betz_name
+      studentEmail:
+        type: string
+        example: 407158@test.learnship.de
+      studentGender:
+        type: string
+        example: male
+        description: female, male, other
+      superiorName:
+        type: string
+        example: Peter Boss
+      supperiorEmail:
+        type: string
+        example: peter.boss@email.com
+      language:
+        type: string
+        example: de-DE
+        description: Language ISO-Code
+      employeeId:
+        type: string
+        example: M123456
+        description: employee number in customers company
+      organizationId:
+        type: string
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        description: Id of the SalesForce Organization in Salesforce
+      costCenter:
+        type: string
+        example: K1234
+        description: customers cost center of employee
+  StudentResult:
+    properties:
+      '@odata.context':
+        type: string
+        example: https://api.businesscentral.dynamics.com/v2.0/cb074161-d878-4784-a259-30495e796802/Sandbox/api/destinationSolutions/bde/v1.0/$metadata#companies(5fc4a8c4-89d1-ea11-bb6c-000d3a2beb23)/bookings/$entity
+      '@odata.etag':
+        type: string
+        example: W/\"JzQ0O1NXRXlNZ0c0SndFS2tYcmFEMm5jbHVZeEVGNWNnQlI1RklkcG0xcGhkaUU9MTswMDsn\"
+      accountId:
+        type: string
+        example: 0012000000ZRUqYAAX
+        description: Id of the SalesForce Account in Salesforce
+      studentId:
+        type: number
+        format: int32
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      studentFirstName:
+        type: string
+        example: Chri_name
+      studentLastName:
+        type: string
+        example: Betz_name
+      studentEmail:
+        type: string
+        example: 407158@test.learnship.de
+      studentGender:
+        type: string
+        example: male
+        description: female, male, other
+      superiorName:
+        type: string
+        example: Peter Boss
+      supperiorEmail:
+        type: string
+        example: peter.boss@email.com
+      language:
+        type: string
+        example: de-DE
+        description: Language ISO-Code
+      employeeId:
+        type: string
+        example: M123456
+        description: employee number in customers company
+      organizationId:
+        type: string
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        description: Id of the SalesForce Organization in Salesforce
+      costCenter:
+        type: string
+        example: K1234
+        description: customers cost center of employee
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /Marquardt-Informatik/student/1.0.1
+schemes:
+ - https

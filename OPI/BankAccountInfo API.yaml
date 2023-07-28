@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: BankAccountInfo API
+  version: 1.0.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/BankAccountInfo/1.0.0.0
+  - url: https://api.example.com
+paths:
+  /bank-account-info:
+    post:
+      summary: Submit Bank Account Information
+      description: Submits bank account information to the Online Invoice Portal (OIP).
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                MandateID:
+                  type: string
+                  description: The Mandate ID
+                  example: LS-000002636
+                AutoPayEnabled:
+                  type: boolean
+                  description: Indicates if autopay is enabled
+                  example: true
+                CustomerNo:
+                  type: string
+                  description: The Customer Number
+                  example: 10021
+                IBAN:
+                  type: string
+                  description: The IBAN
+                  example: DE12270727240018046300
+                SWIFTCode:
+                  type: string
+                  description: The SWIFT Code
+                  example: DEUTDEDB276
+                Owner:
+                  type: string
+                  description: The account owner
+                  example: Nadxxx Kanyy
+                Company:
+                  type: string
+                  description: The tenant name
+                  example: HRS
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the submission was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://oauth.example.com/authorize
+          scopes:
+            read: Grants read access to bank account information
+            write: Grants write access to bank account information

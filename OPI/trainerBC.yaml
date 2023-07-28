@@ -1,0 +1,307 @@
+swagger: '2.0'
+info:
+  description: Trainer which was created in TMS
+  version: 1.0.0
+  title: adding Trainer to BC
+  # put the contact info for your development or API team
+  contact:
+    email: thomas@marquardt-informatik.koeln
+
+# tags are used for organizing operations
+tags:
+- name: developers
+  description: Operations available to regular developers
+
+paths:
+  /trainerMasterData:
+    post:
+      tags:
+      - developers
+      summary: adds a trainer record into BC
+      operationId: addTrainer
+      description: adds a trainer record into BC
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: trainer
+        description: Trainer to add
+        schema:
+          $ref: '#/definitions/Trainer'
+      responses:
+        200:
+          description: Created Trainer
+          schema:
+            $ref: '#/definitions/TrainerResult'
+  /trainerPerformanceRecord:
+    post:
+      tags:
+      - developers
+      summary: adds a trainer performance record into BC
+      operationId: addTrainerPerformanceRecord
+      description: adds a trainer performance record into BC
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: trainer
+        description: Trainer Performance Record to add
+        schema:
+          $ref: '#/definitions/TrainerPerformanceRecord'
+      responses:
+        200:
+          description: Created Trainer Performance Record
+          schema:
+            $ref: '#/definitions/TrainerPerformanceRecordResult'
+definitions:
+  Trainer:
+    type: object
+    required:
+    - eventId
+    - id
+    - firstName
+    - lastName
+    - locale
+    - iban
+    - bic
+    - street
+    - postCode
+    - city
+    - country
+    properties:
+      id:
+        type: string
+        format: uuid
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      firstName:
+        type: string
+        example: Max 
+      lastName:
+        type: string
+        example: Mustermann
+      emailAddress:
+        type: string
+        example: max.musetrmann@email.com
+      gender:
+        type: string
+        enum: [male,femaale]
+        example: male
+      locale:
+        type: string
+        example: de-DE
+        description: Language ISO-Code
+      iban:
+        type: string
+        example: DE12 3456 7890 1234 5678 90
+      bic:
+        type: string
+        example: A123456
+      vatId:
+        type: string
+        example: DE1234567
+      noVat:
+        type: boolean
+        example: false
+      street:
+        type: string
+        example: Stolberger Str 374
+      postCode:
+        type: string
+        example: 50933
+      city:
+        type: string
+        example: Cologne
+      country:
+        type: string
+        example: DE
+        description: Country ISO-Code
+  TrainerResult:
+    properties:
+      id:
+        type: string
+        format: uuid
+        example: d290f1ee-6c54-4b01-90e6-d701748f0851
+      vendorNo:
+        type: string
+        example: 12345
+        description: Vendor No. in BC
+      firstName:
+        type: string
+        example: Max 
+      lastName:
+        type: string
+        example: Mustermann
+      emailAddress:
+        type: string
+        example: max.musetrmann@email.com
+      gender:
+        type: string
+        enum: [male,femaale]
+        example: male
+      locale:
+        type: string
+        example: de-DE
+        description: Language ISO-Code
+      iban:
+        type: string
+        example: DE12 3456 7890 1234 5678 90
+      bic:
+        type: string
+        example: A123456
+      vatId:
+        type: string
+        example: DE1234567
+      noVat:
+        type: boolean
+        example: false
+      street:
+        type: string
+        example: Stolberger Str 374
+      postCode:
+        type: string
+        example: 50933
+      city:
+        type: string
+        example: Cologne
+      country:
+        type: string
+        example: DE
+        description: Country ISO-Code
+  TrainerPerformanceRecord:
+    type: object
+    required:
+    - id
+    - date
+    - accountItemId
+    - opportunityProductId
+    - quantity
+    - courseId
+    - attendeeId
+    - sessionLength
+    - attendeeStatus
+    - sessionStatus
+    - unitType
+    - unitPrice
+    - priceCurrencyCode
+    - totalPrice
+    properties:
+      id:
+        type: string
+        example: 12345
+        description: session ID in case of TMS
+      date:
+        type: string
+        example: sessionDateAsISO
+      accountItemId:
+        type: string
+        example: 132934 
+      opportunityProductId:
+        type: string
+        example: 00k2p00001fE7CoAAK
+      quantity:
+        type: integer
+        example: 1
+      courseId:
+        type: string
+        example: 12345
+      attendeeId:
+        type: string
+        format: uuid
+        example: uuid
+      sessionLength:
+        type: integer
+        example: 60
+      attendeeStatus:
+        type: string
+        enum: [participated,not participated]
+        example: participated
+      sessionStatus:
+        type: string
+        enum: [finished,cancelled]
+        example: finished
+      cancelationReason:
+        type: string
+        example: null
+      unitType:
+        type: string
+        example: course
+      unitPrice:
+        type: integer
+        example: 50
+      priceCurrencyCode:
+        type: string
+        example: EUR
+      totalPrice:
+        type: integer
+          example: 50
+  TrainerPerformanceRecordResult:
+    type: object
+    properties:
+      eventId:
+        type: string
+        format: uuid
+        example: "someRandomUUID"
+      payload:
+        type: object
+        properties:
+          id:
+            type: string
+            example: 12345
+            description: session ID in case of TMS
+          performanceEntryNo:
+            type: integer
+            example: 12345
+            description: Unique performance record id in BC
+          date:
+            type: string
+            example: sessionDateAsISO
+          accountItemId:
+            type: string
+            example: 132934 
+          opportunityProductId:
+            type: string
+            example: 00k2p00001fE7CoAAK
+          quantity:
+            type: integer
+            example: 1
+          courseId:
+            type: string
+            example: 12345
+          attendeeId:
+            type: string
+            format: uuid
+            example: uuid
+          sessionLength:
+            type: integer
+            example: 60
+          attendeeStatus:
+            type: string
+            enum: [participated,not participated]
+            example: participated
+          sessionStatus:
+            type: string
+            enum: [finished,cancelled]
+            example: finished
+          cancelationReason:
+            type: string
+            example: null
+          unitType:
+            type: string
+            example: course
+          unitPrice:
+            type: integer
+            example: 50
+          priceCurrencyCode:
+            type: string
+            example: EUR
+          totalPrice:
+            type: integer
+            example: 50
+host: virtserver.swaggerhub.com
+basePath: /Marquardt-Informatik/trainerBC/1.0.0
+schemes:
+ - https

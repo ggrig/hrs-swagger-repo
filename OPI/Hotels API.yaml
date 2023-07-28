@@ -1,0 +1,222 @@
+openapi: 3.0.0
+info:
+  title: Hotels API
+  version: 1.0.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/Hotels/1.0.0.0
+  - url: https://api.example.com
+paths:
+  /hotels:
+    post:
+      summary: Create Hotel
+      description: Creates a new hotel entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                VATRegistrationNumber:
+                  type: string
+                  description: The VAT registration number of the hotel
+                NoCorrections:
+                  type: string
+                  description: Indicates if there are no corrections
+                InvoiceAddressNo:
+                  type: string
+                  description: The invoice address number
+                HotelAddressNo:
+                  type: string
+                  description: The hotel address number
+                CompanyNo:
+                  type: string
+                  description: The company number of the hotel
+                InvoiceAddressName:
+                  type: string
+                  description: The name of the invoice address
+                InvoiceAddressName2:
+                  type: string
+                  description: The second line of the invoice address name
+                InvoiceAddressLine1:
+                  type: string
+                  description: The first line of the invoice address
+                InvoiceAddressLine2:
+                  type: string
+                  description: The second line of the invoice address
+                PrimaryContactNo:
+                  type: string
+                  description: The primary contact number
+                BrandNo:
+                  type: string
+                  description: The brand number
+                BrandName:
+                  type: string
+                  description: The brand name
+                InvoiceAddressCity:
+                  type: string
+                  description: The city of the invoice address
+                ContractStatus:
+                  type: string
+                  description: The contract status
+                ContractStatusName:
+                  type: string
+                  description: The name of the contract status
+                ChainNo:
+                  type: string
+                  description: The chain number
+                ChainName:
+                  type: string
+                  description: The name of the chain
+                InvoiceAddressCountryRegionCode:
+                  type: string
+                  description: The country/region code of the invoice address
+                HotelStatus:
+                  type: string
+                  description: The hotel status
+                InvoiceAddressEmail:
+                  type: string
+                  description: The email address of the invoice address
+                InvoiceAddressEmailCopy:
+                  type: string
+                  description: The copy email address of the invoice address
+                InvoiceAddressFaxNo:
+                  type: string
+                  description: The fax number of the invoice address
+                InvoiceAddressFaxNoCopy:
+                  type: string
+                  description: The copy fax number of the invoice address
+                InvoiceAddressLanguageCode:
+                  type: string
+                  description: The language code of the invoice address
+                ReasonCode:
+                  type: string
+                  description: The reason code
+                NoSepaCore:
+                  type: string
+                  description: Indicates if SEPA_CORE is enabled or not
+                ReasonName:
+                  type: string
+                  description: The name of the reason
+                ReasonDate:
+                  type: string
+                  description: The date of the reason
+                PhoneNo:
+                  type: string
+                  description: The phone number of the invoice address
+                HRSContact:
+                  type: string
+                  description: The HRS contact code
+                InvoioceAddressZip:
+                  type: string
+                  description: The zip code of the invoice address
+                CCPKN:
+                  type: string
+                  description: The CC PKN
+                CCName:
+                  type: string
+                  description: The name of the credit card
+                CCValidTo:
+                  type: string
+                  description: The valid-to date of the credit card
+                ContactPersonFirstName:
+                  type: string
+                  description: The first name of the contact person
+                ContactPersonMiddleName:
+                  type: string
+                  description: The middle name of the contact person
+                ContactPersonLastName:
+                  type: string
+                  description: The last name of the contact person
+                ContactPersonEmail:
+                  type: string
+                  description: The email address of the contact person
+                ContactPersonPhone:
+                  type: string
+                  description: The phone number of the contact person
+                ContactPersonFax:
+                  type: string
+                  description: The fax number of the contact person
+                HotelAddressName:
+                  type: string
+                  description: The name of the hotel address
+                HotelAddressCountryRegionCode:
+                  type: string
+                  description: The country/region code of the hotel address
+                HotelAddressLanguageCode:
+                  type: string
+                  description: The language code of the hotel address
+                HotelAddressName2:
+                  type: string
+                  description: The second line of the hotel address name
+                HotelAddressLine1:
+                  type: string
+                  description: The first line of the hotel address
+                HotelAddressLine2:
+                  type: string
+                  description: The second line of the hotel address
+                HotelAddressCity:
+                  type: string
+                  description: The city of the hotel address
+                HotelAddressZip:
+                  type: string
+                  description: The zip code of the hotel address
+                HotelAddressPhoneNo:
+                  type: string
+                  description: The phone number of the hotel address
+                HotelAddressFaxNo:
+                  type: string
+                  description: The fax number of the hotel address
+                HotelAddressEmail:
+                  type: string
+                  description: The email address of the hotel address
+                WebPortalEnabled:
+                  type: boolean
+                  description: Indicates if the web portal is enabled for the hotel
+                CorrespondenceType:
+                  type: string
+                  description: The correspondence type
+                AccountingContact:
+                  type: string
+                  description: The accounting contact
+                DeductionType:
+                  type: string
+                  description: The deduction type
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://oauth.example.com/authorize
+          scopes:
+            write: Grants write access to create hotels

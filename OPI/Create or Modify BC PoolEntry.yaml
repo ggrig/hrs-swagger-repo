@@ -1,0 +1,117 @@
+swagger: '2.0'
+info:
+  description: this API lets BC create a poolentry
+  version: 1.0.0
+  title: Create or Modify BC PoolEntry
+  # put the contact info for your development or API team
+  contact:
+    email: info@marquardt-informatik.koeln
+
+# tags are used for organizing operations
+tags:
+- name: developers
+  description: Operations available to regular developers
+paths:
+  /poolentry:
+    post:
+      summary: adds a pool entry in bc
+      operationId: addContact
+      description: Adds a poolentry to the system
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: poolentry
+        description: PoolEntry to add
+        schema:
+          $ref: '#/definitions/PoolEntry'
+      responses:
+        200:
+          description: Created Contact
+          schema:
+            $ref: '#/definitions/PoolEntryResult'
+      tags:
+        - developers
+definitions:
+  PoolEntry:
+    type: object
+    required:
+    - poolEntryId
+    - opportunityId
+    - lineItemId
+    - productId
+    properties:
+      poolEntryId:
+        type: number
+        format: int32
+        example: 192362
+        description: Unique Pool Entry ID
+      opportunityId:
+        type: string
+        example: 0012000000ZRUqYAAX
+        description: Unique Sforce Opportunity ID
+      lineItemId: 
+        type: string
+        example: 00k2p00001fE7CoAAK
+        description: unique Id of the line item
+      productId: 
+        type: string
+        example: 01t2p00000DFw0xAAD
+        description: unique Id of the sold product
+      quantityBase:
+        type: number
+        format: double
+        example: 20.0
+        minimum: 1
+        description: Original quantity as pool entry was created
+      quantityUsed:
+        type: number
+        format: double
+        example: 20.0
+        minimum: 1
+        description: Used quantity  
+  PoolEntryResult:
+    type: object
+    required:
+    - '@odata.etag'
+    properties:
+      '@odata.etag':
+        type: string
+        example: W/\"JzQ0O1NXRXlNZ0c0SndFS2tYcmFEMm5jbHVZeEVGNWNnQlI1RklkcG0xcGhkaUU9MTswMDsn\"
+      poolEntryId:
+        type: number
+        format: int32
+        example: 192362
+        description: Unique Pool Entry ID
+      opportunityId:
+        type: string
+        example: 0012000000ZRUqYAAX
+        description: Unique Sforce Opportunity ID
+      lineItemId: 
+        type: string
+        example: 00k2p00001fE7CoAAK
+        description: unique Id of the line item
+      productId: 
+        type: string
+        example: 01t2p00000DFw0xAAD
+        description: unique Id of the sold product
+      quantityBase:
+        type: number
+        format: double
+        example: 20.0
+        minimum: 1
+        description: Original quantity as pool entry was created
+      quantityUsed:
+        type: number
+        format: double
+        example: 20.0
+        minimum: 1
+        description: Used quantity  
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+schemes:
+ - https
+# Added by API Auto Mocking Plugin
+basePath: /Marquardt-Informatik/poolentry/1.0.0

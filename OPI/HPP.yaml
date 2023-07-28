@@ -1,0 +1,4056 @@
+openapi: 3.0.0
+info:
+  title: HPP
+  contact: {}
+  version: 1.0.0.0
+servers:
+# Added by API Auto Mocking Plugin
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP/1.0.0.0
+- url: http://p-nav-as-1-m.int.hrs.com:7047/DynNavHRS/ws/HRS/Codeunit/HPP?WSDL
+  variables: {}
+paths:
+  /ChangeInvoiceAddress:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ChangeInvoiceAddress
+      operationId: ChangeInvoiceAddress
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ChangeInvoiceAddress'
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ChangeInvoiceAddress_Result'
+                - xml:
+                    name: ChangeInvoiceAddress_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ChangeCustomerAddress:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ChangeCustomerAddress
+      operationId: ChangeCustomerAddress
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ChangeCustomerAddress'
+              - xml:
+                  name: ChangeCustomerAddress
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ChangeCustomerAddress_Result'
+                - xml:
+                    name: ChangeCustomerAddress_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ChangeContactInformation:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ChangeContactInformation
+      operationId: ChangeContactInformation
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ChangeContactInformation'
+              - xml:
+                  name: ChangeContactInformation
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ChangeContactInformation_Result'
+                - xml:
+                    name: ChangeContactInformation_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /InsertPayment:
+    post:
+      tags:
+      - HPP_Binding
+      summary: InsertPayment
+      operationId: InsertPayment
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/InsertPayment'
+              - xml:
+                  name: InsertPayment
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/InsertPayment_Result'
+                - xml:
+                    name: InsertPayment_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ModifyInvoice:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ModifyInvoice
+      operationId: ModifyInvoice
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ModifyInvoice'
+              - xml:
+                  name: ModifyInvoice
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ModifyInvoice_Result'
+                - xml:
+                    name: ModifyInvoice_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /InsertPaymentV2:
+    post:
+      tags:
+      - HPP_Binding
+      summary: InsertPaymentV2
+      operationId: InsertPaymentV2
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/InsertPaymentV2'
+              - xml:
+                  name: InsertPaymentV2
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/InsertPaymentV2_Result'
+                - xml:
+                    name: InsertPaymentV2_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ChangeCustomerAddressV2:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ChangeCustomerAddressV2
+      operationId: ChangeCustomerAddressV2
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ChangeCustomerAddressV2'
+              - xml:
+                  name: ChangeCustomerAddressV2
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ChangeCustomerAddressV2_Result'
+                - xml:
+                    name: ChangeCustomerAddressV2_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ModifyInvoiceV2:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ModifyInvoiceV2
+      operationId: ModifyInvoiceV2
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ModifyInvoiceV2'
+              - xml:
+                  name: ModifyInvoiceV2
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ModifyInvoiceV2_Result'
+                - xml:
+                    name: ModifyInvoiceV2_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ModifyInvoiceV3:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ModifyInvoiceV3
+      operationId: ModifyInvoiceV3
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ModifyInvoiceV3'
+              - xml:
+                  name: ModifyInvoiceV3
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ModifyInvoiceV3_Result'
+                - xml:
+                    name: ModifyInvoiceV3_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /InsertPaymentV3:
+    post:
+      tags:
+      - HPP_Binding
+      summary: InsertPaymentV3
+      operationId: InsertPaymentV3
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/InsertPaymentV3'
+              - xml:
+                  name: InsertPaymentV3
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/InsertPaymentV3_Result'
+                - xml:
+                    name: InsertPaymentV3_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ModifyInvoiceV4:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ModifyInvoiceV4
+      operationId: ModifyInvoiceV4
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ModifyInvoiceV4'
+              - xml:
+                  name: ModifyInvoiceV4
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ModifyInvoiceV4_Result'
+                - xml:
+                    name: ModifyInvoiceV4_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ConfirmInvoice:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ConfirmInvoice
+      operationId: ConfirmInvoice
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ConfirmInvoice'
+              - xml:
+                  name: ConfirmInvoice
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ConfirmInvoice_Result'
+                - xml:
+                    name: ConfirmInvoice_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ModifyHotelCreditCardInfo:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ModifyHotelCreditCardInfo
+      operationId: ModifyHotelCreditCardInfo
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ModifyHotelCreditCardInfo'
+              - xml:
+                  name: ModifyHotelCreditCardInfo
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ModifyHotelCreditCardInfo_Result'
+                - xml:
+                    name: ModifyHotelCreditCardInfo_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+  /ModifyHotelBankAccountInfo:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ModifyHotelBankAccountInfo
+      operationId: ModifyHotelBankAccountInfo
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ModifyHotelBankAccountInfo'
+              - xml:
+                  name: ModifyHotelBankAccountInfo
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ModifyHotelBankAccountInfo_Result'
+                - xml:
+                    name: ModifyHotelBankAccountInfo_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+components:
+  schemas:
+    q2_Invoice:
+      title: q2_Invoice
+      required:
+      - InvoiceNo
+      - Name
+      - Name2
+      - Address
+      - Address2
+      - City
+      - PostCode
+      type: object
+      properties:
+        InvoiceNo:
+          type: string
+          xml:
+            name: InvoiceNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoice
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+        prefix: q2
+        attribute: false
+        wrapped: false
+    q2_Invoices:
+      title: q2_Invoices
+      required:
+      - Invoice
+      type: object
+      properties:
+        Invoice:
+          type: array
+          items:
+            $ref: '#/components/schemas/q2_Invoice'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoices
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+        prefix: q2
+        attribute: false
+        wrapped: false
+    q4_Customer:
+      title: q4_Customer
+      required:
+      - CustomerNo
+      - Name
+      - Name2
+      - Address
+      - Address2
+      - City
+      - PostCode
+      - CountryRegion
+      - Contact
+      - Phone
+      - CorrespondenceType
+      - EMail
+      - Fax
+      - EMailCopy
+      - FaxCopy
+      type: object
+      properties:
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        CountryRegion:
+          type: string
+          xml:
+            name: CountryRegion
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        Contact:
+          type: string
+          xml:
+            name: Contact
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        Phone:
+          type: string
+          xml:
+            name: Phone
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        CorrespondenceType:
+          type: string
+          xml:
+            name: CorrespondenceType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        EMail:
+          type: string
+          xml:
+            name: EMail
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        Fax:
+          type: string
+          xml:
+            name: Fax
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        EMailCopy:
+          type: string
+          xml:
+            name: EMailCopy
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+        FaxCopy:
+          type: string
+          xml:
+            name: FaxCopy
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Customer
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+        prefix: q4
+        attribute: false
+        wrapped: false
+    q4_CustomerList:
+      title: q4_CustomerList
+      required:
+      - Customer
+      type: object
+      properties:
+        Customer:
+          type: array
+          items:
+            $ref: '#/components/schemas/q4_Customer'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+            prefix: q4
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: CustomerList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50036
+        prefix: q4
+        attribute: false
+        wrapped: false
+    q6_Contact:
+      title: q6_Contact
+      required:
+      - ContactNo
+      - FirstName
+      - MiddleName
+      - Surname
+      - EMail
+      - PhoneNo
+      - FaxNo
+      type: object
+      properties:
+        ContactNo:
+          type: string
+          xml:
+            name: ContactNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+        FirstName:
+          type: string
+          xml:
+            name: FirstName
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+        MiddleName:
+          type: string
+          xml:
+            name: MiddleName
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+        Surname:
+          type: string
+          xml:
+            name: Surname
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+        EMail:
+          type: string
+          xml:
+            name: EMail
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+        PhoneNo:
+          type: string
+          xml:
+            name: PhoneNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+        FaxNo:
+          type: string
+          xml:
+            name: FaxNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Contact
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+        prefix: q6
+        attribute: false
+        wrapped: false
+    q6_ContactList:
+      title: q6_ContactList
+      required:
+      - Contact
+      type: object
+      properties:
+        Contact:
+          type: array
+          items:
+            $ref: '#/components/schemas/q6_Contact'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+            prefix: q6
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: ContactList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50037
+        prefix: q6
+        attribute: false
+        wrapped: false
+    q8_Document:
+      title: q8_Document
+      required:
+      - DocumentNo
+      type: object
+      properties:
+        DocumentNo:
+          type: string
+          xml:
+            name: DocumentNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Document
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+        prefix: q8
+        attribute: false
+        wrapped: false
+    q8_Documents:
+      title: q8_Documents
+      required:
+      - Document
+      type: object
+      properties:
+        Document:
+          type: array
+          items:
+            $ref: '#/components/schemas/q8_Document'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Documents
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+        prefix: q8
+        attribute: false
+        wrapped: false
+    q8_PaymentLine:
+      title: q8_PaymentLine
+      required:
+      - PostingDate
+      - PaymentMethodCode
+      - ExtDocumentNo
+      - Documents
+      - CurrencyCode
+      - RemainingAmount
+      - FixFeeAmount
+      - VarFeeAmount
+      type: object
+      properties:
+        PostingDate:
+          type: string
+          xml:
+            name: PostingDate
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+        PaymentMethodCode:
+          type: string
+          xml:
+            name: PaymentMethodCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+        ExtDocumentNo:
+          type: string
+          xml:
+            name: ExtDocumentNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+        Documents:
+          allOf:
+          - $ref: '#/components/schemas/q8_Documents'
+          - xml:
+              name: Documents
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+              prefix: q8
+              attribute: false
+              wrapped: false
+        CurrencyCode:
+          type: string
+          xml:
+            name: CurrencyCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+        RemainingAmount:
+          type: string
+          xml:
+            name: RemainingAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+        FixFeeAmount:
+          type: string
+          xml:
+            name: FixFeeAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+        VarFeeAmount:
+          type: string
+          xml:
+            name: VarFeeAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLine
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+        prefix: q8
+        attribute: false
+        wrapped: false
+    q8_PaymentLines:
+      title: q8_PaymentLines
+      required:
+      - PaymentLine
+      type: object
+      properties:
+        PaymentLine:
+          type: array
+          items:
+            $ref: '#/components/schemas/q8_PaymentLine'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q8
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLines
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+        prefix: q8
+        attribute: false
+        wrapped: false
+    q10_InvoiceAddress:
+      title: q10_InvoiceAddress
+      required:
+      - Address
+      - Address2
+      - City
+      - CustomerNo
+      - Name
+      - Name2
+      - PostCode
+      - CountryCode
+      - CorrespondenceType
+      - CorrespondenceAddress
+      - AccountingContact
+      type: object
+      properties:
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        CountryCode:
+          type: string
+          xml:
+            name: CountryCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        CorrespondenceType:
+          type: string
+          xml:
+            name: CorrespondenceType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        CorrespondenceAddress:
+          type: string
+          xml:
+            name: CorrespondenceAddress
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        AccountingContact:
+          type: string
+          xml:
+            name: AccountingContact
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceAddress
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+        prefix: q10
+        attribute: false
+        wrapped: false
+    q10_Positions:
+      title: q10_Positions
+      required:
+      - IsCancelled
+      - CaseNo
+      - ReservationNo
+      - PositionNo
+      - ProcessNo
+      - NumberOfNights
+      - NumberOfRooms
+      - NumberOfPerson
+      - NumberOfBreakfast
+      - RoomPrice
+      - ReservationDateFrom
+      - ReservationDateTo
+      type: object
+      properties:
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        CaseNo:
+          type: string
+          xml:
+            name: CaseNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        ReservationNo:
+          type: string
+          xml:
+            name: ReservationNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        PositionNo:
+          type: integer
+          format: int32
+          xml:
+            name: PositionNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        ProcessNo:
+          type: integer
+          format: int32
+          xml:
+            name: ProcessNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        NumberOfNights:
+          type: string
+          xml:
+            name: NumberOfNights
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        NumberOfRooms:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfRooms
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        NumberOfPerson:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfPerson
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        NumberOfBreakfast:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfBreakfast
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        RoomPrice:
+          type: string
+          xml:
+            name: RoomPrice
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        ReservationDateFrom:
+          type: string
+          xml:
+            name: ReservationDateFrom
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        ReservationDateTo:
+          type: string
+          xml:
+            name: ReservationDateTo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Positions
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+        prefix: q10
+        attribute: false
+        wrapped: false
+    q10_Invoice:
+      title: q10_Invoice
+      required:
+      - DocNo
+      - IsCancelled
+      - InvoiceAddress
+      - Positions
+      type: object
+      properties:
+        DocNo:
+          type: string
+          xml:
+            name: DocNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+        InvoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q10_InvoiceAddress'
+          - xml:
+              name: InvoiceAddress
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+              prefix: q10
+              attribute: false
+              wrapped: false
+        Positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/q10_Positions'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoice
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+        prefix: q10
+        attribute: false
+        wrapped: false
+    q10_InvoiceList:
+      title: q10_InvoiceList
+      required:
+      - Invoice
+      type: object
+      properties:
+        Invoice:
+          type: array
+          items:
+            $ref: '#/components/schemas/q10_Invoice'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+            prefix: q10
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50039
+        prefix: q10
+        attribute: false
+        wrapped: false
+    q12_Document:
+      title: q12_Document
+      required:
+      - DocumentNo
+      - DocumentType
+      type: object
+      properties:
+        DocumentNo:
+          type: string
+          xml:
+            name: DocumentNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+        DocumentType:
+          type: string
+          xml:
+            name: DocumentType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Document
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+        prefix: q12
+        attribute: false
+        wrapped: false
+    q12_Documents:
+      title: q12_Documents
+      required:
+      - Document
+      type: object
+      properties:
+        Document:
+          type: array
+          items:
+            $ref: '#/components/schemas/q12_Document'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Documents
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+        prefix: q12
+        attribute: false
+        wrapped: false
+    q12_PaymentLine:
+      title: q12_PaymentLine
+      required:
+      - PostingDate
+      - PaymentMethodCode
+      - ExtDocumentNo
+      - Documents
+      - CurrencyCode
+      - RemainingAmount
+      - FixFeeAmount
+      - VarFeeAmount
+      type: object
+      properties:
+        PostingDate:
+          type: string
+          xml:
+            name: PostingDate
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+        PaymentMethodCode:
+          type: string
+          xml:
+            name: PaymentMethodCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+        ExtDocumentNo:
+          type: string
+          xml:
+            name: ExtDocumentNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+        Documents:
+          allOf:
+          - $ref: '#/components/schemas/q12_Documents'
+          - xml:
+              name: Documents
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+              prefix: q12
+              attribute: false
+              wrapped: false
+        CurrencyCode:
+          type: string
+          xml:
+            name: CurrencyCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+        RemainingAmount:
+          type: string
+          xml:
+            name: RemainingAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+        FixFeeAmount:
+          type: string
+          xml:
+            name: FixFeeAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+        VarFeeAmount:
+          type: string
+          xml:
+            name: VarFeeAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLine
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+        prefix: q12
+        attribute: false
+        wrapped: false
+    q12_PaymentLines:
+      title: q12_PaymentLines
+      required:
+      - PaymentLine
+      type: object
+      properties:
+        PaymentLine:
+          type: array
+          items:
+            $ref: '#/components/schemas/q12_PaymentLine'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+            prefix: q12
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLines
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50040
+        prefix: q12
+        attribute: false
+        wrapped: false
+    q14_Customer:
+      title: q14_Customer
+      required:
+      - CustomerNo
+      - Name
+      - Name2
+      - Address
+      - Address2
+      - City
+      - PostCode
+      - CountryRegion
+      - Contact
+      - Phone
+      - CorrespondenceType
+      - EMail
+      - Fax
+      - EMailCopy
+      - FaxCopy
+      - WebportalRegistered
+      type: object
+      properties:
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        CountryRegion:
+          type: string
+          xml:
+            name: CountryRegion
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        Contact:
+          type: string
+          xml:
+            name: Contact
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        Phone:
+          type: string
+          xml:
+            name: Phone
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        CorrespondenceType:
+          type: string
+          xml:
+            name: CorrespondenceType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        EMail:
+          type: string
+          xml:
+            name: EMail
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        Fax:
+          type: string
+          xml:
+            name: Fax
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        EMailCopy:
+          type: string
+          xml:
+            name: EMailCopy
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        FaxCopy:
+          type: string
+          xml:
+            name: FaxCopy
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+        WebportalRegistered:
+          type: string
+          xml:
+            name: WebportalRegistered
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Customer
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+        prefix: q14
+        attribute: false
+        wrapped: false
+    q14_CustomerList:
+      title: q14_CustomerList
+      required:
+      - Customer
+      type: object
+      properties:
+        Customer:
+          type: array
+          items:
+            $ref: '#/components/schemas/q14_Customer'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+            prefix: q14
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: CustomerList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50041
+        prefix: q14
+        attribute: false
+        wrapped: false
+    q16_InvoiceAddress:
+      title: q16_InvoiceAddress
+      required:
+      - Address
+      - Address2
+      - City
+      - CustomerNo
+      - Name
+      - Name2
+      - PostCode
+      - CountryCode
+      - CorrespondenceType
+      - CorrespondenceAddress
+      - AccountingContact
+      type: object
+      properties:
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        CountryCode:
+          type: string
+          xml:
+            name: CountryCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        CorrespondenceType:
+          type: string
+          xml:
+            name: CorrespondenceType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        CorrespondenceAddress:
+          type: string
+          xml:
+            name: CorrespondenceAddress
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        AccountingContact:
+          type: string
+          xml:
+            name: AccountingContact
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceAddress
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+        prefix: q16
+        attribute: false
+        wrapped: false
+    q16_Positions:
+      title: q16_Positions
+      required:
+      - IsCancelled
+      - CaseNo
+      - ReservationNo
+      - PositionNo
+      - ProcessNo
+      - NumberOfNights
+      - NumberOfRooms
+      - NumberOfPerson
+      - NumberOfBreakfast
+      - RoomPrice
+      - ReservationDateFrom
+      - ReservationDateTo
+      - BreakfastPrice
+      type: object
+      properties:
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        CaseNo:
+          type: string
+          xml:
+            name: CaseNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        ReservationNo:
+          type: string
+          xml:
+            name: ReservationNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        PositionNo:
+          type: integer
+          format: int32
+          xml:
+            name: PositionNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        ProcessNo:
+          type: integer
+          format: int32
+          xml:
+            name: ProcessNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        NumberOfNights:
+          type: string
+          xml:
+            name: NumberOfNights
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        NumberOfRooms:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfRooms
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        NumberOfPerson:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfPerson
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        NumberOfBreakfast:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfBreakfast
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        RoomPrice:
+          type: string
+          xml:
+            name: RoomPrice
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        ReservationDateFrom:
+          type: string
+          xml:
+            name: ReservationDateFrom
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        ReservationDateTo:
+          type: string
+          xml:
+            name: ReservationDateTo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        BreakfastPrice:
+          type: string
+          xml:
+            name: BreakfastPrice
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Positions
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+        prefix: q16
+        attribute: false
+        wrapped: false
+    q16_Invoice:
+      title: q16_Invoice
+      required:
+      - DocNo
+      - IsCancelled
+      - InvoiceAddress
+      - Positions
+      type: object
+      properties:
+        DocNo:
+          type: string
+          xml:
+            name: DocNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+        InvoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q16_InvoiceAddress'
+          - xml:
+              name: InvoiceAddress
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+              prefix: q16
+              attribute: false
+              wrapped: false
+        Positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/q16_Positions'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoice
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+        prefix: q16
+        attribute: false
+        wrapped: false
+    q16_InvoiceList:
+      title: q16_InvoiceList
+      required:
+      - Invoice
+      type: object
+      properties:
+        Invoice:
+          type: array
+          items:
+            $ref: '#/components/schemas/q16_Invoice'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+            prefix: q16
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50043
+        prefix: q16
+        attribute: false
+        wrapped: false
+    q18_InvoiceAddress:
+      title: q18_InvoiceAddress
+      required:
+      - Address
+      - Address2
+      - City
+      - CustomerNo
+      - Name
+      - Name2
+      - PostCode
+      - CountryCode
+      - CorrespondenceType
+      - CorrespondenceAddress
+      - AccountingContact
+      type: object
+      properties:
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        CountryCode:
+          type: string
+          xml:
+            name: CountryCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        CorrespondenceType:
+          type: string
+          xml:
+            name: CorrespondenceType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        CorrespondenceAddress:
+          type: string
+          xml:
+            name: CorrespondenceAddress
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        AccountingContact:
+          type: string
+          xml:
+            name: AccountingContact
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceAddress
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+        prefix: q18
+        attribute: false
+        wrapped: false
+    q18_Positions:
+      title: q18_Positions
+      required:
+      - IsCancelled
+      - CaseNo
+      - ReservationNo
+      - PositionNo
+      - ProcessNo
+      - NumberOfNights
+      - NumberOfRooms
+      - NumberOfPerson
+      - NumberOfBreakfast
+      - RoomPrice
+      - ReservationDateFrom
+      - ReservationDateTo
+      - BreakfastPrice
+      - DeductionType
+      type: object
+      properties:
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        CaseNo:
+          type: string
+          xml:
+            name: CaseNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        ReservationNo:
+          type: string
+          xml:
+            name: ReservationNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        PositionNo:
+          type: integer
+          format: int32
+          xml:
+            name: PositionNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        ProcessNo:
+          type: integer
+          format: int32
+          xml:
+            name: ProcessNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        NumberOfNights:
+          type: string
+          xml:
+            name: NumberOfNights
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        NumberOfRooms:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfRooms
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        NumberOfPerson:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfPerson
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        NumberOfBreakfast:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfBreakfast
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        RoomPrice:
+          type: string
+          xml:
+            name: RoomPrice
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        ReservationDateFrom:
+          type: string
+          xml:
+            name: ReservationDateFrom
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        ReservationDateTo:
+          type: string
+          xml:
+            name: ReservationDateTo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        BreakfastPrice:
+          type: string
+          xml:
+            name: BreakfastPrice
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        DeductionType:
+          type: string
+          xml:
+            name: DeductionType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Positions
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+        prefix: q18
+        attribute: false
+        wrapped: false
+    q18_Invoice:
+      title: q18_Invoice
+      required:
+      - DocNo
+      - IsCancelled
+      - InvoiceAddress
+      - Positions
+      type: object
+      properties:
+        DocNo:
+          type: string
+          xml:
+            name: DocNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+        InvoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q18_InvoiceAddress'
+          - xml:
+              name: InvoiceAddress
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+              prefix: q18
+              attribute: false
+              wrapped: false
+        Positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/q18_Positions'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoice
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+        prefix: q18
+        attribute: false
+        wrapped: false
+    q18_InvoiceList:
+      title: q18_InvoiceList
+      required:
+      - Invoice
+      type: object
+      properties:
+        Invoice:
+          type: array
+          items:
+            $ref: '#/components/schemas/q18_Invoice'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+            prefix: q18
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50045
+        prefix: q18
+        attribute: false
+        wrapped: false
+    q20_Document:
+      title: q20_Document
+      required:
+      - DocumentNo
+      - DocumentType
+      - DocumentAmount
+      type: object
+      properties:
+        DocumentNo:
+          type: string
+          xml:
+            name: DocumentNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        DocumentType:
+          type: string
+          xml:
+            name: DocumentType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        DocumentAmount:
+          type: string
+          xml:
+            name: DocumentAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Document
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+        prefix: q20
+        attribute: false
+        wrapped: false
+    q20_Documents:
+      title: q20_Documents
+      required:
+      - Document
+      type: object
+      properties:
+        Document:
+          type: array
+          items:
+            $ref: '#/components/schemas/q20_Document'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Documents
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+        prefix: q20
+        attribute: false
+        wrapped: false
+    q20_PaymentLine:
+      title: q20_PaymentLine
+      required:
+      - PostingDate
+      - PaymentMethodCode
+      - ExtDocumentNo
+      - Documents
+      - CurrencyCode
+      - RemainingAmount
+      - FixFeeAmount
+      - VarFeeAmount
+      type: object
+      properties:
+        PostingDate:
+          type: string
+          xml:
+            name: PostingDate
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        PaymentMethodCode:
+          type: string
+          xml:
+            name: PaymentMethodCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        ExtDocumentNo:
+          type: string
+          xml:
+            name: ExtDocumentNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        Documents:
+          allOf:
+          - $ref: '#/components/schemas/q20_Documents'
+          - xml:
+              name: Documents
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+              prefix: q20
+              attribute: false
+              wrapped: false
+        CurrencyCode:
+          type: string
+          xml:
+            name: CurrencyCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        RemainingAmount:
+          type: string
+          xml:
+            name: RemainingAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        FixFeeAmount:
+          type: string
+          xml:
+            name: FixFeeAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+        VarFeeAmount:
+          type: string
+          xml:
+            name: VarFeeAmount
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLine
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+        prefix: q20
+        attribute: false
+        wrapped: false
+    q20_PaymentLines:
+      title: q20_PaymentLines
+      required:
+      - PaymentLine
+      type: object
+      properties:
+        PaymentLine:
+          type: array
+          items:
+            $ref: '#/components/schemas/q20_PaymentLine'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+            prefix: q20
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLines
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50044
+        prefix: q20
+        attribute: false
+        wrapped: false
+    q22_InvoiceAddress:
+      title: q22_InvoiceAddress
+      required:
+      - Address
+      - Address2
+      - City
+      - CustomerNo
+      - Name
+      - Name2
+      - PostCode
+      - CountryCode
+      - CorrespondenceType
+      - CorrespondenceAddress
+      - AccountingContact
+      type: object
+      properties:
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        CountryCode:
+          type: string
+          xml:
+            name: CountryCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        CorrespondenceType:
+          type: string
+          xml:
+            name: CorrespondenceType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        CorrespondenceAddress:
+          type: string
+          xml:
+            name: CorrespondenceAddress
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        AccountingContact:
+          type: string
+          xml:
+            name: AccountingContact
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceAddress
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+        prefix: q22
+        attribute: false
+        wrapped: false
+    q22_Positions:
+      title: q22_Positions
+      required:
+      - IsCancelled
+      - CaseNo
+      - ReservationNo
+      - PositionNo
+      - ProcessNo
+      - NumberOfNights
+      - NumberOfRooms
+      - NumberOfPerson
+      - NumberOfBreakfast
+      - RoomPrice
+      - ReservationDateFrom
+      - ReservationDateTo
+      - BreakfastPrice
+      - DeductionType
+      - ReasonForChange
+      - RoomType
+      - BreakfastApprovalStatus
+      type: object
+      properties:
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        CaseNo:
+          type: string
+          xml:
+            name: CaseNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        ReservationNo:
+          type: string
+          xml:
+            name: ReservationNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        PositionNo:
+          type: integer
+          format: int32
+          xml:
+            name: PositionNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        ProcessNo:
+          type: integer
+          format: int32
+          xml:
+            name: ProcessNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        NumberOfNights:
+          type: string
+          xml:
+            name: NumberOfNights
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        NumberOfRooms:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfRooms
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        NumberOfPerson:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfPerson
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        NumberOfBreakfast:
+          type: integer
+          format: int32
+          xml:
+            name: NumberOfBreakfast
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        RoomPrice:
+          type: string
+          xml:
+            name: RoomPrice
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        ReservationDateFrom:
+          type: string
+          xml:
+            name: ReservationDateFrom
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        ReservationDateTo:
+          type: string
+          xml:
+            name: ReservationDateTo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        BreakfastPrice:
+          type: string
+          xml:
+            name: BreakfastPrice
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        DeductionType:
+          type: string
+          xml:
+            name: DeductionType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        ReasonForChange:
+          type: string
+          xml:
+            name: ReasonForChange
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        RoomType:
+          type: integer
+          format: int32
+          xml:
+            name: RoomType
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        BreakfastApprovalStatus:
+          type: string
+          xml:
+            name: BreakfastApprovalStatus
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        NonComm:
+          type: string
+          xml:
+            name: NonComm
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Positions
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+        prefix: q22
+        attribute: false
+        wrapped: false
+    q22_Invoice:
+      title: q22_Invoice
+      required:
+      - DocNo
+      - IsCancelled
+      - InvoiceAddress
+      - Positions
+      type: object
+      properties:
+        DocNo:
+          type: string
+          xml:
+            name: DocNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        IsCancelled:
+          type: string
+          xml:
+            name: IsCancelled
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+        InvoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q22_InvoiceAddress'
+          - xml:
+              name: InvoiceAddress
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+              prefix: q22
+              attribute: false
+              wrapped: false
+        Positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/q22_Positions'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoice
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+        prefix: q22
+        attribute: false
+        wrapped: false
+    q22_InvoiceList:
+      title: q22_InvoiceList
+      required:
+      - Invoice
+      type: object
+      properties:
+        Invoice:
+          type: array
+          items:
+            $ref: '#/components/schemas/q22_Invoice'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+            prefix: q22
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50048
+        prefix: q22
+        attribute: false
+        wrapped: false
+    q24_Invoice:
+      title: q24_Invoice
+      required:
+      - CaseNo
+      type: object
+      properties:
+        CaseNo:
+          type: string
+          xml:
+            name: CaseNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50050
+            prefix: q24
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoice
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50050
+        prefix: q24
+        attribute: false
+        wrapped: false
+    q24_InvoiceList:
+      title: q24_InvoiceList
+      required:
+      - Invoice
+      type: object
+      properties:
+        Invoice:
+          type: array
+          items:
+            $ref: '#/components/schemas/q24_Invoice'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50050
+            prefix: q24
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: InvoiceList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50050
+        prefix: q24
+        attribute: false
+        wrapped: false
+    q26_HotelCreditCardInfo:
+      title: q26_HotelCreditCardInfo
+      required:
+      - CustomerNo
+      - PCN
+      - Expiry
+      - Company
+      - AuthorizationDate
+      - State
+      - schemeReferenceID
+      type: object
+      properties:
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+        PCN:
+          type: integer
+          format: int64
+          xml:
+            name: PCN
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+        Expiry:
+          type: string
+          xml:
+            name: Expiry
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+        Company:
+          type: string
+          xml:
+            name: Company
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+        AuthorizationDate:
+          type: string
+          xml:
+            name: AuthorizationDate
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+        State:
+          type: array
+          items:
+            type: string
+            xml:
+              name: State
+              attribute: false
+              wrapped: false
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+        schemeReferenceID:
+          type: string
+          xml:
+            name: schemeReferenceID
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: HotelCreditCardInfo
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+        prefix: q26
+        attribute: false
+        wrapped: false
+    q26_HotelCreditCardInfoList:
+      title: q26_HotelCreditCardInfoList
+      required:
+      - HotelCreditCardInfo
+      type: object
+      properties:
+        HotelCreditCardInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/q26_HotelCreditCardInfo'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+            prefix: q26
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: HotelCreditCardInfoList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50051
+        prefix: q26
+        attribute: false
+        wrapped: false
+    q28_HotelBankAccountInfo:
+      title: q28_HotelBankAccountInfo
+      required:
+      - CustomerNo
+      - State
+      - IBAN
+      - BIC
+      - AccountOwner
+      type: object
+      properties:
+        CustomerNo:
+          type: string
+          xml:
+            name: CustomerNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+            prefix: q28
+            attribute: false
+            wrapped: false
+        State:
+          type: string
+          xml:
+            name: State
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+            prefix: q28
+            attribute: false
+            wrapped: false
+        IBAN:
+          type: string
+          xml:
+            name: IBAN
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+            prefix: q28
+            attribute: false
+            wrapped: false
+        BIC:
+          type: string
+          xml:
+            name: BIC
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+            prefix: q28
+            attribute: false
+            wrapped: false
+        AccountOwner:
+          type: string
+          xml:
+            name: AccountOwner
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+            prefix: q28
+            attribute: false
+            wrapped: false
+        MandateID:
+          type: string
+          xml:
+            name: MandateID
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+            prefix: q28
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: HotelBankAccountInfo
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+        prefix: q28
+        attribute: false
+        wrapped: false
+    q28_HotelBankAccountInfoList:
+      title: q28_HotelBankAccountInfoList
+      required:
+      - HotelBankAccountInfo
+      type: object
+      properties:
+        HotelBankAccountInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/q28_HotelBankAccountInfo'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+            prefix: q28
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: HotelBankAccountInfoList
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50052
+        prefix: q28
+        attribute: false
+        wrapped: false
+    tns_ChangeInvoiceAddress:
+      title: tns_ChangeInvoiceAddress
+      required:
+      - invoiceAddress
+      type: object
+      properties:
+        invoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q2_Invoices'
+          - xml:
+              name: invoiceAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeInvoiceAddress
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeInvoiceAddress_Result:
+      title: tns_ChangeInvoiceAddress_Result
+      required:
+      - invoiceAddress
+      type: object
+      properties:
+        invoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q2_Invoices'
+          - xml:
+              name: invoiceAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeInvoiceAddress_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeCustomerAddress:
+      title: tns_ChangeCustomerAddress
+      required:
+      - customerAddress
+      type: object
+      properties:
+        customerAddress:
+          allOf:
+          - $ref: '#/components/schemas/q4_CustomerList'
+          - xml:
+              name: customerAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeCustomerAddress
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeCustomerAddress_Result:
+      title: tns_ChangeCustomerAddress_Result
+      required:
+      - customerAddress
+      type: object
+      properties:
+        customerAddress:
+          allOf:
+          - $ref: '#/components/schemas/q4_CustomerList'
+          - xml:
+              name: customerAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeCustomerAddress_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeContactInformation:
+      title: tns_ChangeContactInformation
+      required:
+      - contactInformation
+      type: object
+      properties:
+        contactInformation:
+          allOf:
+          - $ref: '#/components/schemas/q6_ContactList'
+          - xml:
+              name: contactInformation
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeContactInformation
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeContactInformation_Result:
+      title: tns_ChangeContactInformation_Result
+      required:
+      - contactInformation
+      type: object
+      properties:
+        contactInformation:
+          allOf:
+          - $ref: '#/components/schemas/q6_ContactList'
+          - xml:
+              name: contactInformation
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeContactInformation_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_InsertPayment:
+      title: tns_InsertPayment
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q8_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPayment
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_InsertPayment_Result:
+      title: tns_InsertPayment_Result
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q8_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPayment_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoice:
+      title: tns_ModifyInvoice
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q10_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoice
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoice_Result:
+      title: tns_ModifyInvoice_Result
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q10_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoice_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_InsertPaymentV2:
+      title: tns_InsertPaymentV2
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q12_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPaymentV2
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_InsertPaymentV2_Result:
+      title: tns_InsertPaymentV2_Result
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q12_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPaymentV2_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeCustomerAddressV2:
+      title: tns_ChangeCustomerAddressV2
+      required:
+      - customerAddress
+      type: object
+      properties:
+        customerAddress:
+          allOf:
+          - $ref: '#/components/schemas/q14_CustomerList'
+          - xml:
+              name: customerAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeCustomerAddressV2
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeCustomerAddressV2_Result:
+      title: tns_ChangeCustomerAddressV2_Result
+      required:
+      - customerAddress
+      type: object
+      properties:
+        customerAddress:
+          allOf:
+          - $ref: '#/components/schemas/q14_CustomerList'
+          - xml:
+              name: customerAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeCustomerAddressV2_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoiceV2:
+      title: tns_ModifyInvoiceV2
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q16_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoiceV2
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoiceV2_Result:
+      title: tns_ModifyInvoiceV2_Result
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q16_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoiceV2_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoiceV3:
+      title: tns_ModifyInvoiceV3
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q18_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoiceV3
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoiceV3_Result:
+      title: tns_ModifyInvoiceV3_Result
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q18_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoiceV3_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_InsertPaymentV3:
+      title: tns_InsertPaymentV3
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q20_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPaymentV3
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_InsertPaymentV3_Result:
+      title: tns_InsertPaymentV3_Result
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q20_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPaymentV3_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoiceV4:
+      title: tns_ModifyInvoiceV4
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q22_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoiceV4
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyInvoiceV4_Result:
+      title: tns_ModifyInvoiceV4_Result
+      required:
+      - modifyInvoice
+      type: object
+      properties:
+        modifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q22_InvoiceList'
+          - xml:
+              name: modifyInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyInvoiceV4_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ConfirmInvoice:
+      title: tns_ConfirmInvoice
+      required:
+      - confirmInvoice
+      type: object
+      properties:
+        confirmInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q24_InvoiceList'
+          - xml:
+              name: confirmInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ConfirmInvoice
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ConfirmInvoice_Result:
+      title: tns_ConfirmInvoice_Result
+      required:
+      - confirmInvoice
+      type: object
+      properties:
+        confirmInvoice:
+          allOf:
+          - $ref: '#/components/schemas/q24_InvoiceList'
+          - xml:
+              name: confirmInvoice
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ConfirmInvoice_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyHotelCreditCardInfo:
+      title: tns_ModifyHotelCreditCardInfo
+      required:
+      - modifyCreditCardInfo
+      type: object
+      properties:
+        modifyCreditCardInfo:
+          allOf:
+          - $ref: '#/components/schemas/q26_HotelCreditCardInfoList'
+          - xml:
+              name: modifyCreditCardInfo
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyHotelCreditCardInfo
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyHotelCreditCardInfo_Result:
+      title: tns_ModifyHotelCreditCardInfo_Result
+      required:
+      - modifyCreditCardInfo
+      type: object
+      properties:
+        modifyCreditCardInfo:
+          allOf:
+          - $ref: '#/components/schemas/q26_HotelCreditCardInfoList'
+          - xml:
+              name: modifyCreditCardInfo
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyHotelCreditCardInfo_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyHotelBankAccountInfo:
+      title: tns_ModifyHotelBankAccountInfo
+      required:
+      - modifyBankAccInfo
+      type: object
+      properties:
+        modifyBankAccInfo:
+          allOf:
+          - $ref: '#/components/schemas/q28_HotelBankAccountInfoList'
+          - xml:
+              name: modifyBankAccInfo
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyHotelBankAccountInfo
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ModifyHotelBankAccountInfo_Result:
+      title: tns_ModifyHotelBankAccountInfo_Result
+      required:
+      - modifyBankAccInfo
+      type: object
+      properties:
+        modifyBankAccInfo:
+          allOf:
+          - $ref: '#/components/schemas/q28_HotelBankAccountInfoList'
+          - xml:
+              name: modifyBankAccInfo
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ModifyHotelBankAccountInfo_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    ChangeContactInformation:
+      title: ChangeContactInformation
+      required:
+      - ChangeContactInformation
+      type: object
+      properties:
+        ChangeContactInformation:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeContactInformation'
+          - {}
+    ChangeContactInformation_Result:
+      title: ChangeContactInformation_Result
+      required:
+      - ChangeContactInformation_Result
+      type: object
+      properties:
+        ChangeContactInformation_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeContactInformation_Result'
+          - xml:
+              name: ChangeContactInformation_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ChangeContactInformation_Result
+        attribute: false
+        wrapped: false
+    ChangeCustomerAddress:
+      title: ChangeCustomerAddress
+      required:
+      - ChangeCustomerAddress
+      type: object
+      properties:
+        ChangeCustomerAddress:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeCustomerAddress'
+          - {}
+    ChangeCustomerAddress_Result:
+      title: ChangeCustomerAddress_Result
+      required:
+      - ChangeCustomerAddress_Result
+      type: object
+      properties:
+        ChangeCustomerAddress_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeCustomerAddress_Result'
+          - xml:
+              name: ChangeCustomerAddress_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ChangeCustomerAddress_Result
+        attribute: false
+        wrapped: false
+    ChangeCustomerAddressV2_Result:
+      title: ChangeCustomerAddressV2_Result
+      required:
+      - ChangeCustomerAddressV2_Result
+      type: object
+      properties:
+        ChangeCustomerAddressV2_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeCustomerAddressV2_Result'
+          - xml:
+              name: ChangeCustomerAddressV2_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ChangeCustomerAddressV2_Result
+        attribute: false
+        wrapped: false
+    ChangeCustomerAddressV2:
+      title: ChangeCustomerAddressV2
+      required:
+      - ChangeCustomerAddressV2
+      type: object
+      properties:
+        ChangeCustomerAddressV2:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeCustomerAddressV2'
+          - {}
+    ChangeInvoiceAddress:
+      title: ChangeInvoiceAddress
+      required:
+      - ChangeInvoiceAddress
+      type: object
+      properties:
+        ChangeInvoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeInvoiceAddress'
+          - {}
+    ChangeInvoiceAddress_Result:
+      title: ChangeInvoiceAddress_Result
+      required:
+      - ChangeInvoiceAddress_Result
+      type: object
+      properties:
+        ChangeInvoiceAddress_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeInvoiceAddress_Result'
+          - xml:
+              name: ChangeInvoiceAddress_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ChangeInvoiceAddress_Result
+        attribute: false
+        wrapped: false
+    ConfirmInvoice:
+      title: ConfirmInvoice
+      required:
+      - ConfirmInvoice
+      type: object
+      properties:
+        ConfirmInvoice:
+          allOf:
+          - $ref: '#/components/schemas/tns_ConfirmInvoice'
+          - {}
+    ConfirmInvoice_Result:
+      title: ConfirmInvoice_Result
+      required:
+      - ConfirmInvoice_Result
+      type: object
+      properties:
+        ConfirmInvoice_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ConfirmInvoice_Result'
+          - xml:
+              name: ConfirmInvoice_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ConfirmInvoice_Result
+        attribute: false
+        wrapped: false
+    InsertPayment:
+      title: InsertPayment
+      required:
+      - InsertPayment
+      type: object
+      properties:
+        InsertPayment:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPayment'
+          - {}
+    InsertPayment_Result:
+      title: InsertPayment_Result
+      required:
+      - InsertPayment_Result
+      type: object
+      properties:
+        InsertPayment_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPayment_Result'
+          - xml:
+              name: InsertPayment_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: InsertPayment_Result
+        attribute: false
+        wrapped: false
+    InsertPaymentV2_Result:
+      title: InsertPaymentV2_Result
+      required:
+      - InsertPaymentV2_Result
+      type: object
+      properties:
+        InsertPaymentV2_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPaymentV2_Result'
+          - xml:
+              name: InsertPaymentV2_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: InsertPaymentV2_Result
+        attribute: false
+        wrapped: false
+    InsertPaymentV3_Result:
+      title: InsertPaymentV3_Result
+      required:
+      - InsertPaymentV3_Result
+      type: object
+      properties:
+        InsertPaymentV3_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPaymentV3_Result'
+          - xml:
+              name: InsertPaymentV3_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: InsertPaymentV3_Result
+        attribute: false
+        wrapped: false
+    InsertPaymentV2:
+      title: InsertPaymentV2
+      required:
+      - InsertPaymentV2
+      type: object
+      properties:
+        InsertPaymentV2:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPaymentV2'
+          - {}
+    InsertPaymentV3:
+      title: InsertPaymentV3
+      required:
+      - InsertPaymentV3
+      type: object
+      properties:
+        InsertPaymentV3:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPaymentV3'
+          - {}
+    ModifyHotelBankAccountInfo:
+      title: ModifyHotelBankAccountInfo
+      required:
+      - ModifyHotelBankAccountInfo
+      type: object
+      properties:
+        ModifyHotelBankAccountInfo:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyHotelBankAccountInfo'
+          - {}
+    ModifyHotelBankAccountInfo_Result:
+      title: ModifyHotelBankAccountInfo_Result
+      required:
+      - ModifyHotelBankAccountInfo_Result
+      type: object
+      properties:
+        ModifyHotelBankAccountInfo_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyHotelBankAccountInfo_Result'
+          - xml:
+              name: ModifyHotelBankAccountInfo_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ModifyHotelBankAccountInfo_Result
+        attribute: false
+        wrapped: false
+    ModifyHotelCreditCardInfo:
+      title: ModifyHotelCreditCardInfo
+      required:
+      - ModifyHotelCreditCardInfo
+      type: object
+      properties:
+        ModifyHotelCreditCardInfo:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyHotelCreditCardInfo'
+          - {}
+    ModifyHotelCreditCardInfo_Result:
+      title: ModifyHotelCreditCardInfo_Result
+      required:
+      - ModifyHotelCreditCardInfo_Result
+      type: object
+      properties:
+        ModifyHotelCreditCardInfo_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyHotelCreditCardInfo_Result'
+          - xml:
+              name: ModifyHotelCreditCardInfo_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ModifyHotelCreditCardInfo_Result
+        attribute: false
+        wrapped: false
+    ModifyInvoice:
+      title: ModifyInvoice
+      required:
+      - ModifyInvoice
+      type: object
+      properties:
+        ModifyInvoice:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoice'
+          - {}
+    ModifyInvoice_Result:
+      title: ModifyInvoice_Result
+      required:
+      - ModifyInvoice_Result
+      type: object
+      properties:
+        ModifyInvoice_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoice_Result'
+          - xml:
+              name: ModifyInvoice_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ModifyInvoice_Result
+        attribute: false
+        wrapped: false
+    ModifyInvoiceV2_Result:
+      title: ModifyInvoiceV2_Result
+      required:
+      - ModifyInvoiceV2_Result
+      type: object
+      properties:
+        ModifyInvoiceV2_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoiceV2_Result'
+          - xml:
+              name: ModifyInvoiceV2_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ModifyInvoiceV2_Result
+        attribute: false
+        wrapped: false
+    ModifyInvoiceV3_Result:
+      title: ModifyInvoiceV3_Result
+      required:
+      - ModifyInvoiceV3_Result
+      type: object
+      properties:
+        ModifyInvoiceV3_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoiceV3_Result'
+          - xml:
+              name: ModifyInvoiceV3_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ModifyInvoiceV3_Result
+        attribute: false
+        wrapped: false
+    ModifyInvoiceV4_Result:
+      title: ModifyInvoiceV4_Result
+      required:
+      - ModifyInvoiceV4_Result
+      type: object
+      properties:
+        ModifyInvoiceV4_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoiceV4_Result'
+          - xml:
+              name: ModifyInvoiceV4_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ModifyInvoiceV4_Result
+        attribute: false
+        wrapped: false
+    ModifyInvoiceV2:
+      title: ModifyInvoiceV2
+      required:
+      - ModifyInvoiceV2
+      type: object
+      properties:
+        ModifyInvoiceV2:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoiceV2'
+          - {}
+    ModifyInvoiceV3:
+      title: ModifyInvoiceV3
+      required:
+      - ModifyInvoiceV3
+      type: object
+      properties:
+        ModifyInvoiceV3:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoiceV3'
+          - {}
+    ModifyInvoiceV4:
+      title: ModifyInvoiceV4
+      required:
+      - ModifyInvoiceV4
+      type: object
+      properties:
+        ModifyInvoiceV4:
+          allOf:
+          - $ref: '#/components/schemas/tns_ModifyInvoiceV4'
+          - {}
+tags:
+- name: HPP_Binding
+  description: ''
+  

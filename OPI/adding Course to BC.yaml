@@ -1,0 +1,115 @@
+swagger: '2.0'
+info:
+  description: Course which was created in TMS
+  version: 1.0.1
+  title: adding Course to BC
+  # put the contact info for your development or API team
+  contact:
+    email: thomas@marquardt-informatik.koeln
+
+# tags are used for organizing operations
+tags:
+- name: developers
+  description: Operations available to regular developers
+
+paths:
+  /courses:
+    post:
+      tags:
+      - developers
+      summary: adds a course record into BC
+      operationId: addTrainer
+      description: adds a course record into BC
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: course
+        description: Course to add
+        schema:
+          $ref: '#/definitions/Course'
+      responses:
+        200:
+          description: Created Course
+          schema:
+            $ref: '#/definitions/CourseResult'
+definitions:
+  Course:
+    type: object
+    required:
+    - courseId
+    - opportunityProductId
+    properties:
+      courseId:
+        type: number
+        format: int32
+        example: 110364
+      publicName: 
+        type: string
+        example: Course name
+        description: Name of Course
+      opportunityProductId: 
+        type: string
+        example: 01t2p00000DFw0xAAD
+        description: unique Id of the sold product
+      courseLength:
+        type: number
+        format: double
+        example: 30
+        minimum: 1
+        description: Length of Course
+      sessionLength:
+        type: number
+        format: double
+        example: 60
+        minimum: 1
+        description: Length of Session
+      status: 
+        type: string
+        example: inPlanning
+        description: Status
+  CourseResult:
+    properties:
+      '@odata.context':
+        type: string
+        example: https://api.businesscentral.dynamics.com/v2.0/cb074161-d878-4784-a259-30495e796802/Sandbox/api/destinationSolutions/bde/v1.0/$metadata#companies(5fc4a8c4-89d1-ea11-bb6c-000d3a2beb23)/bookings/$entity
+      '@odata.etag':
+        type: string
+        example: W/\"JzQ0O1NXRXlNZ0c0SndFS2tYcmFEMm5jbHVZeEVGNWNnQlI1RklkcG0xcGhkaUU9MTswMDsn\"
+      courseId:
+        type: number
+        format: int32
+        example: 110364
+      publicName: 
+        type: string
+        example: Course name
+        description: Name of Course
+      opportunityProductId: 
+        type: string
+        example: 01t2p00000DFw0xAAD
+        description: unique Id of the sold product
+      courseLength:
+        type: number
+        format: double
+        example: 30
+        minimum: 1
+        description: Length of Course
+      sessionLength:
+        type: number
+        format: double
+        example: 60
+        minimum: 1
+        description: Length of Session
+      status: 
+        type: string
+        example: inPlanning
+        description: Status
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+# basePath: /Marquardt-Informatik/trainer/1.0.0
+schemes:
+ - https
+# Added by API Auto Mocking Plugin
+basePath: /Marquardt-Informatik/course/1.0.1

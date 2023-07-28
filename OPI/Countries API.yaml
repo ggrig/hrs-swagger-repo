@@ -1,0 +1,144 @@
+openapi: 3.0.0
+info:
+  title: Countries API
+  version: 1.0.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/Countries/1.0.0.0
+  - url: https://api.example.com
+paths:
+  /countries:
+    post:
+      summary: Create Country
+      description: Creates a new country entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: The name of the country
+                Code:
+                  type: string
+                  description: The code of the country
+                EUCountryRegionCode:
+                  type: string
+                  description: The EU country/region code of the country
+                IntrastatCode:
+                  type: string
+                  description: The Intrastat code of the country
+                AddressFormat:
+                  type: string
+                  description: The address format of the country
+                ContactAddressFormat:
+                  type: string
+                  description: The contact address format of the country
+                GlobalDimension2Code:
+                  type: string
+                  description: The global dimension 2 code of the country
+                CustomerTemplateCode:
+                  type: string
+                  description: The customer template code of the country
+                IncomeCostCarrierCode:
+                  type: string
+                  description: The income cost carrier code of the country
+                EUAffiliation:
+                  type: string
+                  description: The EU affiliation of the country
+                Continent:
+                  type: string
+                  description: The continent of the country
+                MaxIBANLength:
+                  type: string
+                  description: The maximum length of the IBAN in the country
+                LengthOfBankBranchCode:
+                  type: string
+                  description: The length of the bank branch code in the country
+                ResponsibilityCenter:
+                  type: string
+                  description: The responsibility center of the country
+                ISOCode:
+                  type: string
+                  description: The ISO code of the country
+                CultureInfo:
+                  type: string
+                  description: The culture info of the country
+                Signature:
+                  type: string
+                  description: The signature of the country
+                PrimaryLanguageCode:
+                  type: string
+                  description: The primary language code of the country
+                BankCountryCode:
+                  type: string
+                  description: The bank country code of the country
+                EUStandard:
+                  type: string
+                  description: The EU standard of the country
+                InvoicingInLocalCurrency:
+                  type: string
+                  description: Indicates if invoicing is done in the local currency of the country
+                CurrencyCode:
+                  type: string
+                  description: The currency code of the country
+                DefaultLengthBranchCode:
+                  type: string
+                  description: The default length of the branch code in the country
+                DefaultLengthAccountNo:
+                  type: string
+                  description: The default length of the account number in the country
+                ISOBankCode:
+                  type: string
+                  description: The ISO bank code of the country
+                AccountingPeriod:
+                  type: string
+                  description: The accounting period of the country
+                VATRegistrationObligation:
+                  type: string
+                  description: The VAT registration obligation of the country
+                VendGenBusPostingGroup:
+                  type: string
+                  description: The vendor general business posting group of the country
+                CustGenBusPostingGroup:
+                  type: string
+                  description: The customer general business posting group of the country
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://oauth.example.com/authorize
+          scopes:
+            write: Grants write access to create countries

@@ -1,0 +1,132 @@
+openapi: 3.0.0
+info:
+  title: PaymentMethods API
+  version: 1.0.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/PaymentMethods/1.0.0.0
+  - url: https://api.example.com
+paths:
+  /payment-methods:
+    post:
+      summary: Create Payment Method
+      description: Creates a new payment method entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: string
+                  description: The code of the payment method
+                Description:
+                  type: string
+                  description: The description of the payment method
+                BalAccountType:
+                  type: string
+                  description: The balance account type of the payment method
+                BalAccountNo:
+                  type: string
+                  description: The balance account number of the payment method
+                SurchargeVariable:
+                  type: string
+                  description: The surcharge percentage (variable) of the payment method
+                SurchargeFix:
+                  type: string
+                  description: The surcharge amount (fixed) of the payment method
+                CutoffAmountVariable:
+                  type: string
+                  description: The cutoff amount (variable) of the payment method
+                FeeAccount:
+                  type: string
+                  description: The fee account of the payment method
+                PayViewCode:
+                  type: string
+                  description: The pay view code of the payment method
+                CutoffAmountFee:
+                  type: string
+                  description: The cutoff amount for fee of the payment method
+                DefaultPaymentTypeCode:
+                  type: string
+                  description: The default payment type code of the payment method
+                SinglePayment:
+                  type: string
+                  description: Indicates if single payment is enabled or not
+                DefaultPmtBankAccountNo:
+                  type: string
+                  description: The default payment bank account number of the payment method
+                SeparatePmtProposalHead:
+                  type: string
+                  description: Indicates if separate payment proposal head is enabled or not
+                VendorPurposeText:
+                  type: string
+                  description: The vendor purpose text of the payment method
+                CustomerPurposeText:
+                  type: string
+                  description: The customer purpose text of the payment method
+                PaymentNotePurposeText:
+                  type: string
+                  description: The payment note purpose text of the payment method
+                VendorPurposeTextHeader:
+                  type: string
+                  description: The vendor purpose text header of the payment method
+                PurposeTextFooter:
+                  type: string
+                  description: The purpose text footer of the payment method
+                LimitPaymentAmountLCY:
+                  type: string
+                  description: The limit payment amount in local currency of the payment method
+                CustomerPurposeTextHeader:
+                  type: string
+                  description: The customer purpose text header of the payment method
+                LimitLinesPerHead:
+                  type: string
+                  description: The limit lines per head of the payment method
+                MinPosPaymentNote:
+                  type: string
+                  description: The minimum positive payment note of the payment method
+                LimitLinesPerHeadX:
+                  type: string
+                  description: The limit lines per head X of the payment method
+                MinPosPaymentNoteX:
+                  type: string
+                  description: The minimum positive payment note X of the payment method
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://oauth.example.com/authorize
+          scopes:
+            write: Grants write access to create payment methods

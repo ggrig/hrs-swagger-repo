@@ -1,0 +1,354 @@
+openapi: 3.0.0
+info:
+  title: AccountingDocument API
+  version: 1.0.0.0
+paths:
+  /accountingdocuments/{documentId}:
+    put:
+      summary: Update Accounting Document
+      parameters:
+        - name: documentId
+          in: path
+          description: ID of the Accounting Document to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountingDocument'
+      responses:
+        '200':
+          description: Successful update
+        '400':
+          description: Invalid request
+components:
+  schemas:
+    AccountingDocument:
+      required:
+      - DocumentType
+      - LedgerEntryNo
+      - CustomerNo
+      - Company
+      - PostingDate
+      - DocumentNo
+      - AmountCurrencyCode
+      - LocalCurrencyCode
+      - ForeignCurrencyCode
+      - OriginalAmountNet
+      - OriginalAmountVAT
+      - OriginalAmountGross
+      - OriginalLocalAmountGross
+      - OriginalForeignAmountGross
+      - RemainingAmountNet
+      - RemainingAmountVAT
+      - RemainingAmountGross
+      - RemainingLocalAmountGross
+      - RemainingForeignAmountGross
+      - InvoiceExchangeRate
+      - DebitorCurrencyRate
+      - ExchangeRate
+      - Open
+      - Confirmed
+      - OrigNumberOfNights
+      - InvoiceAddressLine1
+      - InvoiceAddressCity
+      - InvoiceAddressContactNo
+      - InvoiceAddressCountryRegionCode
+      - InvoiceAddressCustomerNo
+      - InvoiceAddressEmail
+      - InvoiceAddressName
+      - InvoiceAddressPostCode
+      - HotelAddressLine1
+      - HotelAddressCity
+      - HotelAddressCountryRegionCode
+      - HotelAddressName
+      - HotelAddressPostCode
+      - DocumentDate
+      - HasPdf
+      type: object
+      properties:
+        DocumentType:
+          type: string
+          enum: [Payment,Subseq. Deb. Invoice,Fapiao,Commission Invoice,Booking Overview,Debit Collection Invoice,Refund Invoice,Marketplace Fee,Sourcing Fee,Marketing Invoice,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund]
+        LedgerEntryNo:
+          type: integer
+          description: Number of Customer Ledger Entry
+        FapiaoNo:
+          type: string
+          example:
+        CustomerNo:
+          type: integer
+          example: 378128
+        Company:
+          type: string
+        PostingDate:
+          type: string
+          format: date
+          example: 2023-05-31
+        DocumentNo:
+          type: string
+          example: 16846361
+        Description:
+          type: string
+          example: Rechnung R010876989
+        AmountCurrencyCode:
+          type: string
+          example: MXN
+        LocalCurrencyCode:
+          type: string
+          example: EUR
+        ForeignCurrencyCode:
+          type: string
+          example: MXN
+        OriginalAmountNet:
+          type: number
+          example: 189.000000
+        OriginalAmountVAT:
+          type: number
+          example: 0.000000
+        OriginalAmountGross:
+          type: number
+          example: 189.000000
+        OriginalLocalAmountGross:
+          type: number
+          example: 10.00000000000000000000
+        OriginalForeignAmountGross:
+          type: number
+          example: 189.00000000000000000000
+        RemainingAmountNet:
+          type: number
+          example: 189.000000
+        RemainingAmountVAT:
+          type: number
+          example: 0.000000
+        RemainingAmountGross:
+          type: number
+          example: 189.000000
+        RemainingLocalAmountGross:
+          type: number
+          example: 10.00000000000000000000
+        RemainingForeignAmountGross:
+          type: number
+          example: 189.00000000000000000000
+        InvoiceExchangeRate:
+          type: number
+          example: 18.90034000000000000000
+        DebitorCurrencyRate:
+          type: number
+          example: 18.90034000000000000000
+        ExchangeRate:
+          type: number
+          example: 1.000000
+        Open:
+          type: boolean
+          example: true
+        Confirmed:
+          type: boolean
+          example: false
+        SalespersonCode:
+          type: string
+          example: FREESALE
+        OrigNumberOfNights:
+          type: integer
+          example: 4
+        InvoiceAddressLine1:
+          type: string
+          example: Bulevar Adolfo Lopez Mateos 2611
+        InvoiceAddressLine2:
+          type: string
+          example:
+        InvoiceAddressCity:
+          type: string
+          example: Col. El Coecillo,Leon
+        InvoiceAddressContactNo:
+          type: string
+          example:
+        InvoiceAddressCountryRegionCode:
+          type: string
+          example: 102
+        InvoiceAddressCustomerNo:
+          type: string
+          example: 378128
+        InvoiceAddressEmail:
+          type: string
+          example:
+        InvoiceAddressName:
+          type: string
+          example: Radisson Poliforum Plaza Hotel Leon
+        InvoiceAddressName2:
+          type: string
+          example:
+        InvoiceAddressPostCode:
+          type: string
+          example: 37260
+        HotelAddressLine1:
+          type: string
+          example: Bulevar Adolfo Lopez Mateos 2611
+        HotelAddressLine2:
+          type: string
+          example:
+        HotelAddressCity:
+          type: string
+          example: Col. El Coecillo,Leon
+        HotelAddressCountryRegionCode:
+          type: string
+          example: 102
+        HotelAddressName:
+          type: string
+          example: Radisson Poliforum Plaza Hotel Leon
+        HotelAddressName2:
+          type: string
+          example:
+        HotelAddressPostCode:
+          type: string
+          example: 37260
+        CorrectionFromDocumentNo:
+          type: string
+          example:
+        DocumentDate:
+          type: string
+          format: date
+          example: 2023-05-31
+        ExternalDocumentNo:
+          type: string
+          example:
+        HasPdf:
+          type: boolean
+          example: false
+        Positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Position'
+    Position:
+      type: object
+      required:
+        - Company
+        - ProcessNumber
+        - ReservationNo
+        - PositionNo
+        - ClientGuestname1
+      properties:
+        Company:
+          type: string
+          example: HRS
+        ProcessNumber:
+          type: integer
+          example: 162621580
+        ReservationNo:
+          type: integer
+          example: 283301172
+        PositionNo:
+          type: integer
+          example: 1
+        ClientGuestname1:
+          type: string
+          example: CANSECO AQUINO, ALEJANDRO CLAUDIO
+        ClientGuestname2:
+          type: string
+          example: 
+        ClientCompany:
+          type: string
+          example: VW Cytric_Mexiko
+        RoomType:
+          type: integer
+          example: 0
+        NumberOfRooms:
+          type: integer
+          example: 1
+        NumberOfPerson:
+          type: integer
+          example: 0
+        BreakfastApprovalStatus:
+          type: string
+          example: 0
+        ArrivalDate:
+          type: string
+          format: date
+          example: 2023-05-24
+        DepartureDate:
+          type: string
+          format: date
+          example: 2023-05-26
+        NumberOfNights:
+          type: integer
+          example: 2
+        RateDescription:
+          type: string
+          example: VolkswagenAG
+        RateType:
+          type: integer
+          example: 21011
+        BreakfastType:
+          type: integer
+          example: 0
+        BreakfastPrice:
+          type: number
+          example: 0.00000000000000000000
+        CurrencyFactor:
+          type: number
+          example: 18.90034000000000000000
+        CurrencyCode:
+          type: string
+          example: MXN
+        CommissionAmount:
+          type: number
+          example: 1500.00000000000000000000
+        ComissionRate:
+          type: number
+          example: 0.00000000000000000000
+        RoomPrice:
+          type: number
+          example: 1500.00000000000000000000
+        RankingBooster:
+          type: number
+          example: 0.00000000000000000000
+        BookingQuality:
+          type: integer
+          example: 0
+        BookingCode:
+          type: string
+          example: 
+        QualityAt:
+          type: string
+          format: date-time
+          example: 
+        QualityByUser:
+          type: string
+          example: 
+        ReservationSource:
+          type: string
+          example: 81
+        DeductionType:
+          type: integer
+          example: 0
+        CalculatedWithFunctionID:
+          type: string
+          example: 
+        CustomerNo:
+          type: string
+          example: 378128
+        TafLineAmount:
+          type: number
+          example: 94.50000000000000000000
+        AgencyLineAmount:
+          type: number
+          example: 0.00000000000000000000
+        LineAmount:
+          type: number
+          example: 94.50000000000000000000
+        LineAmountIncludingVAT:
+          type: number
+          example: 94.50000000000000000000
+        AmountIncludingVAT:
+          type: number
+          example: 1500.00000000000000000000
+        TotalAmountIncludingVAT:
+          type: number
+          example: 3000.000000
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/AccountingDocument/1.0.0.0
