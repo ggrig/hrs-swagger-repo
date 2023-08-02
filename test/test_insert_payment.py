@@ -18,6 +18,8 @@ import swagger_client
 from swagger_client.models.insert_payment import InsertPayment  # noqa: E501
 from swagger_client.rest import ApiException
 
+from pprint import pprint
+
 
 class TestInsertPayment(unittest.TestCase):
     """InsertPayment unit test stubs"""
@@ -32,8 +34,18 @@ class TestInsertPayment(unittest.TestCase):
         """Test InsertPayment"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.insert_payment.InsertPayment()  # noqa: E501
-        pass
+        # pass
 
+        api_instance = swagger_client.HPPBindingApi()
+        body = swagger_client.InsertPaymentBody() # InsertPaymentBody | 
+
+        try:
+            # InsertPayment
+            api_response = api_instance.insert_payment(body)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->insert_payment: %s\n" % e)
+            assert(False)
 
 if __name__ == '__main__':
     unittest.main()
