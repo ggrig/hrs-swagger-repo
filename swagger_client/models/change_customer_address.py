@@ -59,8 +59,9 @@ class ChangeCustomerAddress(object):
         :param change_customer_address: The change_customer_address of this ChangeCustomerAddress.  # noqa: E501
         :type: AllOfChangeCustomerAddressChangeCustomerAddress
         """
-        if change_customer_address is None:
-            raise ValueError("Invalid value for `change_customer_address`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if change_customer_address is None:
+        #     raise ValueError("Invalid value for `change_customer_address`, must not be `None`")  # noqa: E501
 
         self._change_customer_address = change_customer_address
 
