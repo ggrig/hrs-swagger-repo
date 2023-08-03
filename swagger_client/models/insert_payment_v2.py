@@ -59,8 +59,9 @@ class InsertPaymentV2(object):
         :param insert_payment_v2: The insert_payment_v2 of this InsertPaymentV2.  # noqa: E501
         :type: AllOfInsertPaymentV2InsertPaymentV2
         """
-        if insert_payment_v2 is None:
-            raise ValueError("Invalid value for `insert_payment_v2`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if insert_payment_v2 is None:
+        #     raise ValueError("Invalid value for `insert_payment_v2`, must not be `None`")  # noqa: E501
 
         self._insert_payment_v2 = insert_payment_v2
 
