@@ -18,6 +18,8 @@ import swagger_client
 from swagger_client.models.confirm_invoice import ConfirmInvoice  # noqa: E501
 from swagger_client.rest import ApiException
 
+from pprint import pprint
+
 
 class TestConfirmInvoice(unittest.TestCase):
     """ConfirmInvoice unit test stubs"""
@@ -32,7 +34,18 @@ class TestConfirmInvoice(unittest.TestCase):
         """Test ConfirmInvoice"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.confirm_invoice.ConfirmInvoice()  # noqa: E501
-        pass
+        # pass
+
+        api_instance = swagger_client.HPPBindingApi()
+        body = swagger_client.ConfirmInvoice() # ConfirmInvoice | 
+
+        try:
+            # InsertPayment
+            api_response = api_instance.confirm_invoice(body)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->confirm_invoice: %s\n" % e)
+            assert(False)
 
 
 if __name__ == '__main__':
