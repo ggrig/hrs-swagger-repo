@@ -59,8 +59,9 @@ class ChangeContactInformation(object):
         :param change_contact_information: The change_contact_information of this ChangeContactInformation.  # noqa: E501
         :type: AllOfChangeContactInformationChangeContactInformation
         """
-        if change_contact_information is None:
-            raise ValueError("Invalid value for `change_contact_information`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if change_contact_information is None:
+        #     raise ValueError("Invalid value for `change_contact_information`, must not be `None`")  # noqa: E501
 
         self._change_contact_information = change_contact_information
 
