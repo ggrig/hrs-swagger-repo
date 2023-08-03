@@ -18,6 +18,8 @@ import swagger_client
 from swagger_client.models.change_customer_address_v2 import ChangeCustomerAddressV2  # noqa: E501
 from swagger_client.rest import ApiException
 
+from pprint import pprint
+
 
 class TestChangeCustomerAddressV2(unittest.TestCase):
     """ChangeCustomerAddressV2 unit test stubs"""
@@ -32,7 +34,18 @@ class TestChangeCustomerAddressV2(unittest.TestCase):
         """Test ChangeCustomerAddressV2"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.change_customer_address_v2.ChangeCustomerAddressV2()  # noqa: E501
-        pass
+        # pass
+
+        api_instance = swagger_client.HPPBindingApi()
+        body = swagger_client.ChangeCustomerAddressV2() # ChangeCustomerAddressV2 | 
+
+        try:
+            # InsertPayment
+            api_response = api_instance.change_customer_address_v2(body)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->change_customer_address_v2: %s\n" % e)
+            assert(False)
 
 
 if __name__ == '__main__':
