@@ -18,6 +18,8 @@ import swagger_client
 from swagger_client.models.modify_invoice_v4 import ModifyInvoiceV4  # noqa: E501
 from swagger_client.rest import ApiException
 
+from pprint import pprint
+
 
 class TestModifyInvoiceV4(unittest.TestCase):
     """ModifyInvoiceV4 unit test stubs"""
@@ -32,8 +34,18 @@ class TestModifyInvoiceV4(unittest.TestCase):
         """Test ModifyInvoiceV4"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.modify_invoice_v4.ModifyInvoiceV4()  # noqa: E501
-        pass
+        # pass
 
+        api_instance = swagger_client.HPPBindingApi()
+        body = swagger_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
+
+        try:
+            # ModifyInvoiceV4
+            api_response = api_instance.modify_invoice_v4(body)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->modify_invoice_v4: %s\n" % e)
+            assert(False)
 
 if __name__ == '__main__':
     unittest.main()

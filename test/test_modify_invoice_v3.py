@@ -41,7 +41,7 @@ class TestModifyInvoiceV3(unittest.TestCase):
         try:
             # ModifyInvoiceV3
             api_response = api_instance.modify_invoice_v3(body)
-            # pprint(api_response)
+            pprint(api_response)
         except ApiException as e:
             print("Exception when calling HPPBindingApi->modify_invoice_v3: %s\n" % e)
             assert(False)
