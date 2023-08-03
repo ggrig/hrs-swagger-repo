@@ -18,6 +18,8 @@ import swagger_client
 from swagger_client.models.modify_hotel_bank_account_info import ModifyHotelBankAccountInfo  # noqa: E501
 from swagger_client.rest import ApiException
 
+from pprint import pprint
+
 
 class TestModifyHotelBankAccountInfo(unittest.TestCase):
     """ModifyHotelBankAccountInfo unit test stubs"""
@@ -32,8 +34,18 @@ class TestModifyHotelBankAccountInfo(unittest.TestCase):
         """Test ModifyHotelBankAccountInfo"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.modify_hotel_bank_account_info.ModifyHotelBankAccountInfo()  # noqa: E501
-        pass
+        # pass
 
+        api_instance = swagger_client.HPPBindingApi()
+        body = swagger_client.ModifyHotelBankAccountInfo() # ModifyHotelBankAccountInfo | 
+
+        try:
+            # InsertPayment
+            api_response = api_instance.modify_hotel_bank_account_info(body)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->modify_hotel_bank_account_info: %s\n" % e)
+            assert(False)
 
 if __name__ == '__main__':
     unittest.main()
