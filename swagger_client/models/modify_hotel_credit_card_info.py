@@ -59,8 +59,9 @@ class ModifyHotelCreditCardInfo(object):
         :param modify_hotel_credit_card_info: The modify_hotel_credit_card_info of this ModifyHotelCreditCardInfo.  # noqa: E501
         :type: AllOfModifyHotelCreditCardInfoModifyHotelCreditCardInfo
         """
-        if modify_hotel_credit_card_info is None:
-            raise ValueError("Invalid value for `modify_hotel_credit_card_info`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if modify_hotel_credit_card_info is None:
+        #     raise ValueError("Invalid value for `modify_hotel_credit_card_info`, must not be `None`")  # noqa: E501
 
         self._modify_hotel_credit_card_info = modify_hotel_credit_card_info
 
