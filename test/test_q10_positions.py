@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.q10_positions import Q10Positions  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.q10_positions import Q10Positions  # noqa: E501
+from ods_client.rest import ApiException
 
 
 class TestQ10Positions(unittest.TestCase):

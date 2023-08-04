@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.modify_invoice_v3_body import ModifyInvoiceV3Body  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.modify_invoice_v3_body import ModifyInvoiceV3Body  # noqa: E501
+from ods_client.rest import ApiException
 
 
 class TestModifyInvoiceV3Body(unittest.TestCase):

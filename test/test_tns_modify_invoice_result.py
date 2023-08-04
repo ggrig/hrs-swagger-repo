@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.tns_modify_invoice_result import TnsModifyInvoiceResult  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.tns_modify_invoice_result import TnsModifyInvoiceResult  # noqa: E501
+from ods_client.rest import ApiException
 
 
 class TestTnsModifyInvoiceResult(unittest.TestCase):

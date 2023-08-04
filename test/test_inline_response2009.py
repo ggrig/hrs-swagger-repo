@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.inline_response2009 import InlineResponse2009  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.inline_response2009 import InlineResponse2009  # noqa: E501
+from ods_client.rest import ApiException
 
 
 class TestInlineResponse2009(unittest.TestCase):

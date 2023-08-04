@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.all_oftns_change_customer_address_v2_customer_address import AllOftnsChangeCustomerAddressV2CustomerAddress  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.all_oftns_change_customer_address_v2_customer_address import AllOftnsChangeCustomerAddressV2CustomerAddress  # noqa: E501
+from ods_client.rest import ApiException
 
 
 class TestAllOftnsChangeCustomerAddressV2CustomerAddress(unittest.TestCase):

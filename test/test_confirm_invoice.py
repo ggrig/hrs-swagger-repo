@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.confirm_invoice import ConfirmInvoice  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.confirm_invoice import ConfirmInvoice  # noqa: E501
+from ods_client.rest import ApiException
 
 from pprint import pprint
 
@@ -36,8 +36,8 @@ class TestConfirmInvoice(unittest.TestCase):
         # model = swagger_client.models.confirm_invoice.ConfirmInvoice()  # noqa: E501
         # pass
 
-        api_instance = swagger_client.HPPBindingApi()
-        body = swagger_client.ConfirmInvoice() # ConfirmInvoice | 
+        api_instance = ods_client.HPPBindingApi()
+        body = ods_client.ConfirmInvoice() # ConfirmInvoice | 
 
         try:
             # InsertPayment

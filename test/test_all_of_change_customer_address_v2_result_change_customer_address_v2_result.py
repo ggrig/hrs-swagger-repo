@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.all_of_change_customer_address_v2_result_change_customer_address_v2_result import AllOfChangeCustomerAddressV2ResultChangeCustomerAddressV2Result  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.all_of_change_customer_address_v2_result_change_customer_address_v2_result import AllOfChangeCustomerAddressV2ResultChangeCustomerAddressV2Result  # noqa: E501
+from ods_client.rest import ApiException
 
 
 class TestAllOfChangeCustomerAddressV2ResultChangeCustomerAddressV2Result(unittest.TestCase):

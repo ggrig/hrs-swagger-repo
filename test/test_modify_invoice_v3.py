@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.modify_invoice_v3 import ModifyInvoiceV3  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.modify_invoice_v3 import ModifyInvoiceV3  # noqa: E501
+from ods_client.rest import ApiException
 
 from pprint import pprint
 
@@ -35,8 +35,8 @@ class TestModifyInvoiceV3(unittest.TestCase):
         # model = swagger_client.models.modify_invoice_v3.ModifyInvoiceV3()  # noqa: E501
         # pass
 
-        api_instance = swagger_client.HPPBindingApi()
-        body = swagger_client.ModifyInvoiceV3Body() # ModifyInvoiceV3Body | 
+        api_instance = ods_client.HPPBindingApi()
+        body = ods_client.ModifyInvoiceV3Body() # ModifyInvoiceV3Body | 
 
         try:
             # ModifyInvoiceV3

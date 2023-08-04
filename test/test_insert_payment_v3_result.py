@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.insert_payment_v3_result import InsertPaymentV3Result  # noqa: E501
-from swagger_client.rest import ApiException
+import ods_client
+from ods_client.models.insert_payment_v3_result import InsertPaymentV3Result  # noqa: E501
+from ods_client.rest import ApiException
 
 
 class TestInsertPaymentV3Result(unittest.TestCase):
