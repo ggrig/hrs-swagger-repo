@@ -32,7 +32,7 @@ class TestBankaccountinfoBody(unittest.TestCase):
         """Test BankaccountinfoBody"""
         # FIXME: construct object with mandatory attributes with example values
         # model = oip_client.models.bankaccountinfo_body.BankaccountinfoBody()  # noqa: E501
-        pass
+        # pass
 
         # Configure OAuth2 access token for authorization: oauth2
         configuration = oip_client.Configuration()
