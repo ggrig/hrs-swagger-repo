@@ -1,9 +1,9 @@
-# InlineResponse2001
+# InlineResponse401
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **bool** | Indicates if the creation was successful | [optional] 
+**error** | **str** | Error message indicating unauthorized access | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

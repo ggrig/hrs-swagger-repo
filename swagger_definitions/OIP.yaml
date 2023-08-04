@@ -1,0 +1,970 @@
+openapi: 3.0.0
+info:
+  title: OIP API
+  version: 1.0.0.0
+paths:
+  /accountingdocuments/{documentId}:
+    put:
+      summary: Update Accounting Document
+      parameters:
+        - name: documentId
+          in: path
+          description: ID of the Accounting Document to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountingDocument'
+      responses:
+        '200':
+          description: Successful update
+        '400':
+          description: Invalid request
+  /bank-account-info:
+    post:
+      summary: Submit Bank Account Information
+      description: Submits bank account information to the Online Invoice Portal (OIP).
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                MandateID:
+                  type: string
+                  description: The Mandate ID
+                  example: LS-000002636
+                AutoPayEnabled:
+                  type: boolean
+                  description: Indicates if autopay is enabled
+                  example: true
+                CustomerNo:
+                  type: string
+                  description: The Customer Number
+                  example: 10021
+                IBAN:
+                  type: string
+                  description: The IBAN
+                  example: DE12270727240018046300
+                SWIFTCode:
+                  type: string
+                  description: The SWIFT Code
+                  example: DEUTDEDB276
+                Owner:
+                  type: string
+                  description: The account owner
+                  example: Nadxxx Kanyy
+                Company:
+                  type: string
+                  description: The tenant name
+                  example: HRS
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the submission was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+  /booking-source:
+    post:
+      summary: Create Booking Source
+      description: Creates a new booking source.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                No:
+                  type: string
+                  description: The booking source number
+                Category:
+                  type: string
+                  description: The category of the booking source
+                Name:
+                  type: string
+                  description: The name of the booking source
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+  /countries:
+    post:
+      summary: Create Country
+      description: Creates a new country entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: The name of the country
+                Code:
+                  type: string
+                  description: The code of the country
+                EUCountryRegionCode:
+                  type: string
+                  description: The EU country/region code of the country
+                IntrastatCode:
+                  type: string
+                  description: The Intrastat code of the country
+                AddressFormat:
+                  type: string
+                  description: The address format of the country
+                ContactAddressFormat:
+                  type: string
+                  description: The contact address format of the country
+                GlobalDimension2Code:
+                  type: string
+                  description: The global dimension 2 code of the country
+                CustomerTemplateCode:
+                  type: string
+                  description: The customer template code of the country
+                IncomeCostCarrierCode:
+                  type: string
+                  description: The income cost carrier code of the country
+                EUAffiliation:
+                  type: string
+                  description: The EU affiliation of the country
+                Continent:
+                  type: string
+                  description: The continent of the country
+                MaxIBANLength:
+                  type: string
+                  description: The maximum length of the IBAN in the country
+                LengthOfBankBranchCode:
+                  type: string
+                  description: The length of the bank branch code in the country
+                ResponsibilityCenter:
+                  type: string
+                  description: The responsibility center of the country
+                ISOCode:
+                  type: string
+                  description: The ISO code of the country
+                CultureInfo:
+                  type: string
+                  description: The culture info of the country
+                Signature:
+                  type: string
+                  description: The signature of the country
+                PrimaryLanguageCode:
+                  type: string
+                  description: The primary language code of the country
+                BankCountryCode:
+                  type: string
+                  description: The bank country code of the country
+                EUStandard:
+                  type: string
+                  description: The EU standard of the country
+                InvoicingInLocalCurrency:
+                  type: string
+                  description: Indicates if invoicing is done in the local currency of the country
+                CurrencyCode:
+                  type: string
+                  description: The currency code of the country
+                DefaultLengthBranchCode:
+                  type: string
+                  description: The default length of the branch code in the country
+                DefaultLengthAccountNo:
+                  type: string
+                  description: The default length of the account number in the country
+                ISOBankCode:
+                  type: string
+                  description: The ISO bank code of the country
+                AccountingPeriod:
+                  type: string
+                  description: The accounting period of the country
+                VATRegistrationObligation:
+                  type: string
+                  description: The VAT registration obligation of the country
+                VendGenBusPostingGroup:
+                  type: string
+                  description: The vendor general business posting group of the country
+                CustGenBusPostingGroup:
+                  type: string
+                  description: The customer general business posting group of the country
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+  /hotels:
+    post:
+      summary: Create Hotel
+      description: Creates a new hotel entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                VATRegistrationNumber:
+                  type: string
+                  description: The VAT registration number of the hotel
+                NoCorrections:
+                  type: string
+                  description: Indicates if there are no corrections
+                InvoiceAddressNo:
+                  type: string
+                  description: The invoice address number
+                HotelAddressNo:
+                  type: string
+                  description: The hotel address number
+                CompanyNo:
+                  type: string
+                  description: The company number of the hotel
+                InvoiceAddressName:
+                  type: string
+                  description: The name of the invoice address
+                InvoiceAddressName2:
+                  type: string
+                  description: The second line of the invoice address name
+                InvoiceAddressLine1:
+                  type: string
+                  description: The first line of the invoice address
+                InvoiceAddressLine2:
+                  type: string
+                  description: The second line of the invoice address
+                PrimaryContactNo:
+                  type: string
+                  description: The primary contact number
+                BrandNo:
+                  type: string
+                  description: The brand number
+                BrandName:
+                  type: string
+                  description: The brand name
+                InvoiceAddressCity:
+                  type: string
+                  description: The city of the invoice address
+                ContractStatus:
+                  type: string
+                  description: The contract status
+                ContractStatusName:
+                  type: string
+                  description: The name of the contract status
+                ChainNo:
+                  type: string
+                  description: The chain number
+                ChainName:
+                  type: string
+                  description: The name of the chain
+                InvoiceAddressCountryRegionCode:
+                  type: string
+                  description: The country/region code of the invoice address
+                HotelStatus:
+                  type: string
+                  description: The hotel status
+                InvoiceAddressEmail:
+                  type: string
+                  description: The email address of the invoice address
+                InvoiceAddressEmailCopy:
+                  type: string
+                  description: The copy email address of the invoice address
+                InvoiceAddressFaxNo:
+                  type: string
+                  description: The fax number of the invoice address
+                InvoiceAddressFaxNoCopy:
+                  type: string
+                  description: The copy fax number of the invoice address
+                InvoiceAddressLanguageCode:
+                  type: string
+                  description: The language code of the invoice address
+                ReasonCode:
+                  type: string
+                  description: The reason code
+                NoSepaCore:
+                  type: string
+                  description: Indicates if SEPA_CORE is enabled or not
+                ReasonName:
+                  type: string
+                  description: The name of the reason
+                ReasonDate:
+                  type: string
+                  description: The date of the reason
+                PhoneNo:
+                  type: string
+                  description: The phone number of the invoice address
+                HRSContact:
+                  type: string
+                  description: The HRS contact code
+                InvoioceAddressZip:
+                  type: string
+                  description: The zip code of the invoice address
+                CCPKN:
+                  type: string
+                  description: The CC PKN
+                CCName:
+                  type: string
+                  description: The name of the credit card
+                CCValidTo:
+                  type: string
+                  description: The valid-to date of the credit card
+                ContactPersonFirstName:
+                  type: string
+                  description: The first name of the contact person
+                ContactPersonMiddleName:
+                  type: string
+                  description: The middle name of the contact person
+                ContactPersonLastName:
+                  type: string
+                  description: The last name of the contact person
+                ContactPersonEmail:
+                  type: string
+                  description: The email address of the contact person
+                ContactPersonPhone:
+                  type: string
+                  description: The phone number of the contact person
+                ContactPersonFax:
+                  type: string
+                  description: The fax number of the contact person
+                HotelAddressName:
+                  type: string
+                  description: The name of the hotel address
+                HotelAddressCountryRegionCode:
+                  type: string
+                  description: The country/region code of the hotel address
+                HotelAddressLanguageCode:
+                  type: string
+                  description: The language code of the hotel address
+                HotelAddressName2:
+                  type: string
+                  description: The second line of the hotel address name
+                HotelAddressLine1:
+                  type: string
+                  description: The first line of the hotel address
+                HotelAddressLine2:
+                  type: string
+                  description: The second line of the hotel address
+                HotelAddressCity:
+                  type: string
+                  description: The city of the hotel address
+                HotelAddressZip:
+                  type: string
+                  description: The zip code of the hotel address
+                HotelAddressPhoneNo:
+                  type: string
+                  description: The phone number of the hotel address
+                HotelAddressFaxNo:
+                  type: string
+                  description: The fax number of the hotel address
+                HotelAddressEmail:
+                  type: string
+                  description: The email address of the hotel address
+                WebPortalEnabled:
+                  type: boolean
+                  description: Indicates if the web portal is enabled for the hotel
+                CorrespondenceType:
+                  type: string
+                  description: The correspondence type
+                AccountingContact:
+                  type: string
+                  description: The accounting contact
+                DeductionType:
+                  type: string
+                  description: The deduction type
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+  /payment-methods:
+    post:
+      summary: Create Payment Method
+      description: Creates a new payment method entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: string
+                  description: The code of the payment method
+                Description:
+                  type: string
+                  description: The description of the payment method
+                BalAccountType:
+                  type: string
+                  description: The balance account type of the payment method
+                BalAccountNo:
+                  type: string
+                  description: The balance account number of the payment method
+                SurchargeVariable:
+                  type: string
+                  description: The surcharge percentage (variable) of the payment method
+                SurchargeFix:
+                  type: string
+                  description: The surcharge amount (fixed) of the payment method
+                CutoffAmountVariable:
+                  type: string
+                  description: The cutoff amount (variable) of the payment method
+                FeeAccount:
+                  type: string
+                  description: The fee account of the payment method
+                PayViewCode:
+                  type: string
+                  description: The pay view code of the payment method
+                CutoffAmountFee:
+                  type: string
+                  description: The cutoff amount for fee of the payment method
+                DefaultPaymentTypeCode:
+                  type: string
+                  description: The default payment type code of the payment method
+                SinglePayment:
+                  type: string
+                  description: Indicates if single payment is enabled or not
+                DefaultPmtBankAccountNo:
+                  type: string
+                  description: The default payment bank account number of the payment method
+                SeparatePmtProposalHead:
+                  type: string
+                  description: Indicates if separate payment proposal head is enabled or not
+                VendorPurposeText:
+                  type: string
+                  description: The vendor purpose text of the payment method
+                CustomerPurposeText:
+                  type: string
+                  description: The customer purpose text of the payment method
+                PaymentNotePurposeText:
+                  type: string
+                  description: The payment note purpose text of the payment method
+                VendorPurposeTextHeader:
+                  type: string
+                  description: The vendor purpose text header of the payment method
+                PurposeTextFooter:
+                  type: string
+                  description: The purpose text footer of the payment method
+                LimitPaymentAmountLCY:
+                  type: string
+                  description: The limit payment amount in local currency of the payment method
+                CustomerPurposeTextHeader:
+                  type: string
+                  description: The customer purpose text header of the payment method
+                LimitLinesPerHead:
+                  type: string
+                  description: The limit lines per head of the payment method
+                MinPosPaymentNote:
+                  type: string
+                  description: The minimum positive payment note of the payment method
+                LimitLinesPerHeadX:
+                  type: string
+                  description: The limit lines per head X of the payment method
+                MinPosPaymentNoteX:
+                  type: string
+                  description: The minimum positive payment note X of the payment method
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+  /salesperson:
+    post:
+      summary: Create Salesperson
+      description: Creates a new salesperson entry.
+      security:
+        - oauth2: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Timestamp:
+                  type: string
+                  description: The timestamp of the salesperson
+                Code:
+                  type: string
+                  description: The code of the salesperson
+                Description:
+                  type: string
+                  description: The description of the salesperson
+                FaxExtension:
+                  type: string
+                  description: The fax extension of the salesperson
+                PhoneExtension:
+                  type: string
+                  description: The phone extension of the salesperson
+                ContactMail:
+                  type: string
+                  description: The contact email of the salesperson
+                Tenant:
+                  type: string
+                  description: The tenant name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates if the creation was successful
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message indicating unauthorized access
+      deprecated: false
+components:
+  schemas:
+    AccountingDocument:
+      required:
+      - DocumentType
+      - LedgerEntryNo
+      - CustomerNo
+      - Company
+      - PostingDate
+      - DocumentNo
+      - AmountCurrencyCode
+      - LocalCurrencyCode
+      - ForeignCurrencyCode
+      - OriginalAmountNet
+      - OriginalAmountVAT
+      - OriginalAmountGross
+      - OriginalLocalAmountGross
+      - OriginalForeignAmountGross
+      - RemainingAmountNet
+      - RemainingAmountVAT
+      - RemainingAmountGross
+      - RemainingLocalAmountGross
+      - RemainingForeignAmountGross
+      - InvoiceExchangeRate
+      - DebitorCurrencyRate
+      - ExchangeRate
+      - Open
+      - Confirmed
+      - OrigNumberOfNights
+      - InvoiceAddressLine1
+      - InvoiceAddressCity
+      - InvoiceAddressContactNo
+      - InvoiceAddressCountryRegionCode
+      - InvoiceAddressCustomerNo
+      - InvoiceAddressEmail
+      - InvoiceAddressName
+      - InvoiceAddressPostCode
+      - HotelAddressLine1
+      - HotelAddressCity
+      - HotelAddressCountryRegionCode
+      - HotelAddressName
+      - HotelAddressPostCode
+      - DocumentDate
+      - HasPdf
+      type: object
+      properties:
+        DocumentType:
+          type: string
+          enum: [Payment,Subseq. Deb. Invoice,Fapiao,Commission Invoice,Booking Overview,Debit Collection Invoice,Refund Invoice,Marketplace Fee,Sourcing Fee,Marketing Invoice,Invoice,Credit Memo,Finance Charge Memo,Reminder,Refund]
+        LedgerEntryNo:
+          type: integer
+          description: Number of Customer Ledger Entry
+        FapiaoNo:
+          type: string
+          example:
+        CustomerNo:
+          type: integer
+          example: 378128
+        Company:
+          type: string
+        PostingDate:
+          type: string
+          format: date
+          example: 2023-05-31
+        DocumentNo:
+          type: string
+          example: 16846361
+        Description:
+          type: string
+          example: Rechnung R010876989
+        AmountCurrencyCode:
+          type: string
+          example: MXN
+        LocalCurrencyCode:
+          type: string
+          example: EUR
+        ForeignCurrencyCode:
+          type: string
+          example: MXN
+        OriginalAmountNet:
+          type: number
+          example: 189.000000
+        OriginalAmountVAT:
+          type: number
+          example: 0.000000
+        OriginalAmountGross:
+          type: number
+          example: 189.000000
+        OriginalLocalAmountGross:
+          type: number
+          example: 10.00000000000000000000
+        OriginalForeignAmountGross:
+          type: number
+          example: 189.00000000000000000000
+        RemainingAmountNet:
+          type: number
+          example: 189.000000
+        RemainingAmountVAT:
+          type: number
+          example: 0.000000
+        RemainingAmountGross:
+          type: number
+          example: 189.000000
+        RemainingLocalAmountGross:
+          type: number
+          example: 10.00000000000000000000
+        RemainingForeignAmountGross:
+          type: number
+          example: 189.00000000000000000000
+        InvoiceExchangeRate:
+          type: number
+          example: 18.90034000000000000000
+        DebitorCurrencyRate:
+          type: number
+          example: 18.90034000000000000000
+        ExchangeRate:
+          type: number
+          example: 1.000000
+        Open:
+          type: boolean
+          example: true
+        Confirmed:
+          type: boolean
+          example: false
+        SalespersonCode:
+          type: string
+          example: FREESALE
+        OrigNumberOfNights:
+          type: integer
+          example: 4
+        InvoiceAddressLine1:
+          type: string
+          example: Bulevar Adolfo Lopez Mateos 2611
+        InvoiceAddressLine2:
+          type: string
+          example:
+        InvoiceAddressCity:
+          type: string
+          example: Col. El Coecillo,Leon
+        InvoiceAddressContactNo:
+          type: string
+          example:
+        InvoiceAddressCountryRegionCode:
+          type: string
+          example: 102
+        InvoiceAddressCustomerNo:
+          type: string
+          example: 378128
+        InvoiceAddressEmail:
+          type: string
+          example:
+        InvoiceAddressName:
+          type: string
+          example: Radisson Poliforum Plaza Hotel Leon
+        InvoiceAddressName2:
+          type: string
+          example:
+        InvoiceAddressPostCode:
+          type: string
+          example: 37260
+        HotelAddressLine1:
+          type: string
+          example: Bulevar Adolfo Lopez Mateos 2611
+        HotelAddressLine2:
+          type: string
+          example:
+        HotelAddressCity:
+          type: string
+          example: Col. El Coecillo,Leon
+        HotelAddressCountryRegionCode:
+          type: string
+          example: 102
+        HotelAddressName:
+          type: string
+          example: Radisson Poliforum Plaza Hotel Leon
+        HotelAddressName2:
+          type: string
+          example:
+        HotelAddressPostCode:
+          type: string
+          example: 37260
+        CorrectionFromDocumentNo:
+          type: string
+          example:
+        DocumentDate:
+          type: string
+          format: date
+          example: 2023-05-31
+        ExternalDocumentNo:
+          type: string
+          example:
+        HasPdf:
+          type: boolean
+          example: false
+        Positions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Position'
+    Position:
+      type: object
+      required:
+        - Company
+        - ProcessNumber
+        - ReservationNo
+        - PositionNo
+        - ClientGuestname1
+      properties:
+        Company:
+          type: string
+          example: HRS
+        ProcessNumber:
+          type: integer
+          example: 162621580
+        ReservationNo:
+          type: integer
+          example: 283301172
+        PositionNo:
+          type: integer
+          example: 1
+        ClientGuestname1:
+          type: string
+          example: CANSECO AQUINO, ALEJANDRO CLAUDIO
+        ClientGuestname2:
+          type: string
+          example: 
+        ClientCompany:
+          type: string
+          example: VW Cytric_Mexiko
+        RoomType:
+          type: integer
+          example: 0
+        NumberOfRooms:
+          type: integer
+          example: 1
+        NumberOfPerson:
+          type: integer
+          example: 0
+        BreakfastApprovalStatus:
+          type: string
+          example: 0
+        ArrivalDate:
+          type: string
+          format: date
+          example: 2023-05-24
+        DepartureDate:
+          type: string
+          format: date
+          example: 2023-05-26
+        NumberOfNights:
+          type: integer
+          example: 2
+        RateDescription:
+          type: string
+          example: VolkswagenAG
+        RateType:
+          type: integer
+          example: 21011
+        BreakfastType:
+          type: integer
+          example: 0
+        BreakfastPrice:
+          type: number
+          example: 0.00000000000000000000
+        CurrencyFactor:
+          type: number
+          example: 18.90034000000000000000
+        CurrencyCode:
+          type: string
+          example: MXN
+        CommissionAmount:
+          type: number
+          example: 1500.00000000000000000000
+        ComissionRate:
+          type: number
+          example: 0.00000000000000000000
+        RoomPrice:
+          type: number
+          example: 1500.00000000000000000000
+        RankingBooster:
+          type: number
+          example: 0.00000000000000000000
+        BookingQuality:
+          type: integer
+          example: 0
+        BookingCode:
+          type: string
+          example: 
+        QualityAt:
+          type: string
+          format: date-time
+          example: 
+        QualityByUser:
+          type: string
+          example: 
+        ReservationSource:
+          type: string
+          example: 81
+        DeductionType:
+          type: integer
+          example: 0
+        CalculatedWithFunctionID:
+          type: string
+          example: 
+        CustomerNo:
+          type: string
+          example: 378128
+        TafLineAmount:
+          type: number
+          example: 94.50000000000000000000
+        AgencyLineAmount:
+          type: number
+          example: 0.00000000000000000000
+        LineAmount:
+          type: number
+          example: 94.50000000000000000000
+        LineAmountIncludingVAT:
+          type: number
+          example: 94.50000000000000000000
+        AmountIncludingVAT:
+          type: number
+          example: 1500.00000000000000000000
+        TotalAmountIncludingVAT:
+          type: number
+          example: 3000.000000
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://oauth.example.com/authorize
+          scopes:
+            read: Grants read access
+            write: Grants write access
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Marquardt-Informatik/AccountingDocument/1.0.0.0
