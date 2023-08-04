@@ -265,14 +265,17 @@ class AccountingDocument(object):
         :param document_type: The document_type of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if document_type is None:
-            raise ValueError("Invalid value for `document_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["Payment", "Subseq. Deb. Invoice", "Fapiao", "Commission Invoice", "Booking Overview", "Debit Collection Invoice", "Refund Invoice", "Marketplace Fee", "Sourcing Fee", "Marketing Invoice", "Invoice", "Credit Memo", "Finance Charge Memo", "Reminder", "Refund"]  # noqa: E501
-        if document_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `document_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(document_type, allowed_values)
-            )
+        # TBD:
+        # if document_type is None:
+        #     raise ValueError("Invalid value for `document_type`, must not be `None`")  # noqa: E501
+
+        if document_type is not None:
+            allowed_values = ["Payment", "Subseq. Deb. Invoice", "Fapiao", "Commission Invoice", "Booking Overview", "Debit Collection Invoice", "Refund Invoice", "Marketplace Fee", "Sourcing Fee", "Marketing Invoice", "Invoice", "Credit Memo", "Finance Charge Memo", "Reminder", "Refund"]  # noqa: E501
+            if document_type not in allowed_values:
+                raise ValueError(
+                    "Invalid value for `document_type` ({0}), must be one of {1}"  # noqa: E501
+                    .format(document_type, allowed_values)
+                )
 
         self._document_type = document_type
 
@@ -296,8 +299,9 @@ class AccountingDocument(object):
         :param ledger_entry_no: The ledger_entry_no of this AccountingDocument.  # noqa: E501
         :type: int
         """
-        if ledger_entry_no is None:
-            raise ValueError("Invalid value for `ledger_entry_no`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if ledger_entry_no is None:
+        #     raise ValueError("Invalid value for `ledger_entry_no`, must not be `None`")  # noqa: E501
 
         self._ledger_entry_no = ledger_entry_no
 
@@ -340,8 +344,9 @@ class AccountingDocument(object):
         :param customer_no: The customer_no of this AccountingDocument.  # noqa: E501
         :type: int
         """
-        if customer_no is None:
-            raise ValueError("Invalid value for `customer_no`, must not be `None`")  # noqa: E501
+        # TND:
+        # if customer_no is None:
+        #     raise ValueError("Invalid value for `customer_no`, must not be `None`")  # noqa: E501
 
         self._customer_no = customer_no
 
@@ -363,8 +368,9 @@ class AccountingDocument(object):
         :param company: The company of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if company is None:
-            raise ValueError("Invalid value for `company`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if company is None:
+        #     raise ValueError("Invalid value for `company`, must not be `None`")  # noqa: E501
 
         self._company = company
 
@@ -386,8 +392,9 @@ class AccountingDocument(object):
         :param posting_date: The posting_date of this AccountingDocument.  # noqa: E501
         :type: date
         """
-        if posting_date is None:
-            raise ValueError("Invalid value for `posting_date`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if posting_date is None:
+        #     raise ValueError("Invalid value for `posting_date`, must not be `None`")  # noqa: E501
 
         self._posting_date = posting_date
 
@@ -409,8 +416,9 @@ class AccountingDocument(object):
         :param document_no: The document_no of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if document_no is None:
-            raise ValueError("Invalid value for `document_no`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if document_no is None:
+        #     raise ValueError("Invalid value for `document_no`, must not be `None`")  # noqa: E501
 
         self._document_no = document_no
 
@@ -453,8 +461,9 @@ class AccountingDocument(object):
         :param amount_currency_code: The amount_currency_code of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if amount_currency_code is None:
-            raise ValueError("Invalid value for `amount_currency_code`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if amount_currency_code is None:
+        #     raise ValueError("Invalid value for `amount_currency_code`, must not be `None`")  # noqa: E501
 
         self._amount_currency_code = amount_currency_code
 
@@ -476,8 +485,9 @@ class AccountingDocument(object):
         :param local_currency_code: The local_currency_code of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if local_currency_code is None:
-            raise ValueError("Invalid value for `local_currency_code`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if local_currency_code is None:
+        #     raise ValueError("Invalid value for `local_currency_code`, must not be `None`")  # noqa: E501
 
         self._local_currency_code = local_currency_code
 
@@ -499,8 +509,9 @@ class AccountingDocument(object):
         :param foreign_currency_code: The foreign_currency_code of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if foreign_currency_code is None:
-            raise ValueError("Invalid value for `foreign_currency_code`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if foreign_currency_code is None:
+        #     raise ValueError("Invalid value for `foreign_currency_code`, must not be `None`")  # noqa: E501
 
         self._foreign_currency_code = foreign_currency_code
 
@@ -522,8 +533,9 @@ class AccountingDocument(object):
         :param original_amount_net: The original_amount_net of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if original_amount_net is None:
-            raise ValueError("Invalid value for `original_amount_net`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if original_amount_net is None:
+        #     raise ValueError("Invalid value for `original_amount_net`, must not be `None`")  # noqa: E501
 
         self._original_amount_net = original_amount_net
 
@@ -545,8 +557,9 @@ class AccountingDocument(object):
         :param original_amount_vat: The original_amount_vat of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if original_amount_vat is None:
-            raise ValueError("Invalid value for `original_amount_vat`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if original_amount_vat is None:
+        #     raise ValueError("Invalid value for `original_amount_vat`, must not be `None`")  # noqa: E501
 
         self._original_amount_vat = original_amount_vat
 
@@ -568,8 +581,9 @@ class AccountingDocument(object):
         :param original_amount_gross: The original_amount_gross of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if original_amount_gross is None:
-            raise ValueError("Invalid value for `original_amount_gross`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if original_amount_gross is None:
+        #     raise ValueError("Invalid value for `original_amount_gross`, must not be `None`")  # noqa: E501
 
         self._original_amount_gross = original_amount_gross
 
@@ -591,8 +605,9 @@ class AccountingDocument(object):
         :param original_local_amount_gross: The original_local_amount_gross of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if original_local_amount_gross is None:
-            raise ValueError("Invalid value for `original_local_amount_gross`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if original_local_amount_gross is None:
+        #     raise ValueError("Invalid value for `original_local_amount_gross`, must not be `None`")  # noqa: E501
 
         self._original_local_amount_gross = original_local_amount_gross
 
@@ -614,8 +629,9 @@ class AccountingDocument(object):
         :param original_foreign_amount_gross: The original_foreign_amount_gross of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if original_foreign_amount_gross is None:
-            raise ValueError("Invalid value for `original_foreign_amount_gross`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if original_foreign_amount_gross is None:
+        #     raise ValueError("Invalid value for `original_foreign_amount_gross`, must not be `None`")  # noqa: E501
 
         self._original_foreign_amount_gross = original_foreign_amount_gross
 
@@ -637,8 +653,9 @@ class AccountingDocument(object):
         :param remaining_amount_net: The remaining_amount_net of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if remaining_amount_net is None:
-            raise ValueError("Invalid value for `remaining_amount_net`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if remaining_amount_net is None:
+        #     raise ValueError("Invalid value for `remaining_amount_net`, must not be `None`")  # noqa: E501
 
         self._remaining_amount_net = remaining_amount_net
 
@@ -660,8 +677,9 @@ class AccountingDocument(object):
         :param remaining_amount_vat: The remaining_amount_vat of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if remaining_amount_vat is None:
-            raise ValueError("Invalid value for `remaining_amount_vat`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if remaining_amount_vat is None:
+        #     raise ValueError("Invalid value for `remaining_amount_vat`, must not be `None`")  # noqa: E501
 
         self._remaining_amount_vat = remaining_amount_vat
 
@@ -683,8 +701,9 @@ class AccountingDocument(object):
         :param remaining_amount_gross: The remaining_amount_gross of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if remaining_amount_gross is None:
-            raise ValueError("Invalid value for `remaining_amount_gross`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if remaining_amount_gross is None:
+        #     raise ValueError("Invalid value for `remaining_amount_gross`, must not be `None`")  # noqa: E501
 
         self._remaining_amount_gross = remaining_amount_gross
 
@@ -706,8 +725,9 @@ class AccountingDocument(object):
         :param remaining_local_amount_gross: The remaining_local_amount_gross of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if remaining_local_amount_gross is None:
-            raise ValueError("Invalid value for `remaining_local_amount_gross`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if remaining_local_amount_gross is None:
+        #     raise ValueError("Invalid value for `remaining_local_amount_gross`, must not be `None`")  # noqa: E501
 
         self._remaining_local_amount_gross = remaining_local_amount_gross
 
@@ -729,8 +749,9 @@ class AccountingDocument(object):
         :param remaining_foreign_amount_gross: The remaining_foreign_amount_gross of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if remaining_foreign_amount_gross is None:
-            raise ValueError("Invalid value for `remaining_foreign_amount_gross`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if remaining_foreign_amount_gross is None:
+        #     raise ValueError("Invalid value for `remaining_foreign_amount_gross`, must not be `None`")  # noqa: E501
 
         self._remaining_foreign_amount_gross = remaining_foreign_amount_gross
 
@@ -752,8 +773,9 @@ class AccountingDocument(object):
         :param invoice_exchange_rate: The invoice_exchange_rate of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if invoice_exchange_rate is None:
-            raise ValueError("Invalid value for `invoice_exchange_rate`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_exchange_rate is None:
+        #     raise ValueError("Invalid value for `invoice_exchange_rate`, must not be `None`")  # noqa: E501
 
         self._invoice_exchange_rate = invoice_exchange_rate
 
@@ -775,8 +797,9 @@ class AccountingDocument(object):
         :param debitor_currency_rate: The debitor_currency_rate of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if debitor_currency_rate is None:
-            raise ValueError("Invalid value for `debitor_currency_rate`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if debitor_currency_rate is None:
+        #     raise ValueError("Invalid value for `debitor_currency_rate`, must not be `None`")  # noqa: E501
 
         self._debitor_currency_rate = debitor_currency_rate
 
@@ -798,8 +821,9 @@ class AccountingDocument(object):
         :param exchange_rate: The exchange_rate of this AccountingDocument.  # noqa: E501
         :type: float
         """
-        if exchange_rate is None:
-            raise ValueError("Invalid value for `exchange_rate`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if exchange_rate is None:
+        #     raise ValueError("Invalid value for `exchange_rate`, must not be `None`")  # noqa: E501
 
         self._exchange_rate = exchange_rate
 
@@ -821,8 +845,9 @@ class AccountingDocument(object):
         :param open: The open of this AccountingDocument.  # noqa: E501
         :type: bool
         """
-        if open is None:
-            raise ValueError("Invalid value for `open`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if open is None:
+        #     raise ValueError("Invalid value for `open`, must not be `None`")  # noqa: E501
 
         self._open = open
 
@@ -844,8 +869,9 @@ class AccountingDocument(object):
         :param confirmed: The confirmed of this AccountingDocument.  # noqa: E501
         :type: bool
         """
-        if confirmed is None:
-            raise ValueError("Invalid value for `confirmed`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if confirmed is None:
+        #     raise ValueError("Invalid value for `confirmed`, must not be `None`")  # noqa: E501
 
         self._confirmed = confirmed
 
@@ -888,8 +914,9 @@ class AccountingDocument(object):
         :param orig_number_of_nights: The orig_number_of_nights of this AccountingDocument.  # noqa: E501
         :type: int
         """
-        if orig_number_of_nights is None:
-            raise ValueError("Invalid value for `orig_number_of_nights`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if orig_number_of_nights is None:
+        #     raise ValueError("Invalid value for `orig_number_of_nights`, must not be `None`")  # noqa: E501
 
         self._orig_number_of_nights = orig_number_of_nights
 
@@ -911,8 +938,9 @@ class AccountingDocument(object):
         :param invoice_address_line1: The invoice_address_line1 of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_line1 is None:
-            raise ValueError("Invalid value for `invoice_address_line1`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_line1 is None:
+        #     raise ValueError("Invalid value for `invoice_address_line1`, must not be `None`")  # noqa: E501
 
         self._invoice_address_line1 = invoice_address_line1
 
@@ -955,8 +983,9 @@ class AccountingDocument(object):
         :param invoice_address_city: The invoice_address_city of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_city is None:
-            raise ValueError("Invalid value for `invoice_address_city`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_city is None:
+        #     raise ValueError("Invalid value for `invoice_address_city`, must not be `None`")  # noqa: E501
 
         self._invoice_address_city = invoice_address_city
 
@@ -978,8 +1007,9 @@ class AccountingDocument(object):
         :param invoice_address_contact_no: The invoice_address_contact_no of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_contact_no is None:
-            raise ValueError("Invalid value for `invoice_address_contact_no`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_contact_no is None:
+        #     raise ValueError("Invalid value for `invoice_address_contact_no`, must not be `None`")  # noqa: E501
 
         self._invoice_address_contact_no = invoice_address_contact_no
 
@@ -1001,8 +1031,9 @@ class AccountingDocument(object):
         :param invoice_address_country_region_code: The invoice_address_country_region_code of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_country_region_code is None:
-            raise ValueError("Invalid value for `invoice_address_country_region_code`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_country_region_code is None:
+        #     raise ValueError("Invalid value for `invoice_address_country_region_code`, must not be `None`")  # noqa: E501
 
         self._invoice_address_country_region_code = invoice_address_country_region_code
 
@@ -1024,8 +1055,9 @@ class AccountingDocument(object):
         :param invoice_address_customer_no: The invoice_address_customer_no of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_customer_no is None:
-            raise ValueError("Invalid value for `invoice_address_customer_no`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_customer_no is None:
+        #     raise ValueError("Invalid value for `invoice_address_customer_no`, must not be `None`")  # noqa: E501
 
         self._invoice_address_customer_no = invoice_address_customer_no
 
@@ -1047,8 +1079,9 @@ class AccountingDocument(object):
         :param invoice_address_email: The invoice_address_email of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_email is None:
-            raise ValueError("Invalid value for `invoice_address_email`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_email is None:
+        #     raise ValueError("Invalid value for `invoice_address_email`, must not be `None`")  # noqa: E501
 
         self._invoice_address_email = invoice_address_email
 
@@ -1070,8 +1103,9 @@ class AccountingDocument(object):
         :param invoice_address_name: The invoice_address_name of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_name is None:
-            raise ValueError("Invalid value for `invoice_address_name`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_name is None:
+        #     raise ValueError("Invalid value for `invoice_address_name`, must not be `None`")  # noqa: E501
 
         self._invoice_address_name = invoice_address_name
 
@@ -1114,8 +1148,9 @@ class AccountingDocument(object):
         :param invoice_address_post_code: The invoice_address_post_code of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if invoice_address_post_code is None:
-            raise ValueError("Invalid value for `invoice_address_post_code`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if invoice_address_post_code is None:
+        #     raise ValueError("Invalid value for `invoice_address_post_code`, must not be `None`")  # noqa: E501
 
         self._invoice_address_post_code = invoice_address_post_code
 
@@ -1137,8 +1172,9 @@ class AccountingDocument(object):
         :param hotel_address_line1: The hotel_address_line1 of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if hotel_address_line1 is None:
-            raise ValueError("Invalid value for `hotel_address_line1`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if hotel_address_line1 is None:
+        #     raise ValueError("Invalid value for `hotel_address_line1`, must not be `None`")  # noqa: E501
 
         self._hotel_address_line1 = hotel_address_line1
 
@@ -1181,8 +1217,9 @@ class AccountingDocument(object):
         :param hotel_address_city: The hotel_address_city of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if hotel_address_city is None:
-            raise ValueError("Invalid value for `hotel_address_city`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if hotel_address_city is None:
+        #     raise ValueError("Invalid value for `hotel_address_city`, must not be `None`")  # noqa: E501
 
         self._hotel_address_city = hotel_address_city
 
@@ -1204,8 +1241,9 @@ class AccountingDocument(object):
         :param hotel_address_country_region_code: The hotel_address_country_region_code of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if hotel_address_country_region_code is None:
-            raise ValueError("Invalid value for `hotel_address_country_region_code`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if hotel_address_country_region_code is None:
+        #     raise ValueError("Invalid value for `hotel_address_country_region_code`, must not be `None`")  # noqa: E501
 
         self._hotel_address_country_region_code = hotel_address_country_region_code
 
@@ -1227,8 +1265,9 @@ class AccountingDocument(object):
         :param hotel_address_name: The hotel_address_name of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if hotel_address_name is None:
-            raise ValueError("Invalid value for `hotel_address_name`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if hotel_address_name is None:
+        #     raise ValueError("Invalid value for `hotel_address_name`, must not be `None`")  # noqa: E501
 
         self._hotel_address_name = hotel_address_name
 
@@ -1271,8 +1310,9 @@ class AccountingDocument(object):
         :param hotel_address_post_code: The hotel_address_post_code of this AccountingDocument.  # noqa: E501
         :type: str
         """
-        if hotel_address_post_code is None:
-            raise ValueError("Invalid value for `hotel_address_post_code`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if hotel_address_post_code is None:
+        #     raise ValueError("Invalid value for `hotel_address_post_code`, must not be `None`")  # noqa: E501
 
         self._hotel_address_post_code = hotel_address_post_code
 
@@ -1315,8 +1355,9 @@ class AccountingDocument(object):
         :param document_date: The document_date of this AccountingDocument.  # noqa: E501
         :type: date
         """
-        if document_date is None:
-            raise ValueError("Invalid value for `document_date`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if document_date is None:
+        #     raise ValueError("Invalid value for `document_date`, must not be `None`")  # noqa: E501
 
         self._document_date = document_date
 
@@ -1359,8 +1400,9 @@ class AccountingDocument(object):
         :param has_pdf: The has_pdf of this AccountingDocument.  # noqa: E501
         :type: bool
         """
-        if has_pdf is None:
-            raise ValueError("Invalid value for `has_pdf`, must not be `None`")  # noqa: E501
+        # TBD:
+        # if has_pdf is None:
+        #     raise ValueError("Invalid value for `has_pdf`, must not be `None`")  # noqa: E501
 
         self._has_pdf = has_pdf
 
