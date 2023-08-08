@@ -12,7 +12,7 @@ def run(event, context):
     try:
         # InsertPayment
         api_response = api_instance.accountingdocuments_document_id_put(body, None)
-    except ApiException as e:
+    except Exception as e:
         return {
             'statusCode': 500,
             'error': str(e),
@@ -26,7 +26,7 @@ def run(event, context):
     try:
         # Create Bank Accout Source
         api_response = api_instance.bank_account_info_post(body)
-    except ApiException as e:
+    except Exception as e:
         return {
             'statusCode': 500,
             'error': str(e),
@@ -40,7 +40,7 @@ def run(event, context):
     try:
         # Create Booking Source
         api_response = api_instance.booking_source_post(body)
-    except ApiException as e:
+    except Exception as e:
         return {
             'statusCode': 500,
             'error': str(e),
@@ -54,7 +54,7 @@ def run(event, context):
     try:
         # Create Countries Source
         api_response = api_instance.countries_post(body)
-    except ApiException as e:
+    except Exception as e:
         return {
             'statusCode': 500,
             'error': str(e),
@@ -68,7 +68,7 @@ def run(event, context):
     try:
         # Create Hotels Source
         api_response = api_instance.hotels_post(body)
-    except ApiException as e:
+    except Exception as e:
         return {
             'statusCode': 500,
             'error': str(e),
@@ -82,7 +82,7 @@ def run(event, context):
     try:
         # Create Payment Methods Source
         api_response = api_instance.payment_methods_post(body)
-    except ApiException as e:
+    except Exception as e:
         return {
             'statusCode': 500,
             'error': str(e),
@@ -96,7 +96,7 @@ def run(event, context):
     try:
         # Create Salesperson Source
         api_response = api_instance.salesperson_post(body)
-    except ApiException as e:
+    except Exception as e:
         return {
             'statusCode': 500,
             'error': str(e),
