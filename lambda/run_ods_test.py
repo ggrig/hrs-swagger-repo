@@ -15,31 +15,29 @@ def run(event, context):
             'api': 'change_invoice_address'
         }
 
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ChangeCustomerAddressV2() # ChangeCustomerAddressV2 | 
+    api_instance = ods_client.HPPBindingApi()
+    body = ods_client.ChangeCustomerAddressV2() # ChangeCustomerAddressV2 | 
 
-    # try:
-    #     api_response = api_instance.change_customer_address_v2(body)
-    #     pprint(api_response)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'change_customer_address_v2'
-    #     }
+    try:
+        api_response = api_instance.change_customer_address_v2(body)
+    except Exception as e:
+        return {
+            'statusCode': 500,
+            'error': str(e),
+            'api': 'change_customer_address_v2'
+        }
 
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ConfirmInvoice() # ConfirmInvoice | 
+    api_instance = ods_client.HPPBindingApi()
+    body = ods_client.ConfirmInvoice() # ConfirmInvoice | 
 
-    # try:
-    #     api_response = api_instance.confirm_invoice(body)
-    #     pprint(api_response)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'confirm_invoice'
-    #     }
+    try:
+        api_response = api_instance.confirm_invoice(body)
+    except Exception as e:
+        return {
+            'statusCode': 500,
+            'error': str(e),
+            'api': 'confirm_invoice'
+        }
 
     api_instance = ods_client.HPPBindingApi()
     body = ods_client.ChangeContactInformation() # ChangeContactInformation | 
