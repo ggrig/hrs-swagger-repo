@@ -18,8 +18,8 @@ The OIP Client supports OIP endpoints as per [the swagger specification](https:/
 Building the layer for the Lambda fucntions
 
 ``
-cp ods_client pyton/
-cp oip_client pyton/
+cp -r ods_client python/
+cp -r oip_client python/
 cd python
 pip3 install --target=. -r ../requirements.txt --no-user
 cd ..
