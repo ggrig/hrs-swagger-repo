@@ -62,3 +62,23 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+*.zip
+
+python/__pycache__/
+python/_distutils_hack/
+python/certifi/
+python/certifi-2023.7.22.dist-info/
+python/common/
+python/dateutil/
+python/ods_client/
+python/oip_client/
+python/pkg_resources/
+python/python_dateutil-2.8.2.dist-info/
+python/setuptools/
+python/setuptools-68.0.0.dist-info/
+python/six-1.16.0.dist-info/
+python/urllib3/
+python/urllib3-2.0.4.dist-info/
+python/distutils-precedence.pth
+python/six.py
