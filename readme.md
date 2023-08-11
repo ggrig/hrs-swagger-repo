@@ -21,7 +21,7 @@ Building the layer for the Lambda fucntions
 cp -r ods_client python/
 cp -r oip_client python/
 cd python
-pip3 install --target=. -r ../requirements.txt --no-user
+pip3 install --target=. -r ../requirements.txt --no-user --no-cache --upgrade
 cd ..
 zip -r lambda_layer.zip python
 ``
