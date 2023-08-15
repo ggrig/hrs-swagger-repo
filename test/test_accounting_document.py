@@ -42,6 +42,97 @@ class TestAccountingDocument(unittest.TestCase):
 
         api_instance = oip_client.DefaultApi()
         body = oip_client.AccountingDocument() # AccountingDocument | 
+        body.amount_currency_code = 'MXN'
+        body.company = "string"
+        body.confirmed = False
+        body.correction_from_document_no = "string"
+        body.customer_no = 378128
+        body.debitor_currency_rate = 18.90034
+        body.description = "Rechnung R010876989"
+        body.document_date = "2023-08-15" 
+        body.document_no = "16846361"
+        body.document_type = "Payment"
+        body.exchange_rate = 1
+        body.external_document_no = "string"
+        body.fapiao_no = "string" 
+        body.foreign_currency_code = "MXN"
+        body.has_pdf = False
+        body.hotel_address_city = "Col. El Coecillo,Leon"
+        body.hotel_address_country_region_code = "102"
+        body.hotel_address_line1 = "Bulevar Adolfo Lopez Mateos 2611"
+        body.hotel_address_line2 = "string" 
+        body.hotel_address_name = "Radisson Poliforum Plaza Hotel Leon"
+        body.hotel_address_name2 = "string"
+        body.hotel_address_post_code = "37260"
+        body.invoice_address_city = "Col. El Coecillo,Leon"
+        body.invoice_address_contact_no = "string"
+        body.invoice_address_country_region_code = "102"
+        body.invoice_address_customer_no = "378128"
+        body.invoice_address_email = "string"
+        body.invoice_address_line1 = "Bulevar Adolfo Lopez Mateos 2611"
+        body.invoice_address_line2 = "string"
+        body.invoice_address_name = "Radisson Poliforum Plaza Hotel Leon"
+        body.invoice_address_name2 = "string"
+        body.invoice_address_post_code = "37260"
+        body.invoice_exchange_rate = 18.90034
+        body.ledger_entry_no = 0
+        body.local_currency_code = "EUR"
+        body.open = True
+        body.orig_number_of_nights = 4
+        body.original_amount_gross = 189
+        body.original_amount_net = 189
+        body.original_amount_vat = 0
+        body.original_foreign_amount_gross = 189
+        body.original_local_amount_gross = 10
+        #   "Positions": [
+        #     {
+        #       "AgencyLineAmount": 0,
+        #       "AmountIncludingVAT": 1500,
+        #       "ArrivalDate": "2023-08-15",
+        #       "BookingCode": "string",
+        #       "BookingQuality": 0,
+        #       "BreakfastApprovalStatus": "0",
+        #       "BreakfastPrice": 0,
+        #       "BreakfastType": 0,
+        #       "CalculatedWithFunctionID": "string",
+        #       "ClientCompany": "VW Cytric_Mexiko",
+        #       "ClientGuestname1": "CANSECO AQUINO, ALEJANDRO CLAUDIO",
+        #       "ClientGuestname2": "string",
+        #       "ComissionRate": 0,
+        #       "CommissionAmount": 1500,
+        #       "Company": "HRS",
+        #       "CurrencyCode": "MXN",
+        #       "CurrencyFactor": 18.90034,
+        #       "CustomerNo": "378128",
+        #       "DeductionType": 0,
+        #       "DepartureDate": "2023-08-15",
+        #       "LineAmount": 94.5,
+        #       "LineAmountIncludingVAT": 94.5,
+        #       "NumberOfNights": 2,
+        #       "NumberOfPerson": 0,
+        #       "NumberOfRooms": 1,
+        #       "PositionNo": 1,
+        #       "ProcessNumber": 162621580,
+        #       "QualityAt": "2023-08-15T06:59:55.198Z",
+        #       "QualityByUser": "string",
+        #       "RankingBooster": 0,
+        #       "RateDescription": "VolkswagenAG",
+        #       "RateType": 21011,
+        #       "ReservationNo": 283301172,
+        #       "ReservationSource": "81",
+        #       "RoomPrice": 1500,
+        #       "RoomType": 0,
+        #       "TafLineAmount": 94.5,
+        #       "TotalAmountIncludingVAT": 3000
+        #     }
+        #   ],
+        body.posting_date = "2023-08-15"
+        body.remaining_amount_gross = 189
+        body.remaining_amount_net = 189
+        body.remaining_amount_vat = 0
+        body.remaining_foreign_amount_gross = 189
+        body.remaining_local_amount_gross = 10
+        body.salesperson_code = "FREESALE"
 
         try:
             # InsertPayment
