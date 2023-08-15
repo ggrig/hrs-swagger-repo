@@ -1,0 +1,223 @@
+openapi: 3.0.0
+info:
+  title: HPP-ChangeInvoiceAddress
+  contact: {}
+  version: 1.0.0.0
+servers:
+# Added by API Auto Mocking Plugin
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP/1.0.0.0
+- url: http://p-nav-as-1-m.int.hrs.com:7047/DynNavHRS/ws/HRS/Codeunit/HPP?WSDL
+  variables: {}
+paths:
+  /ChangeInvoiceAddress:
+    post:
+      tags:
+      - HPP_Binding
+      summary: ChangeInvoiceAddress
+      operationId: ChangeInvoiceAddress
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/ChangeInvoiceAddress'
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/ChangeInvoiceAddress_Result'
+                - xml:
+                    name: ChangeInvoiceAddress_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+
+components:
+  schemas:
+    q2_Invoice:
+      title: q2_Invoice
+      required:
+      - InvoiceNo
+      - Name
+      - Name2
+      - Address
+      - Address2
+      - City
+      - PostCode
+      type: object
+      properties:
+        InvoiceNo:
+          type: string
+          xml:
+            name: InvoiceNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Name:
+          type: string
+          xml:
+            name: Name
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Name2:
+          type: string
+          xml:
+            name: Name2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Address:
+          type: string
+          xml:
+            name: Address
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        Address2:
+          type: string
+          xml:
+            name: Address2
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        City:
+          type: string
+          xml:
+            name: City
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+        PostCode:
+          type: string
+          xml:
+            name: PostCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoice
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+        prefix: q2
+        attribute: false
+        wrapped: false
+
+
+    q2_Invoices:
+      title: q2_Invoices
+      required:
+      - Invoice
+      type: object
+      properties:
+        Invoice:
+          type: array
+          items:
+            $ref: '#/components/schemas/q2_Invoice'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+            prefix: q2
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Invoices
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50035
+        prefix: q2
+        attribute: false
+        wrapped: false
+
+    tns_ChangeInvoiceAddress:
+      title: tns_ChangeInvoiceAddress
+      required:
+      - invoiceAddress
+      type: object
+      properties:
+        invoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q2_Invoices'
+          - xml:
+              name: invoiceAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeInvoiceAddress
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+    tns_ChangeInvoiceAddress_Result:
+      title: tns_ChangeInvoiceAddress_Result
+      required:
+      - invoiceAddress
+      type: object
+      properties:
+        invoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/q2_Invoices'
+          - xml:
+              name: invoiceAddress
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: ChangeInvoiceAddress_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+
+    ChangeInvoiceAddress:
+      title: ChangeInvoiceAddress
+      required:
+      - ChangeInvoiceAddress
+      type: object
+      properties:
+        ChangeInvoiceAddress:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeInvoiceAddress'
+          - {}
+    ChangeInvoiceAddress_Result:
+      title: ChangeInvoiceAddress_Result
+      required:
+      - ChangeInvoiceAddress_Result
+      type: object
+      properties:
+        ChangeInvoiceAddress_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_ChangeInvoiceAddress_Result'
+          - xml:
+              name: ChangeInvoiceAddress_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: ChangeInvoiceAddress_Result
+        attribute: false
+        wrapped: false
+
+
+tags:
+- name: HPP_Binding
+  description: ''
+  
