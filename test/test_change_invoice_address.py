@@ -37,7 +37,27 @@ class TestChangeInvoiceAddress(unittest.TestCase):
         # pass
 
         api_instance = ods_client.HPPBindingApi()
-        body = ods_client.ChangeInvoiceAddress() # ChangeInvoiceAddress | 
+
+        q2_invoice = ods_client.Q2Invoice(
+            invoice_no = "string",
+            name = "string",
+            name2 = "string",
+            address = "string",
+            address2 = "string",
+            city = "string",
+            post_code = "string"
+        )
+
+        invoice_list = []
+        invoice_list.append(q2_invoice)
+
+        q2_invoices = ods_client.Q2Invoices(invoice_list)
+
+
+        tns_changeinvoiceaddress = ods_client.TnsChangeInvoiceAddress(q2_invoices)
+        body = ods_client.ChangeInvoiceAddress(tns_changeinvoiceaddress) # ChangeInvoiceAddress | 
+
+        # body.to_dict()
 
         try:
             # InsertPayment
