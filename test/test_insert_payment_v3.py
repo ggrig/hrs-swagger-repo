@@ -18,9 +18,6 @@ import ods_client
 from ods_client.models.insert_payment_v3 import InsertPaymentV3  # noqa: E501
 from ods_client.rest import ApiException
 
-from pprint import pprint
-
-
 class TestInsertPaymentV3(unittest.TestCase):
     """InsertPaymentV3 unit test stubs"""
 
@@ -37,12 +34,39 @@ class TestInsertPaymentV3(unittest.TestCase):
         # pass
 
         api_instance = ods_client.HPPBindingApi()
-        body = ods_client.InsertPaymentV3() # InsertPaymentV3 | 
+
+        q20document = ods_client.Q20Document(
+            document_no = "document_no",
+            document_type = "document_type",
+            document_amount = "document_amount"
+        )
+
+        document_list = []
+        document_list.append(q20document)
+        q20documents = ods_client.Q20Documents(document_list)
+
+        q20paymentline = ods_client.Q20PaymentLine(
+            posting_date = "posting_date",
+            payment_method_code = "payment_method_code",
+            ext_document_no = "ext_document_no",
+            documents = q20documents,
+            currency_code = "currency_code",
+            remaining_amount = "remaining_amount",
+            fix_fee_amount = "fix_fee_amount",
+            var_fee_amount = "var_fee_amount",
+        )
+
+        paymentline_list = []
+        paymentline_list.append(q20paymentline)
+
+        q20paymentlines = ods_client.Q20PaymentLines(payment_line = paymentline_list)
+        tnsinsertpaymentv3 = ods_client.TnsInsertPaymentV3(q20paymentlines)
+
+        body = ods_client.InsertPaymentV3(tnsinsertpaymentv3) # InsertPaymentV3 | 
 
         try:
             # InsertPayment
             api_response = api_instance.insert_payment_v3(body)
-            pprint(api_response)
         except ApiException as e:
             print("Exception when calling HPPBindingApi->insert_payment_v3: %s\n" % e)
             assert(False)
