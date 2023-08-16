@@ -54,8 +54,6 @@ class TestChangeInvoiceAddress(unittest.TestCase):
         tns_changeinvoiceaddress = ods_client.TnsChangeInvoiceAddress(q2_invoices)
         body = ods_client.ChangeInvoiceAddress(tns_changeinvoiceaddress) # ChangeInvoiceAddress | 
 
-        # body.to_dict()
-
         try:
             # InsertPayment
             api_response = api_instance.change_invoice_address(body)

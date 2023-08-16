@@ -32,8 +32,29 @@ class TestConfirmInvoiceBody(unittest.TestCase):
         """Test ConfirmInvoiceBody"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.confirm_invoice_body.ConfirmInvoiceBody()  # noqa: E501
-        pass
+        # pass
 
+        api_instance = ods_client.HPPBindingApi()
+
+        q24invoice = ods_client.Q24Invoice(
+            case_no = "string"
+        )
+
+        invoice_list = []
+        invoice_list.append(q24invoice)
+
+        q24invoicelist = ods_client.Q24InvoiceList(invoice_list)
+
+        tnsconfirminvoice = ods_client.TnsConfirmInvoice(q24invoicelist)
+
+        body = ods_client.ConfirmInvoice(tnsconfirminvoice)
+
+        try:
+            # InsertPayment
+            api_response = api_instance.confirm_invoice(body)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->confirm_invoice: %s\n" % e)
+            assert(False)
 
 if __name__ == '__main__':
     unittest.main()
