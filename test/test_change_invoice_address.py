@@ -18,9 +18,6 @@ import ods_client
 from ods_client.models.change_invoice_address import ChangeInvoiceAddress  # noqa: E501
 from ods_client.rest import ApiException
 
-from pprint import pprint
-
-
 class TestChangeInvoiceAddress(unittest.TestCase):
     """ChangeInvoiceAddress unit test stubs"""
 
@@ -62,7 +59,6 @@ class TestChangeInvoiceAddress(unittest.TestCase):
         try:
             # InsertPayment
             api_response = api_instance.change_invoice_address(body)
-            pprint(api_response)
         except ApiException as e:
             print("Exception when calling HPPBindingApi->change_invoice_address: %s\n" % e)
             assert(False)
