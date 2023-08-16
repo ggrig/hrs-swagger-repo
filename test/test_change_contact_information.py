@@ -18,9 +18,6 @@ import ods_client
 from ods_client.models.change_contact_information import ChangeContactInformation  # noqa: E501
 from ods_client.rest import ApiException
 
-from pprint import pprint
-
-
 class TestChangeContactInformation(unittest.TestCase):
     """ChangeContactInformation unit test stubs"""
 
@@ -37,12 +34,29 @@ class TestChangeContactInformation(unittest.TestCase):
         # pass
 
         api_instance = ods_client.HPPBindingApi()
-        body = ods_client.ChangeContactInformation() # ChangeContactInformation | 
+
+        q6contact = ods_client.Q6Contact(
+            contact_no = "contact_no",
+            first_name = "first_name",
+            middle_name = "middle_name",
+            surname = "surname",
+            e_mail = "e_mail",
+            phone_no = "phone_no",
+            fax_no = "fax_no"
+        )
+
+        contact_list = []
+        contact_list.append(q6contact)
+
+        q6contactlist = ods_client.Q6ContactList(contact_list)
+
+        tnschangecontactinformation = ods_client.TnsChangeContactInformation(q6contactlist)
+
+        body = ods_client.ChangeContactInformation(tnschangecontactinformation) # ChangeContactInformation | 
 
         try:
             # InsertPayment
             api_response = api_instance.change_contact_information(body)
-            pprint(api_response)
         except ApiException as e:
             print("Exception when calling HPPBindingApi->change_contact_information: %s\n" % e)
             assert(False)
