@@ -34,7 +34,30 @@ class TestModifyHotelBankAccountInfo(unittest.TestCase):
         """Test ModifyHotelBankAccountInfo"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.modify_hotel_bank_account_info.ModifyHotelBankAccountInfo()  # noqa: E501
-        pass
+
+        api_instance = ods_client.HPPBindingApi()
+
+        Q28HotelBankAccountInfo = ods_client.Q28HotelBankAccountInfo(
+            customer_no = "customer_no",
+            state = "state",
+            iban = "iban",
+            bic = "bic",
+            account_owner = "account_owner",
+            mandate_id = "mandate_id"
+        )
+
+        Q28HotelBankAccountInfoList = ods_client.Q28HotelBankAccountInfoList([Q28HotelBankAccountInfo])
+
+        TnsModifyHotelBankAccountInfo = ods_client.TnsModifyHotelBankAccountInfo(Q28HotelBankAccountInfoList)
+
+        body = ods_client.ModifyHotelBankAccountInfo(TnsModifyHotelBankAccountInfo)
+
+        try:
+            # ModifyHotelCreditCardInfo
+            api_response = api_instance.modify_hotel_bank_account_info(body)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->modify_hotel_bank_account_info: %s\n" % e)
+            assert(False)        
 
 if __name__ == '__main__':
     unittest.main()

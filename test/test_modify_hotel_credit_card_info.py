@@ -34,7 +34,6 @@ class TestModifyHotelCreditCardInfo(unittest.TestCase):
         """Test ModifyHotelCreditCardInfo"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.modify_hotel_credit_card_info.ModifyHotelCreditCardInfo()  # noqa: E501
-        # pass
 
         api_instance = ods_client.HPPBindingApi()
 
