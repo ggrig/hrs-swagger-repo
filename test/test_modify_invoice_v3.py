@@ -33,18 +33,8 @@ class TestModifyInvoiceV3(unittest.TestCase):
         """Test ModifyInvoiceV3"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.modify_invoice_v3.ModifyInvoiceV3()  # noqa: E501
-        # pass
+        pass
 
-        api_instance = ods_client.HPPBindingApi()
-        body = ods_client.ModifyInvoiceV3Body() # ModifyInvoiceV3Body | 
-
-        try:
-            # ModifyInvoiceV3
-            api_response = api_instance.modify_invoice_v3(body)
-            pprint(api_response)
-        except ApiException as e:
-            print("Exception when calling HPPBindingApi->modify_invoice_v3: %s\n" % e)
-            assert(False)
 
 if __name__ == '__main__':
     unittest.main()

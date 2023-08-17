@@ -34,7 +34,7 @@ class TestModifyInvoiceV4Body(unittest.TestCase):
         """Test ModifyInvoiceV4Body"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.modify_invoice_v4_body.ModifyInvoiceV4Body()  # noqa: E501
-        # pass
+        pass
 
         api_instance = ods_client.HPPBindingApi()
         body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 

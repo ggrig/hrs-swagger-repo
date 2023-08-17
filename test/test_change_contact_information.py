@@ -31,7 +31,6 @@ class TestChangeContactInformation(unittest.TestCase):
         """Test ChangeContactInformation"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.change_contact_information.ChangeContactInformation()  # noqa: E501
-        # pass
 
         api_instance = ods_client.HPPBindingApi()
 

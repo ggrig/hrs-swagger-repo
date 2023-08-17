@@ -34,7 +34,6 @@ class TestConfirmInvoice(unittest.TestCase):
         """Test ConfirmInvoice"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.confirm_invoice.ConfirmInvoice()  # noqa: E501
-        # pass
 
         api_instance = ods_client.HPPBindingApi()
 

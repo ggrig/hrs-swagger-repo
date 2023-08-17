@@ -32,7 +32,6 @@ class TestCountriesBody(unittest.TestCase):
         """Test CountriesBody"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.countries_body.CountriesBody()  # noqa: E501
-        # pass
 
         # Configure OAuth2 access token for authorization: oauth2
         configuration = oip_client.Configuration()

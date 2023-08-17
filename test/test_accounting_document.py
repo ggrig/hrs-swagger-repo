@@ -34,7 +34,6 @@ class TestAccountingDocument(unittest.TestCase):
         """Test AccountingDocument"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.accounting_document.AccountingDocument()  # noqa: E501
-        # pass
 
         # Configure OAuth2 access token for authorization: oauth2
         configuration = oip_client.Configuration()

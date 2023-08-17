@@ -32,7 +32,6 @@ class TestPaymentmethodsBody(unittest.TestCase):
         """Test PaymentmethodsBody"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.paymentmethods_body.PaymentmethodsBody()  # noqa: E501
-        # pass
 
         # Configure OAuth2 access token for authorization: oauth2
         configuration = oip_client.Configuration()

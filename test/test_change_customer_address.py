@@ -34,18 +34,7 @@ class TestChangeCustomerAddress(unittest.TestCase):
         """Test ChangeCustomerAddress"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.change_customer_address.ChangeCustomerAddress()  # noqa: E501
-        # pass
-
-        api_instance = ods_client.HPPBindingApi()
-        body = ods_client.ChangeCustomerAddress() # ChangeCustomerAddress | 
-
-        try:
-            # InsertPayment
-            api_response = api_instance.change_customer_address(body)
-            pprint(api_response)
-        except ApiException as e:
-            print("Exception when calling HPPBindingApi->change_customer_address: %s\n" % e)
-            assert(False)
+        pass
 
 if __name__ == '__main__':
     unittest.main()

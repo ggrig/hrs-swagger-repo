@@ -31,7 +31,6 @@ class TestChangeInvoiceAddress(unittest.TestCase):
         """Test ChangeInvoiceAddress"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.change_invoice_address.ChangeInvoiceAddress()  # noqa: E501
-        # pass
 
         api_instance = ods_client.HPPBindingApi()
 

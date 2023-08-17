@@ -31,7 +31,6 @@ class TestInsertPaymentV3(unittest.TestCase):
         """Test InsertPaymentV3"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.insert_payment_v3.InsertPaymentV3()  # noqa: E501
-        # pass
 
         api_instance = ods_client.HPPBindingApi()
 
