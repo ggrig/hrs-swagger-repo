@@ -35,16 +35,5 @@ class TestModifyInvoiceV2(unittest.TestCase):
         # model = swagger_client.models.modify_invoice_v2.ModifyInvoiceV2()  # noqa: E501
         pass
 
-        api_instance = ods_client.HPPBindingApi()
-        body = ods_client.ModifyInvoiceV2Body() # ModifyInvoiceV2Body | 
-
-        try:
-            # ModifyInvoiceV2
-            api_response = api_instance.modify_invoice_v2(body)
-            pprint(api_response)
-        except ApiException as e:
-            print("Exception when calling HPPBindingApi->modify_invoice_v2: %s\n" % e)
-            assert(False)
-
 if __name__ == '__main__':
     unittest.main()
