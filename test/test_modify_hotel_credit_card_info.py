@@ -44,9 +44,7 @@ class TestModifyHotelCreditCardInfo(unittest.TestCase):
             expiry = "expiry",
             company = "company",
             authorization_date = "authorization_date",
-            state = [
-                    "state"
-                ],
+            state = ["state"],
             scheme_reference_id = "scheme_reference_id"
         )
 
