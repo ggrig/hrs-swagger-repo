@@ -37,16 +37,26 @@ class TestConfirmInvoice(unittest.TestCase):
         # pass
 
         api_instance = ods_client.HPPBindingApi()
-        body = ods_client.ConfirmInvoice() # ConfirmInvoice | 
+
+        q24invoice = ods_client.Q24Invoice(
+            case_no = "string"
+        )
+
+        invoice_list = []
+        invoice_list.append(q24invoice)
+
+        q24invoicelist = ods_client.Q24InvoiceList(invoice_list)
+
+        tnsconfirminvoice = ods_client.TnsConfirmInvoice(q24invoicelist)
+
+        body = ods_client.ConfirmInvoice(tnsconfirminvoice)
 
         try:
             # InsertPayment
             api_response = api_instance.confirm_invoice(body)
-            pprint(api_response)
         except ApiException as e:
             print("Exception when calling HPPBindingApi->confirm_invoice: %s\n" % e)
             assert(False)
-
 
 if __name__ == '__main__':
     unittest.main()
