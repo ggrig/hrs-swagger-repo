@@ -18,9 +18,6 @@ import ods_client
 from ods_client.models.modify_invoice_v4 import ModifyInvoiceV4  # noqa: E501
 from ods_client.rest import ApiException
 
-from pprint import pprint
-
-
 class TestModifyInvoiceV4(unittest.TestCase):
     """ModifyInvoiceV4 unit test stubs"""
 
@@ -37,15 +34,55 @@ class TestModifyInvoiceV4(unittest.TestCase):
         # pass
 
         api_instance = ods_client.HPPBindingApi()
-        body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
 
-        try:
-            # ModifyInvoiceV4
-            api_response = api_instance.modify_invoice_v4(body)
-            pprint(api_response)
-        except ApiException as e:
-            print("Exception when calling HPPBindingApi->modify_invoice_v4: %s\n" % e)
-            assert(False)
+        q22invoiceaddress = ods_client.Q22InvoiceAddress(
+            address = "address",
+            address2 = "address2",
+            city = "city",
+            customer_no = "customer_no",
+            name = "name",
+            name2 = "name2",
+            post_code = "post_code",
+            country_code = "country_code",
+            correspondence_type = "correspondence_type",
+            correspondence_address = "correspondence_address",
+            accounting_contact = "accounting_contact"
+        )
+        invoice_address_list = []
+        invoice_address_list.append(q22invoiceaddress)
+
+        q22positions = ods_client.Q22Positions(
+            is_cancelled = "is_cancelled",
+            case_no = "case_no",
+            reservation_no = "reservation_no",
+            position_no = 0,
+            process_no = 0,
+            number_of_nights = 0,
+            number_of_rooms = 0,
+            number_of_person = 0,
+            number_of_breakfast = 0,
+            room_price  = "room_price",
+            reservation_date_from  = "reservation_date_from",
+            reservation_date_to  = "reservation_date_to",
+            breakfast_price  = "breakfast_price",
+            deduction_type  = "deduction_type",
+            reason_for_change  = "reason_for_change",
+            room_type = 0,
+            breakfast_approval_status = "breakfast_approval_status",
+            non_comm = "non_comm"
+        )
+        positions_list = []
+        positions_list.append(q22positions)
+
+
+        # body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
+
+        # try:
+        #     # ModifyInvoiceV4
+        #     api_response = api_instance.modify_invoice_v4(body)
+        # except ApiException as e:
+        #     print("Exception when calling HPPBindingApi->modify_invoice_v4: %s\n" % e)
+        #     assert(False)
 
 if __name__ == '__main__':
     unittest.main()
