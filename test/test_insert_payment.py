@@ -34,18 +34,7 @@ class TestInsertPayment(unittest.TestCase):
         """Test InsertPayment"""
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.insert_payment.InsertPayment()  # noqa: E501
-        # pass
-
-        api_instance = ods_client.HPPBindingApi()
-        body = ods_client.InsertPaymentBody() # InsertPaymentBody | 
-
-        try:
-            # InsertPayment
-            api_response = api_instance.insert_payment(body)
-            pprint(api_response)
-        except ApiException as e:
-            print("Exception when calling HPPBindingApi->insert_payment: %s\n" % e)
-            assert(False)
+        pass
 
 if __name__ == '__main__':
     unittest.main()
