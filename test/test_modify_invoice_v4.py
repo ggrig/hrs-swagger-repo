@@ -48,8 +48,6 @@ class TestModifyInvoiceV4(unittest.TestCase):
             correspondence_address = "correspondence_address",
             accounting_contact = "accounting_contact"
         )
-        invoice_address_list = []
-        invoice_address_list.append(q22invoiceaddress)
 
         q22positions = ods_client.Q22Positions(
             is_cancelled = "is_cancelled",
@@ -57,7 +55,7 @@ class TestModifyInvoiceV4(unittest.TestCase):
             reservation_no = "reservation_no",
             position_no = 0,
             process_no = 0,
-            number_of_nights = 0,
+            number_of_nights = "string",
             number_of_rooms = 0,
             number_of_person = 0,
             number_of_breakfast = 0,
@@ -74,15 +72,26 @@ class TestModifyInvoiceV4(unittest.TestCase):
         positions_list = []
         positions_list.append(q22positions)
 
+        q22_Invoice = ods_client.Q22Invoice(
+            doc_no = "doc_no",
+            is_cancelled = "is_cancelled",
+            invoice_address = q22invoiceaddress,
+            positions = positions_list
+        )
 
-        # body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
+        invoice_list = []
+        invoice_list.append(q22_Invoice)
 
-        # try:
-        #     # ModifyInvoiceV4
-        #     api_response = api_instance.modify_invoice_v4(body)
-        # except ApiException as e:
-        #     print("Exception when calling HPPBindingApi->modify_invoice_v4: %s\n" % e)
-        #     assert(False)
+        q22_InvoiceList = ods_client.Q22InvoiceList(invoice_list)
+        tns_modifyinvoicev4 = ods_client.TnsModifyInvoiceV4(q22_InvoiceList)
+        body = ods_client.ModifyInvoiceV4Body(tns_modifyinvoicev4) # ModifyInvoiceV4Body | 
+
+        try:
+            # ModifyInvoiceV4
+            api_response = api_instance.modify_invoice_v4(body)
+        except ApiException as e:
+            print("Exception when calling HPPBindingApi->modify_invoice_v4: %s\n" % e)
+            assert(False)
 
 if __name__ == '__main__':
     unittest.main()
