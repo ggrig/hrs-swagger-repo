@@ -59,9 +59,8 @@ class ModifyInvoiceV3(object):
         :param modify_invoice_v3: The modify_invoice_v3 of this ModifyInvoiceV3.  # noqa: E501
         :type: AllOfModifyInvoiceV3ModifyInvoiceV3
         """
-        # TBD: Investigate why None is not OK here
-        # if modify_invoice_v3 is None:
-        #     raise ValueError("Invalid value for `modify_invoice_v3`, must not be `None`")  # noqa: E501
+        if modify_invoice_v3 is None:
+            raise ValueError("Invalid value for `modify_invoice_v3`, must not be `None`")  # noqa: E501
 
         self._modify_invoice_v3 = modify_invoice_v3
 

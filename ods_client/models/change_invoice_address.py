@@ -59,9 +59,8 @@ class ChangeInvoiceAddress(object):
         :param change_invoice_address: The change_invoice_address of this ChangeInvoiceAddress.  # noqa: E501
         :type: AllOfChangeInvoiceAddressChangeInvoiceAddress
         """
-        # TBD:
-        # if change_invoice_address is None:
-        #     raise ValueError("Invalid value for `change_invoice_address`, must not be `None`")  # noqa: E501
+        if change_invoice_address is None:
+            raise ValueError("Invalid value for `change_invoice_address`, must not be `None`")  # noqa: E501
 
         self._change_invoice_address = change_invoice_address
 

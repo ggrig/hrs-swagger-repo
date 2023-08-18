@@ -59,9 +59,8 @@ class ConfirmInvoice(object):
         :param confirm_invoice: The confirm_invoice of this ConfirmInvoice.  # noqa: E501
         :type: AllOfConfirmInvoiceConfirmInvoice
         """
-        # TBD:
-        # if confirm_invoice is None:
-        #     raise ValueError("Invalid value for `confirm_invoice`, must not be `None`")  # noqa: E501
+        if confirm_invoice is None:
+            raise ValueError("Invalid value for `confirm_invoice`, must not be `None`")  # noqa: E501
 
         self._confirm_invoice = confirm_invoice
 
