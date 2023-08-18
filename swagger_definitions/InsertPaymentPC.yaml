@@ -1,0 +1,257 @@
+openapi: 3.0.0
+info:
+  title: HPP
+  contact: {}
+  version: 1.0.0.0
+servers:
+# Added by API Auto Mocking Plugin
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP/1.0.0.0
+- url: http://p-nav-as-1-m.int.hrs.com:7047/DynNavHRS/ws/HRS/Codeunit/HPP?WSDL
+  variables: {}
+paths:
+  /InsertPaymentPC:
+    post:
+      tags:
+      - HPP_Binding
+      summary: InsertPaymentPC
+      operationId: InsertPaymentPC
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/InsertPaymentPC'
+              - xml:
+                  name: InsertPaymentPC
+                  attribute: false
+                  wrapped: false
+        required: true
+      responses:
+        '200':
+          description: Successfully retrieved the response
+          headers: {}
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/InsertPaymentPC_Result'
+                - xml:
+                    name: InsertPaymentPC_Result
+                    attribute: false
+                    wrapped: false
+      deprecated: false
+components:
+  schemas:
+
+    q30_Document:
+      title: q30_Document
+      required:
+      - ReservationNo
+      - PaymentAmount
+      type: object
+      properties:
+        ReservationNo:
+          type: string
+          xml:
+            name: ReservationNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+        PaymentAmount:
+          type: string
+          xml:
+            name: Reservation
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+    q30_Reservation:
+      title: q30_Reservation
+      required:
+      - Reservation
+      type: object
+      properties:
+        Reservation:
+          type: array
+          items:
+            $ref: '#/components/schemas/q30_Document'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: Reservation
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+        prefix: q30
+        attribute: false
+        wrapped: false
+
+
+    q30_PaymentLine:
+      title: q30_PaymentLine
+      required:
+      - PostingDate
+      - PaymentMethodCode
+      - ExtDocumentNo
+      - Reservation
+      - CurrencyCode
+      type: object
+      properties:
+        PostingDate:
+          type: string
+          xml:
+            name: PostingDate
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+        PaymentMethodCode:
+          type: string
+          xml:
+            name: PaymentMethodCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+        ExtDocumentNo:
+          type: string
+          xml:
+            name: ExtDocumentNo
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+        Reservation:
+          allOf:
+          - $ref: '#/components/schemas/q30_Reservation'
+          - xml:
+              name: Reservation
+              namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+              prefix: q30
+              attribute: false
+              wrapped: false
+        CurrencyCode:
+          type: string
+          xml:
+            name: CurrencyCode
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLine
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+        prefix: q30
+        attribute: false
+        wrapped: false
+    q30_PaymentLines:
+      title: q30_PaymentLines
+      required:
+      - PaymentLine
+      type: object
+      properties:
+        PaymentLine:
+          type: array
+          items:
+            $ref: '#/components/schemas/q30_PaymentLine'
+          description: ''
+          xml:
+            namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+            prefix: q30
+            attribute: false
+            wrapped: false
+      description: ''
+      xml:
+        name: PaymentLines
+        namespace: urn:microsoft-dynamics-nav/xmlports/x50038
+        prefix: q30
+        attribute: false
+        wrapped: false
+
+    tns_InsertPaymentPC:
+      title: tns_InsertPaymentPC
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q30_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPaymentPC
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+
+    tns_InsertPaymentPC_Result:
+      title: tns_InsertPaymentPC_Result
+      required:
+      - insertPayment
+      type: object
+      properties:
+        insertPayment:
+          allOf:
+          - $ref: '#/components/schemas/q30_PaymentLines'
+          - xml:
+              name: insertPayment
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              prefix: tns
+              attribute: false
+              wrapped: false
+      description: ''
+      xml:
+        name: InsertPaymentPC_Result
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        prefix: tns
+        attribute: false
+        wrapped: false
+
+    InsertPaymentPC:
+      title: InsertPaymentPC
+      required:
+      - InsertPaymentPC
+      type: object
+      properties:
+        InsertPaymentPC:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPaymentPC'
+          - {}
+
+    InsertPaymentPC_Result:
+      title: InsertPaymentPC_Result
+      required:
+      - InsertPaymentPC_Result
+      type: object
+      properties:
+        InsertPaymentPC_Result:
+          allOf:
+          - $ref: '#/components/schemas/tns_InsertPaymentPC_Result'
+          - xml:
+              name: InsertPaymentPC_Result
+              attribute: false
+              wrapped: false
+      xml:
+        name: InsertPaymentPC_Result
+        attribute: false
+        wrapped: false
+
+tags:
+- name: HPP_Binding
+  description: ''
+  
