@@ -208,7 +208,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP/1.0.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP-V2/1.0.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

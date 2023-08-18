@@ -1,13 +1,13 @@
 openapi: 3.0.0
 info:
-  title: HPP
+  title: HPP-V2
   contact: {}
   version: 1.0.0.0
 servers:
 # Added by API Auto Mocking Plugin
 - description: SwaggerHub API Auto Mocking
-  url: https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP/1.0.0.0
-- url: http://p-nav-as-1-m.int.hrs.com:7047/DynNavHRS/ws/HRS/Codeunit/HPP?WSDL
+  url: https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP-V2/1.0.0.0
+- url: http://p-nav-as-1-m.int.hrs.com:7047/DynNavHRS/ws/HRS/Codeunit/HPP-V2?WSDL
   variables: {}
 paths:
   /InsertPaymentPC:
@@ -187,14 +187,14 @@ components:
           - $ref: '#/components/schemas/q30_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPaymentPC
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -210,14 +210,14 @@ components:
           - $ref: '#/components/schemas/q30_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPaymentPC_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false

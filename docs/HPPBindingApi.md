@@ -1,6 +1,6 @@
 # swagger_client.HPPBindingApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP/1.0.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP-V2/1.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**change_invoice_address**](HPPBindingApi.md#change_invoice_address) | **POST** /ChangeInvoiceAddress | ChangeInvoiceAddress
 [**confirm_invoice**](HPPBindingApi.md#confirm_invoice) | **POST** /ConfirmInvoice | ConfirmInvoice
 [**insert_payment**](HPPBindingApi.md#insert_payment) | **POST** /InsertPayment | InsertPayment
+[**insert_payment_pc**](HPPBindingApi.md#insert_payment_pc) | **POST** /InsertPaymentPC | InsertPaymentPC
 [**insert_payment_v2**](HPPBindingApi.md#insert_payment_v2) | **POST** /InsertPaymentV2 | InsertPaymentV2
 [**insert_payment_v3**](HPPBindingApi.md#insert_payment_v3) | **POST** /InsertPaymentV3 | InsertPaymentV3
 [**modify_hotel_bank_account_info**](HPPBindingApi.md#modify_hotel_bank_account_info) | **POST** /ModifyHotelBankAccountInfo | ModifyHotelBankAccountInfo
@@ -283,6 +284,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2003**](InlineResponse2003.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **insert_payment_pc**
+> InlineResponse20014 insert_payment_pc(body)
+
+InsertPaymentPC
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.HPPBindingApi()
+body = swagger_client.InsertPaymentPCBody() # InsertPaymentPCBody | 
+
+try:
+    # InsertPaymentPC
+    api_response = api_instance.insert_payment_pc(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling HPPBindingApi->insert_payment_pc: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**InsertPaymentPCBody**](InsertPaymentPCBody.md)|  | 
+
+### Return type
+
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 

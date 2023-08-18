@@ -1,13 +1,13 @@
 openapi: 3.0.0
 info:
-  title: HPP
+  title: HPP-V2
   contact: {}
   version: 1.0.0.0
 servers:
 # Added by API Auto Mocking Plugin
 - description: SwaggerHub API Auto Mocking
-  url: https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP/1.0.0.0
-- url: http://p-nav-as-1-m.int.hrs.com:7047/DynNavHRS/ws/HRS/Codeunit/HPP?WSDL
+  url: https://virtserver.swaggerhub.com/Marquardt-Informatik/HPP-V2/1.0.0.0
+- url: http://p-nav-as-1-m.int.hrs.com:7047/DynNavHRS/ws/HRS/Codeunit/HPP-V2?WSDL
   variables: {}
 paths:
   /ChangeInvoiceAddress:
@@ -3067,14 +3067,14 @@ components:
           - $ref: '#/components/schemas/q2_Invoices'
           - xml:
               name: invoiceAddress
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeInvoiceAddress
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3089,14 +3089,14 @@ components:
           - $ref: '#/components/schemas/q2_Invoices'
           - xml:
               name: invoiceAddress
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeInvoiceAddress_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3111,14 +3111,14 @@ components:
           - $ref: '#/components/schemas/q4_CustomerList'
           - xml:
               name: customerAddress
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeCustomerAddress
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3133,14 +3133,14 @@ components:
           - $ref: '#/components/schemas/q4_CustomerList'
           - xml:
               name: customerAddress
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeCustomerAddress_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3155,14 +3155,14 @@ components:
           - $ref: '#/components/schemas/q6_ContactList'
           - xml:
               name: contactInformation
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeContactInformation
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3177,14 +3177,14 @@ components:
           - $ref: '#/components/schemas/q6_ContactList'
           - xml:
               name: contactInformation
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeContactInformation_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3199,14 +3199,14 @@ components:
           - $ref: '#/components/schemas/q8_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPayment
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3221,14 +3221,14 @@ components:
           - $ref: '#/components/schemas/q8_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPayment_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3243,14 +3243,14 @@ components:
           - $ref: '#/components/schemas/q10_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoice
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3265,14 +3265,14 @@ components:
           - $ref: '#/components/schemas/q10_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoice_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3287,14 +3287,14 @@ components:
           - $ref: '#/components/schemas/q12_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPaymentV2
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3309,14 +3309,14 @@ components:
           - $ref: '#/components/schemas/q12_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPaymentV2_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3331,14 +3331,14 @@ components:
           - $ref: '#/components/schemas/q14_CustomerList'
           - xml:
               name: customerAddress
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeCustomerAddressV2
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3353,14 +3353,14 @@ components:
           - $ref: '#/components/schemas/q14_CustomerList'
           - xml:
               name: customerAddress
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ChangeCustomerAddressV2_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3375,14 +3375,14 @@ components:
           - $ref: '#/components/schemas/q16_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoiceV2
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3397,14 +3397,14 @@ components:
           - $ref: '#/components/schemas/q16_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoiceV2_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3419,14 +3419,14 @@ components:
           - $ref: '#/components/schemas/q18_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoiceV3
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3441,14 +3441,14 @@ components:
           - $ref: '#/components/schemas/q18_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoiceV3_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3463,14 +3463,14 @@ components:
           - $ref: '#/components/schemas/q20_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPaymentV3
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3485,14 +3485,14 @@ components:
           - $ref: '#/components/schemas/q20_PaymentLines'
           - xml:
               name: insertPayment
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: InsertPaymentV3_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3507,14 +3507,14 @@ components:
           - $ref: '#/components/schemas/q22_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoiceV4
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3529,14 +3529,14 @@ components:
           - $ref: '#/components/schemas/q22_InvoiceList'
           - xml:
               name: modifyInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyInvoiceV4_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3551,14 +3551,14 @@ components:
           - $ref: '#/components/schemas/q24_InvoiceList'
           - xml:
               name: confirmInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ConfirmInvoice
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3573,14 +3573,14 @@ components:
           - $ref: '#/components/schemas/q24_InvoiceList'
           - xml:
               name: confirmInvoice
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ConfirmInvoice_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3595,14 +3595,14 @@ components:
           - $ref: '#/components/schemas/q26_HotelCreditCardInfoList'
           - xml:
               name: modifyCreditCardInfo
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyHotelCreditCardInfo
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3617,14 +3617,14 @@ components:
           - $ref: '#/components/schemas/q26_HotelCreditCardInfoList'
           - xml:
               name: modifyCreditCardInfo
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyHotelCreditCardInfo_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3639,14 +3639,14 @@ components:
           - $ref: '#/components/schemas/q28_HotelBankAccountInfoList'
           - xml:
               name: modifyBankAccInfo
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyHotelBankAccountInfo
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false
@@ -3661,14 +3661,14 @@ components:
           - $ref: '#/components/schemas/q28_HotelBankAccountInfoList'
           - xml:
               name: modifyBankAccInfo
-              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+              namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
               prefix: tns
               attribute: false
               wrapped: false
       description: ''
       xml:
         name: ModifyHotelBankAccountInfo_Result
-        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP
+        namespace: urn:microsoft-dynamics-schemas/codeunit/HPP-V2
         prefix: tns
         attribute: false
         wrapped: false

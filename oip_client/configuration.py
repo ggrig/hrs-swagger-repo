@@ -47,6 +47,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         """Constructor"""
         # Default Base url
         self.host = "https://virtserver.swaggerhub.com/Marquardt-Informatik/OIP-API/1.0.0"
+        # self.host = "http://localhost:8080/Marquardt-Informatik/OIP-API/1.0.0"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
