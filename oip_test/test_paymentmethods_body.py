@@ -29,7 +29,7 @@ class TestPaymentmethodsBody(unittest.TestCase):
         pass
 
     def testPaymentmethodsBody(self):
-        """Test PaymentmethodsBody"""
+        print("""Test PaymentmethodsBody""")
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.paymentmethods_body.PaymentmethodsBody()  # noqa: E501
 
@@ -39,12 +39,39 @@ class TestPaymentmethodsBody(unittest.TestCase):
 
         # create an instance of the API class
         api_instance = oip_client.DefaultApi(oip_client.ApiClient(configuration))
-        body = oip_client.PaymentmethodsBody() # PaymentmethodsBody | 
+        body = oip_client.PaymentmethodsBody(
+            code = 'str',
+            description = 'str',
+            bal_account_type = 'str',
+            bal_account_no = 'str',
+            surcharge_variable = 'str',
+            surcharge_fix = 'str',
+            cutoff_amount_variable = 'str',
+            fee_account = 'str',
+            pay_view_code = 'str',
+            cutoff_amount_fee = 'str',
+            default_payment_type_code = 'str',
+            single_payment = 'str',
+            default_pmt_bank_account_no = 'str',
+            separate_pmt_proposal_head = 'str',
+            vendor_purpose_text = 'str',
+            customer_purpose_text = 'str',
+            payment_note_purpose_text = 'str',
+            vendor_purpose_text_header = 'str',
+            purpose_text_footer = 'str',
+            limit_payment_amount_lcy = 'str',
+            customer_purpose_text_header = 'str',
+            limit_lines_per_head = 'str',
+            min_pos_payment_note = 'str',
+            limit_lines_per_head_x = 'str',
+            min_pos_payment_note_x = 'str',
+            tenant = 'str'            
+        ) # PaymentmethodsBody | 
 
         try:
             # Create Booking Source
             api_response = api_instance.payment_methods_post(body)
-            pprint(api_response)
+            # pprint(api_response)
         except ApiException as e:
             print("Exception when calling DefaultApi->payment_methods_post: %s\n" % e)
 

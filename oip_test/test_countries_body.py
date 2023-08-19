@@ -29,7 +29,7 @@ class TestCountriesBody(unittest.TestCase):
         pass
 
     def testCountriesBody(self):
-        """Test CountriesBody"""
+        print("""Test CountriesBody""")
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.countries_body.CountriesBody()  # noqa: E501
 
@@ -39,12 +39,43 @@ class TestCountriesBody(unittest.TestCase):
 
         # create an instance of the API class
         api_instance = oip_client.DefaultApi(oip_client.ApiClient(configuration))
-        body = oip_client.CountriesBody() # CountriesBody | 
+        body = oip_client.CountriesBody(
+            name = 'str',
+            code = 'str',
+            eu_country_region_code = 'str',
+            intrastat_code = 'str',
+            address_format = 'str',
+            contact_address_format = 'str',
+            global_dimension2_code = 'str',
+            customer_template_code = 'str',
+            income_cost_carrier_code = 'str',
+            eu_affiliation = 'str',
+            continent = 'str',
+            max_iban_length = 'str',
+            length_of_bank_branch_code = 'str',
+            responsibility_center = 'str',
+            iso_code = 'str',
+            culture_info = 'str',
+            signature = 'str',
+            primary_language_code = 'str',
+            bank_country_code = 'str',
+            eu_standard = 'str',
+            invoicing_in_local_currency = 'str',
+            currency_code = 'str',
+            default_length_branch_code = 'str',
+            default_length_account_no = 'str',
+            iso_bank_code = 'str',
+            accounting_period = 'str',
+            vat_registration_obligation = 'str',
+            vend_gen_bus_posting_group = 'str',
+            cust_gen_bus_posting_group = 'str',
+            tenant = 'str'            
+        ) # CountriesBody | 
 
         try:
             # Create Booking Source
             api_response = api_instance.countries_post(body)
-            pprint(api_response)
+            # pprint(api_response)
         except ApiException as e:
             print("Exception when calling DefaultApi->countries_post: %s\n" % e)
 

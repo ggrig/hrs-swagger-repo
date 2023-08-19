@@ -31,7 +31,7 @@ class TestAccountingDocument(unittest.TestCase):
         pass
 
     def testAccountingDocument(self):
-        """Test AccountingDocument"""
+        print("""Test AccountingDocument""")
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.accounting_document.AccountingDocument()  # noqa: E501
 
@@ -140,7 +140,7 @@ class TestAccountingDocument(unittest.TestCase):
             # InsertPayment
             api_response = api_instance.accountingdocuments_document_id_put(body, document_id)
             # api_response = api_instance.accountingdocuments_document_id_put_with_http_info(body, None)
-            pprint(api_response)
+            # pprint(api_response)
         except ApiException as e:
             print("Exception when calling DefaultApi->accounting_document: %s\n" % e)
             assert(False)

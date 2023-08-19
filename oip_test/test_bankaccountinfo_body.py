@@ -29,7 +29,7 @@ class TestBankaccountinfoBody(unittest.TestCase):
         pass
 
     def testBankaccountinfoBody(self):
-        """Test BankaccountinfoBody"""
+        print("""Test BankaccountinfoBody""")
         # FIXME: construct object with mandatory attributes with example values
         # model = oip_client.models.bankaccountinfo_body.BankaccountinfoBody()  # noqa: E501
 
@@ -40,19 +40,19 @@ class TestBankaccountinfoBody(unittest.TestCase):
         # create an instance of the API class
         api_instance = oip_client.DefaultApi(oip_client.ApiClient(configuration))
         body = oip_client.BankaccountinfoBody(
-            mandate_id = 'str',
-            auto_pay_enabled = False,
-            customer_no = 'str',
-            iban = 'str',
-            swift_code = 'str',
-            owner = 'str',
-            company = 'str'            
+            mandate_id = 'LS-000002636',
+            auto_pay_enabled = True,
+            customer_no = '10021',
+            iban = 'DE12270727240018046300',
+            swift_code = 'DEUTDEDB276',
+            owner = 'Nadxxx Kanyy',
+            company = 'HRS'      
         ) # BankaccountinfoBody | 
 
         try:
             # Create Booking Source
             api_response = api_instance.bank_account_info_post(body)
-            pprint(api_response)
+            # pprint(api_response)
         except ApiException as e:
             print("Exception when calling DefaultApi->bank_account_info_post: %s\n" % e)
 

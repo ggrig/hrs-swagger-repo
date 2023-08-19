@@ -29,7 +29,7 @@ class TestBookingsourceBody(unittest.TestCase):
         pass
 
     def testBookingsourceBody(self):
-        """Test BookingsourceBody"""
+        print("""Test BookingsourceBody""")
         # FIXME: construct object with mandatory attributes with example values
         # model = oip_client.models.bookingsource_body.BookingsourceBody()  # noqa: E501
         pass
@@ -51,7 +51,7 @@ class TestBookingsourceBody(unittest.TestCase):
         try:
             # Create Booking Source
             api_response = api_instance.booking_source_post(body)
-            pprint(api_response)
+            # pprint(api_response)
         except ApiException as e:
             print("Exception when calling DefaultApi->booking_source_post: %s\n" % e)
 

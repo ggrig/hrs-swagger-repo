@@ -29,7 +29,7 @@ class TestSalespersonBody(unittest.TestCase):
         pass
 
     def testSalespersonBody(self):
-        """Test SalespersonBody"""
+        print("""Test SalespersonBody""")
         # FIXME: construct object with mandatory attributes with example values
         # model = swagger_client.models.salesperson_body.SalespersonBody()  # noqa: E501
 
@@ -39,12 +39,20 @@ class TestSalespersonBody(unittest.TestCase):
 
         # create an instance of the API class
         api_instance = oip_client.DefaultApi(oip_client.ApiClient(configuration))
-        body = oip_client.SalespersonBody() # SalespersonBody | 
+        body = oip_client.SalespersonBody(
+            timestamp = 'str',
+            code = 'str',
+            description = 'str',
+            fax_extension = 'str',
+            phone_extension = 'str',
+            contact_mail = 'str',
+            tenant = 'str'            
+        ) # SalespersonBody | 
 
         try:
             # Create Booking Source
             api_response = api_instance.salesperson_post(body)
-            pprint(api_response)
+            # pprint(api_response)
         except ApiException as e:
             print("Exception when calling DefaultApi->salesperson_post: %s\n" % e)
 
