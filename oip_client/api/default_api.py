@@ -92,9 +92,9 @@ class DefaultApi(object):
         # verify the required parameter 'document_id' is set
         if ('document_id' not in params):
             raise ValueError("Missing the required parameter `document_id` when calling `accountingdocuments_document_id_put`")  # noqa: E501
-        # TBD:
-        # if (params['document_id'] is None):
-        #     raise ValueError("Missing the required parameter `document_id` when calling `accountingdocuments_document_id_put`")  # noqa: E501
+
+        if (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `accountingdocuments_document_id_put`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

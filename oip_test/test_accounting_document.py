@@ -133,9 +133,10 @@ class TestAccountingDocument(unittest.TestCase):
         body.remaining_local_amount_gross = 10
         body.salesperson_code = "FREESALE"
 
+        document_id = 'document_id'
         try:
             # InsertPayment
-            api_response = api_instance.accountingdocuments_document_id_put(body, None)
+            api_response = api_instance.accountingdocuments_document_id_put(body, document_id)
             # api_response = api_instance.accountingdocuments_document_id_put_with_http_info(body, None)
             pprint(api_response)
         except ApiException as e:
