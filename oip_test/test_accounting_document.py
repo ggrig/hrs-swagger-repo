@@ -40,49 +40,49 @@ class TestAccountingDocument(unittest.TestCase):
         configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
         api_instance = oip_client.DefaultApi()
-        body = oip_client.AccountingDocument() # AccountingDocument | 
-        body.amount_currency_code = 'MXN'
-        body.company = "string"
-        body.confirmed = False
-        body.correction_from_document_no = "string"
-        body.customer_no = 378128
-        body.debitor_currency_rate = 18.90034
-        body.description = "Rechnung R010876989"
-        body.document_date = "2023-08-15" 
-        body.document_no = "16846361"
-        body.document_type = "Payment"
-        body.exchange_rate = 1
-        body.external_document_no = "string"
-        body.fapiao_no = "string" 
-        body.foreign_currency_code = "MXN"
-        body.has_pdf = False
-        body.hotel_address_city = "Col. El Coecillo,Leon"
-        body.hotel_address_country_region_code = "102"
-        body.hotel_address_line1 = "Bulevar Adolfo Lopez Mateos 2611"
-        body.hotel_address_line2 = "string" 
-        body.hotel_address_name = "Radisson Poliforum Plaza Hotel Leon"
-        body.hotel_address_name2 = "string"
-        body.hotel_address_post_code = "37260"
-        body.invoice_address_city = "Col. El Coecillo,Leon"
-        body.invoice_address_contact_no = "string"
-        body.invoice_address_country_region_code = "102"
-        body.invoice_address_customer_no = "378128"
-        body.invoice_address_email = "string"
-        body.invoice_address_line1 = "Bulevar Adolfo Lopez Mateos 2611"
-        body.invoice_address_line2 = "string"
-        body.invoice_address_name = "Radisson Poliforum Plaza Hotel Leon"
-        body.invoice_address_name2 = "string"
-        body.invoice_address_post_code = "37260"
-        body.invoice_exchange_rate = 18.90034
-        body.ledger_entry_no = 0
-        body.local_currency_code = "EUR"
-        body.open = True
-        body.orig_number_of_nights = 4
-        body.original_amount_gross = 189
-        body.original_amount_net = 189
-        body.original_amount_vat = 0
-        body.original_foreign_amount_gross = 189
-        body.original_local_amount_gross = 10
+        body = oip_client.AccountingDocument(
+            amount_currency_code = 'MXN',
+            company = "string",
+            confirmed = False,
+            correction_from_document_no = "string",
+            customer_no = 378128,
+            debitor_currency_rate = 18.90034,
+            description = "Rechnung R010876989",
+            document_date = "2023-08-15" ,
+            document_no = "16846361",
+            document_type = "Payment",
+            exchange_rate = 1,
+            external_document_no = "string",
+            fapiao_no = "string" ,
+            foreign_currency_code = "MXN",
+            has_pdf = False,
+            hotel_address_city = "Col. El Coecillo,Leon",
+            hotel_address_country_region_code = "102",
+            hotel_address_line1 = "Bulevar Adolfo Lopez Mateos 2611",
+            hotel_address_line2 = "string" ,
+            hotel_address_name = "Radisson Poliforum Plaza Hotel Leon",
+            hotel_address_name2 = "string",
+            hotel_address_post_code = "37260",
+            invoice_address_city = "Col. El Coecillo,Leon",
+            invoice_address_contact_no = "string",
+            invoice_address_country_region_code = "102",
+            invoice_address_customer_no = "378128",
+            invoice_address_email = "string",
+            invoice_address_line1 = "Bulevar Adolfo Lopez Mateos 2611",
+            invoice_address_line2 = "string",
+            invoice_address_name = "Radisson Poliforum Plaza Hotel Leon",
+            invoice_address_name2 = "string",
+            invoice_address_post_code = "37260",
+            invoice_exchange_rate = 18.90034,
+            ledger_entry_no = 0,
+            local_currency_code = "EUR",
+            open = True,
+            orig_number_of_nights = 4,
+            original_amount_gross = 189,
+            original_amount_net = 189,
+            original_amount_vat = 0,
+            original_foreign_amount_gross = 189,
+            original_local_amount_gross = 10,
         #   "Positions": [
         #     {
         #       "AgencyLineAmount": 0,
@@ -125,13 +125,14 @@ class TestAccountingDocument(unittest.TestCase):
         #       "TotalAmountIncludingVAT": 3000
         #     }
         #   ],
-        body.posting_date = "2023-08-15"
-        body.remaining_amount_gross = 189
-        body.remaining_amount_net = 189
-        body.remaining_amount_vat = 0
-        body.remaining_foreign_amount_gross = 189
-        body.remaining_local_amount_gross = 10
-        body.salesperson_code = "FREESALE"
+            posting_date = "2023-08-15",
+            remaining_amount_gross = 189,
+            remaining_amount_net = 189,
+            remaining_amount_vat = 0,
+            remaining_foreign_amount_gross = 189,
+            remaining_local_amount_gross = 10,
+            salesperson_code = "FREESALE"
+        ) # AccountingDocument | 
 
         document_id = 'document_id'
         try:
