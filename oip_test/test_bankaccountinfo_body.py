@@ -39,7 +39,15 @@ class TestBankaccountinfoBody(unittest.TestCase):
 
         # create an instance of the API class
         api_instance = oip_client.DefaultApi(oip_client.ApiClient(configuration))
-        body = oip_client.BankaccountinfoBody() # BankaccountinfoBody | 
+        body = oip_client.BankaccountinfoBody(
+            mandate_id = 'str',
+            auto_pay_enabled = False,
+            customer_no = 'str',
+            iban = 'str',
+            swift_code = 'str',
+            owner = 'str',
+            company = 'str'            
+        ) # BankaccountinfoBody | 
 
         try:
             # Create Booking Source
