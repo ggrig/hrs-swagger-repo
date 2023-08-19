@@ -41,7 +41,12 @@ class TestBookingsourceBody(unittest.TestCase):
 
         # create an instance of the API class
         api_instance = oip_client.DefaultApi(oip_client.ApiClient(configuration))
-        body = oip_client.BookingsourceBody() # BookingsourceBody | 
+        body = oip_client.BookingsourceBody(
+            no = 'str',
+            category = 'str',
+            name = 'str',
+            tenant = 'str'            
+        ) # BookingsourceBody | 
 
         try:
             # Create Booking Source
