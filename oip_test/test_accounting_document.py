@@ -70,7 +70,7 @@ class TestAccountingDocument(unittest.TestCase):
             booking_code = "string",
             quality_at = "2023-08-15T06:59:55.198Z",
             quality_by_user = "string",
-            reservation_source = 81,
+            reservation_source = "81",
             deduction_type = 0,
             calculated_with_function_id = "CalculatedWithFunctionID",
             customer_no = "378128",
@@ -125,14 +125,14 @@ class TestAccountingDocument(unittest.TestCase):
             original_amount_vat = 0,
             original_foreign_amount_gross = 189,
             original_local_amount_gross = 10,
-            # positions = [position],
             posting_date = "2023-08-15",
             remaining_amount_gross = 189,
             remaining_amount_net = 189,
             remaining_amount_vat = 0,
             remaining_foreign_amount_gross = 189,
             remaining_local_amount_gross = 10,
-            salesperson_code = "FREESALE"
+            salesperson_code = "FREESALE",
+            positions = [position]
         ) # AccountingDocument | 
 
         document_id = 'document_id'
