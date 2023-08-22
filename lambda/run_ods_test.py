@@ -21,11 +21,12 @@ def testChangeInvoiceAddress():
     q2_invoices = ods_client.Q2Invoices(invoice_list)
 
     tns_changeinvoiceaddress = ods_client.TnsChangeInvoiceAddress(q2_invoices)
-    body = ods_client.ChangeInvoiceAddress(tns_changeinvoiceaddress) # ChangeInvoiceAddress | 
+    body = ods_client.ChangeInvoiceAddress(tns_changeinvoiceaddress)
 
     try:
         api_response = api_instance.change_invoice_address(body)
     except Exception as e:
+        print(str(e))
         return False
     
     return True
@@ -65,49 +66,92 @@ def testChangeCustomerAddressV2():
     try:
         api_response = api_instance.change_customer_address_v2(body)
     except Exception as e:
+        print(str(e))
         return False
 
-    return True   
+    return True
+
+def testConfirmInvoice():
+
+    api_instance = ods_client.HPPBindingApi()
+
+    q24invoice = ods_client.Q24Invoice(
+        case_no = "string"
+    )
+
+    invoice_list = []
+    invoice_list.append(q24invoice)
+
+    q24invoicelist = ods_client.Q24InvoiceList(invoice_list)
+
+    tnsconfirminvoice = ods_client.TnsConfirmInvoice(q24invoicelist)
+
+    body = ods_client.ConfirmInvoice(tnsconfirminvoice)
+
+    try:
+        api_response = api_instance.confirm_invoice(body)
+    except Exception as e:
+        print(str(e))
+        return False
+
+    return True
+
+def testChangeContactInformation():
+
+    api_instance = ods_client.HPPBindingApi()
+
+    q6contact = ods_client.Q6Contact(
+        contact_no = "contact_no",
+        first_name = "first_name",
+        middle_name = "middle_name",
+        surname = "surname",
+        e_mail = "e_mail",
+        phone_no = "phone_no",
+        fax_no = "fax_no"
+    )
+
+    contact_list = []
+    contact_list.append(q6contact)
+
+    q6contactlist = ods_client.Q6ContactList(contact_list)
+
+    tnschangecontactinformation = ods_client.TnsChangeContactInformation(q6contactlist)
+
+    body = ods_client.ChangeContactInformation(tnschangecontactinformation)
+
+    try:
+        api_response = api_instance.change_contact_information(body)
+    except Exception as e:
+        print(str(e))
+        return False
+
+    return True
 
 def run(event, context):
 
     if not testChangeInvoiceAddress():
         return {
             'statusCode': 500,
-            'error': str(e),
             'api': 'change_invoice_address'
         }
 
     if not testChangeCustomerAddressV2():
         return {
             'statusCode': 500,
-            'error': str(e),
             'api': 'change_customer_address_v2'
         }
 
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ConfirmInvoice() # ConfirmInvoice | 
+    if not testConfirmInvoice():
+        return {
+            'statusCode': 500,
+            'api': 'confirm_invoice'
+        }
 
-    # try:
-    #     api_response = api_instance.confirm_invoice(body)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'confirm_invoice'
-    #     }
-
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ChangeContactInformation() # ChangeContactInformation | 
-
-    # try:
-    #     api_response = api_instance.change_contact_information(body)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'change_contact_information'
-    #     }
+    if testChangeContactInformation():
+        return {
+            'statusCode': 500,
+            'api': 'change_contact_information'
+        }
 
     # api_instance = ods_client.HPPBindingApi()
     # body = ods_client.InsertPaymentV3() # InsertPaymentV3 | 
