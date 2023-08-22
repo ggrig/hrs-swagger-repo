@@ -205,33 +205,120 @@ def testInsertPaymentPC():
 
 
 def testModifyInvoiceV4():
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
+    api_instance = ods_client.HPPBindingApi()
 
-    # try:
-    #     # ModifyInvoiceV4
-    #     api_response = api_instance.modify_invoice_v4(body)
-    # except Exception as e:
+    q22invoiceaddress = ods_client.Q22InvoiceAddress(
+        address = "address",
+        address2 = "address2",
+        city = "city",
+        customer_no = "customer_no",
+        name = "name",
+        name2 = "name2",
+        post_code = "post_code",
+        country_code = "country_code",
+        correspondence_type = "correspondence_type",
+        correspondence_address = "correspondence_address",
+        accounting_contact = "accounting_contact"
+    )
+
+    q22positions = ods_client.Q22Positions(
+        is_cancelled = "is_cancelled",
+        case_no = "case_no",
+        reservation_no = "reservation_no",
+        position_no = 0,
+        process_no = 0,
+        number_of_nights = "string",
+        number_of_rooms = 0,
+        number_of_person = 0,
+        number_of_breakfast = 0,
+        room_price  = "room_price",
+        reservation_date_from  = "reservation_date_from",
+        reservation_date_to  = "reservation_date_to",
+        breakfast_price  = "breakfast_price",
+        deduction_type  = "deduction_type",
+        reason_for_change  = "reason_for_change",
+        room_type = 0,
+        breakfast_approval_status = "breakfast_approval_status",
+        non_comm = "non_comm"
+    )
+    positions_list = []
+    positions_list.append(q22positions)
+
+    q22_Invoice = ods_client.Q22Invoice(
+        doc_no = "doc_no",
+        is_cancelled = "is_cancelled",
+        invoice_address = q22invoiceaddress,
+        positions = positions_list
+    )
+
+    invoice_list = []
+    invoice_list.append(q22_Invoice)
+
+    q22_InvoiceList = ods_client.Q22InvoiceList(invoice_list)
+    tns_modifyinvoicev4 = ods_client.TnsModifyInvoiceV4(q22_InvoiceList)
+    body = ods_client.ModifyInvoiceV4(tns_modifyinvoicev4) 
+
+    try:
+        # ModifyInvoiceV4
+        api_response = api_instance.modify_invoice_v4(body)
+    except Exception as e:
+        print(str(e))
+        return False
 
     return True
 
 def testModifyHotelCreditCardInfo():
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ModifyHotelCreditCardInfo() # ModifyHotelCreditCardInfo | 
+    api_instance = ods_client.HPPBindingApi()
 
-    # try:
-    #     api_response = api_instance.modify_hotel_credit_card_info(body)
-    # except Exception as e:
+    q26_hotelcreditcardinfo = ods_client.Q26HotelCreditCardInfo(
+        customer_no = "customer_no",
+        pcn = 0,
+        expiry = "expiry",
+        company = "company",
+        authorization_date = "authorization_date",
+        state = ["state"],
+        scheme_reference_id = "scheme_reference_id"
+    )
+
+    hotelcreditcardinfo_list = []
+    hotelcreditcardinfo_list.append(q26_hotelcreditcardinfo)
+
+    q26_hotelcreditcardinfolist = ods_client.Q26HotelCreditCardInfoList(hotelcreditcardinfo_list)
+    tns_modifyhotelcreditcardinfo = ods_client.TnsModifyHotelCreditCardInfo(q26_hotelcreditcardinfolist)
+    body = ods_client.ModifyHotelCreditCardInfo(tns_modifyhotelcreditcardinfo)
+
+    try:
+        api_response = api_instance.modify_hotel_credit_card_info(body)
+    except Exception as e:
+        print(str(e))
+        return False
 
     return True
 
 def testModifyHotelBankAccountInfo():
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ModifyHotelBankAccountInfo() # ModifyHotelBankAccountInfo | 
 
-    # try:
-    #     api_response = api_instance.modify_hotel_bank_account_info(body)
-    # except Exception as e:
+    api_instance = ods_client.HPPBindingApi()
+
+    Q28HotelBankAccountInfo = ods_client.Q28HotelBankAccountInfo(
+        customer_no = "customer_no",
+        state = "state",
+        iban = "iban",
+        bic = "bic",
+        account_owner = "account_owner",
+        mandate_id = "mandate_id"
+    )
+
+    Q28HotelBankAccountInfoList = ods_client.Q28HotelBankAccountInfoList([Q28HotelBankAccountInfo])
+
+    TnsModifyHotelBankAccountInfo = ods_client.TnsModifyHotelBankAccountInfo(Q28HotelBankAccountInfoList)
+
+    body = ods_client.ModifyHotelBankAccountInfo(TnsModifyHotelBankAccountInfo)
+
+    try:
+        api_response = api_instance.modify_hotel_bank_account_info(body)
+    except Exception as e:
+        print(str(e))
+        return False
 
     return True
 
@@ -260,7 +347,6 @@ def run(event, context):
             'statusCode': 500,
             'api': 'change_contact_information'
         }
-
 
     if not testInsertPaymentV3():
         return {
