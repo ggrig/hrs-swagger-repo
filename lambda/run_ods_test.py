@@ -1,116 +1,174 @@
 import json
 import ods_client
 
-def run(event, context):
+def testChangeInvoiceAddress():
 
     api_instance = ods_client.HPPBindingApi()
-    body = ods_client.ChangeInvoiceAddress() # ChangeInvoiceAddress | 
+
+    q2_invoice = ods_client.Q2Invoice(
+        invoice_no = "string",
+        name = "string",
+        name2 = "string",
+        address = "string",
+        address2 = "string",
+        city = "string",
+        post_code = "string"
+    )
+
+    invoice_list = []
+    invoice_list.append(q2_invoice)
+
+    q2_invoices = ods_client.Q2Invoices(invoice_list)
+
+    tns_changeinvoiceaddress = ods_client.TnsChangeInvoiceAddress(q2_invoices)
+    body = ods_client.ChangeInvoiceAddress(tns_changeinvoiceaddress) # ChangeInvoiceAddress | 
 
     try:
         api_response = api_instance.change_invoice_address(body)
     except Exception as e:
+        return False
+    
+    return True
+
+def testChangeCustomerAddressV2():
+
+    api_instance = ods_client.HPPBindingApi()
+
+    q14customer = ods_client.Q14Customer(
+        customer_no = "string",
+        name = "string",
+        name2 = "string",
+        address = "string",
+        address2 = "string",
+        city = "string",
+        post_code = "string",
+        country_region = "string",
+        contact = "string",
+        phone = "string",
+        correspondence_type = "string",
+        e_mail = "string",
+        fax = "string",
+        e_mail_copy = "string",
+        fax_copy = "string",
+        webportal_registered = "string",
+    )
+
+    customer_list = []
+    customer_list.append(q14customer)
+
+    q14customerlist = ods_client.Q14CustomerList(customer_list)
+
+    tnschangecustomeraddressv2 = ods_client.TnsChangeCustomerAddressV2(q14customerlist)
+
+    body = ods_client.ChangeCustomerAddressV2(tnschangecustomeraddressv2)
+
+    try:
+        api_response = api_instance.change_customer_address_v2(body)
+    except Exception as e:
+        return False
+
+    return True   
+
+def run(event, context):
+
+    if not testChangeInvoiceAddress():
         return {
             'statusCode': 500,
             'error': str(e),
             'api': 'change_invoice_address'
         }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.ChangeCustomerAddressV2() # ChangeCustomerAddressV2 | 
-
-    try:
-        api_response = api_instance.change_customer_address_v2(body)
-    except Exception as e:
+    if not testChangeCustomerAddressV2():
         return {
             'statusCode': 500,
             'error': str(e),
             'api': 'change_customer_address_v2'
         }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.ConfirmInvoice() # ConfirmInvoice | 
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ConfirmInvoice() # ConfirmInvoice | 
 
-    try:
-        api_response = api_instance.confirm_invoice(body)
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'error': str(e),
-            'api': 'confirm_invoice'
-        }
+    # try:
+    #     api_response = api_instance.confirm_invoice(body)
+    # except Exception as e:
+    #     return {
+    #         'statusCode': 500,
+    #         'error': str(e),
+    #         'api': 'confirm_invoice'
+    #     }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.ChangeContactInformation() # ChangeContactInformation | 
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ChangeContactInformation() # ChangeContactInformation | 
 
-    try:
-        api_response = api_instance.change_contact_information(body)
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'error': str(e),
-            'api': 'change_contact_information'
-        }
+    # try:
+    #     api_response = api_instance.change_contact_information(body)
+    # except Exception as e:
+    #     return {
+    #         'statusCode': 500,
+    #         'error': str(e),
+    #         'api': 'change_contact_information'
+    #     }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.InsertPaymentV3() # InsertPaymentV3 | 
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.InsertPaymentV3() # InsertPaymentV3 | 
 
-    try:
-        api_response = api_instance.insert_payment_v3(body)
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'error': str(e),
-            'api': 'insert_payment_v3'
-        }
+    # try:
+    #     api_response = api_instance.insert_payment_v3(body)
+    # except Exception as e:
+    #     return {
+    #         'statusCode': 500,
+    #         'error': str(e),
+    #         'api': 'insert_payment_v3'
+    #     }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.InsertPaymentBody() # InsertPaymentBody | 
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.InsertPaymentBody() # InsertPaymentBody | 
 
-    try:
-        api_response = api_instance.insert_payment(body)
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'error': str(e),
-            'api': 'insert_payment'
-        }
+    # try:
+    #     api_response = api_instance.insert_payment(body)
+    # except Exception as e:
+    #     return {
+    #         'statusCode': 500,
+    #         'error': str(e),
+    #         'api': 'insert_payment'
+    #     }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
 
-    try:
-        # ModifyInvoiceV4
-        api_response = api_instance.modify_invoice_v4(body)
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'error': str(e),
-            'api': 'modify_invoice_v4'
-        }
+    # try:
+    #     # ModifyInvoiceV4
+    #     api_response = api_instance.modify_invoice_v4(body)
+    # except Exception as e:
+    #     return {
+    #         'statusCode': 500,
+    #         'error': str(e),
+    #         'api': 'modify_invoice_v4'
+    #     }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.ModifyHotelCreditCardInfo() # ModifyHotelCreditCardInfo | 
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ModifyHotelCreditCardInfo() # ModifyHotelCreditCardInfo | 
 
-    try:
-        api_response = api_instance.modify_hotel_credit_card_info(body)
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'error': str(e),
-            'api': 'modify_hotel_credit_card_info'
-        }
+    # try:
+    #     api_response = api_instance.modify_hotel_credit_card_info(body)
+    # except Exception as e:
+    #     return {
+    #         'statusCode': 500,
+    #         'error': str(e),
+    #         'api': 'modify_hotel_credit_card_info'
+    #     }
 
-    api_instance = ods_client.HPPBindingApi()
-    body = ods_client.ModifyHotelBankAccountInfo() # ModifyHotelBankAccountInfo | 
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ModifyHotelBankAccountInfo() # ModifyHotelBankAccountInfo | 
 
-    try:
-        api_response = api_instance.modify_hotel_bank_account_info(body)
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'error': str(e),
-            'api': 'modify_hotel_bank_account_info'
-        }
+    # try:
+    #     api_response = api_instance.modify_hotel_bank_account_info(body)
+    # except Exception as e:
+    #     return {
+    #         'statusCode': 500,
+    #         'error': str(e),
+    #         'api': 'modify_hotel_bank_account_info'
+    #     }
 
     return {
         'statusCode': 200,
