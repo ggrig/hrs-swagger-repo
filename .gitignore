@@ -84,5 +84,9 @@ python/boto*/
 python/jmespath*/
 python/s3transfer*/
 python/bin/
+python/dotenv/
+python/python_dotenv*/
 
 .env
+
+notes.txt
