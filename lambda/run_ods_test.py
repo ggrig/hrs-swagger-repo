@@ -127,6 +127,114 @@ def testChangeContactInformation():
 
     return True
 
+def testInsertPaymentV3():
+
+    api_instance = ods_client.HPPBindingApi()
+
+    q20document = ods_client.Q20Document(
+        document_no = "document_no",
+        document_type = "document_type",
+        document_amount = "document_amount"
+    )
+
+    document_list = []
+    document_list.append(q20document)
+    q20documents = ods_client.Q20Documents(document_list)
+
+    q20paymentline = ods_client.Q20PaymentLine(
+        posting_date = "posting_date",
+        payment_method_code = "payment_method_code",
+        ext_document_no = "ext_document_no",
+        documents = q20documents,
+        currency_code = "currency_code",
+        remaining_amount = "remaining_amount",
+        fix_fee_amount = "fix_fee_amount",
+        var_fee_amount = "var_fee_amount",
+    )
+
+    paymentline_list = []
+    paymentline_list.append(q20paymentline)
+
+    q20paymentlines = ods_client.Q20PaymentLines(payment_line = paymentline_list)
+    tnsinsertpaymentv3 = ods_client.TnsInsertPaymentV3(q20paymentlines)
+
+    body = ods_client.InsertPaymentV3(tnsinsertpaymentv3)
+
+    try:
+        api_response = api_instance.insert_payment_v3(body)
+    except Exception as e:
+        print(str(e))
+        return False
+
+    return True
+
+def testInsertPaymentPC():
+    api_instance = ods_client.HPPBindingApi()
+
+    Document = ods_client.Q30Document(
+        reservation_no = "reservation_no",
+        payment_amount = "payment_amount"
+    )
+    
+    Reservation = ods_client.Q30Reservation(
+        [Document]
+    )
+
+    PaymentLine = ods_client.Q30PaymentLine(
+        posting_date = "posting_date",
+        payment_method_code = "payment_method_code",
+        ext_document_no = "ext_document_no",
+        reservation = Reservation,
+        currency_code = "currency_code"
+    )
+
+    PaymentLines = ods_client.Q30PaymentLines([PaymentLine])
+
+    TnsInsertPaymentPC = ods_client.TnsInsertPaymentPC(PaymentLines)
+
+    body = ods_client.InsertPaymentPC(TnsInsertPaymentPC)
+
+    try:
+        # InsertPayment
+        api_response = api_instance.insert_payment_pc(body)
+    except Exception as e:
+        print(str(e))
+        return False
+
+    return True
+
+
+def testModifyInvoiceV4():
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
+
+    # try:
+    #     # ModifyInvoiceV4
+    #     api_response = api_instance.modify_invoice_v4(body)
+    # except Exception as e:
+
+    return True
+
+def testModifyHotelCreditCardInfo():
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ModifyHotelCreditCardInfo() # ModifyHotelCreditCardInfo | 
+
+    # try:
+    #     api_response = api_instance.modify_hotel_credit_card_info(body)
+    # except Exception as e:
+
+    return True
+
+def testModifyHotelBankAccountInfo():
+    # api_instance = ods_client.HPPBindingApi()
+    # body = ods_client.ModifyHotelBankAccountInfo() # ModifyHotelBankAccountInfo | 
+
+    # try:
+    #     api_response = api_instance.modify_hotel_bank_account_info(body)
+    # except Exception as e:
+
+    return True
+
 def run(event, context):
 
     if not testChangeInvoiceAddress():
@@ -147,72 +255,42 @@ def run(event, context):
             'api': 'confirm_invoice'
         }
 
-    if testChangeContactInformation():
+    if not testChangeContactInformation():
         return {
             'statusCode': 500,
             'api': 'change_contact_information'
         }
 
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.InsertPaymentV3() # InsertPaymentV3 | 
 
-    # try:
-    #     api_response = api_instance.insert_payment_v3(body)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'insert_payment_v3'
-    #     }
+    if not testInsertPaymentV3():
+        return {
+            'statusCode': 500,
+            'api': 'insert_payment_v3'
+        }
 
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.InsertPaymentBody() # InsertPaymentBody | 
+    if not testInsertPaymentPC():
+        return {
+            'statusCode': 500,
+            'api': 'insert_payment_pc'
+        }
 
-    # try:
-    #     api_response = api_instance.insert_payment(body)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'insert_payment'
-    #     }
+    if not testModifyInvoiceV4():
+        return {
+            'statusCode': 500,
+            'api': 'modify_invoice_v4'
+        }
 
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ModifyInvoiceV4Body() # ModifyInvoiceV4Body | 
+    if not testModifyHotelCreditCardInfo():
+        return {
+            'statusCode': 500,
+            'api': 'modify_hotel_credit_card_info'
+        }
 
-    # try:
-    #     # ModifyInvoiceV4
-    #     api_response = api_instance.modify_invoice_v4(body)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'modify_invoice_v4'
-    #     }
-
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ModifyHotelCreditCardInfo() # ModifyHotelCreditCardInfo | 
-
-    # try:
-    #     api_response = api_instance.modify_hotel_credit_card_info(body)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'modify_hotel_credit_card_info'
-    #     }
-
-    # api_instance = ods_client.HPPBindingApi()
-    # body = ods_client.ModifyHotelBankAccountInfo() # ModifyHotelBankAccountInfo | 
-
-    # try:
-    #     api_response = api_instance.modify_hotel_bank_account_info(body)
-    # except Exception as e:
-    #     return {
-    #         'statusCode': 500,
-    #         'error': str(e),
-    #         'api': 'modify_hotel_bank_account_info'
-    #     }
+    if not testModifyHotelBankAccountInfo():
+        return {
+            'statusCode': 500,
+            'api': 'modify_hotel_bank_account_info'
+        }
 
     return {
         'statusCode': 200,
