@@ -84,3 +84,5 @@ python/boto*/
 python/jmespath*/
 python/s3transfer*/
 python/bin/
+
+.env

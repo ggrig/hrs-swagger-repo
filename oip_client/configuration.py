@@ -21,6 +21,8 @@ import urllib3
 import six
 from six.moves import http_client as httplib
 
+import os
+from dotenv import load_dotenv
 
 class TypeWithDefault(type):
     def __init__(cls, name, bases, dct):
@@ -45,9 +47,10 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
     def __init__(self):
         """Constructor"""
+        load_dotenv(override=True)  
+
         # Default Base url
-        # self.host = "https://virtserver.swaggerhub.com/Marquardt-Informatik/OIP-API/1.0.0"
-        self.host = "http://localhost:8080/Marquardt-Informatik/OIP-API/1.0.0"
+        self.host = os.getenv ("OIP_SERVER_URL" , "")
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
