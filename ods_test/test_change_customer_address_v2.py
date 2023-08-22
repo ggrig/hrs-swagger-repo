@@ -61,7 +61,7 @@ class TestChangeCustomerAddressV2(unittest.TestCase):
 
         tnschangecustomeraddressv2 = ods_client.TnsChangeCustomerAddressV2(q14customerlist)
 
-        body = ods_client.ChangeCustomerAddressV2Body(tnschangecustomeraddressv2)
+        body = ods_client.ChangeCustomerAddressV2(tnschangecustomeraddressv2)
 
         try:
             # InsertPayment

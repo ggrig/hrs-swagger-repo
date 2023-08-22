@@ -84,7 +84,7 @@ class TestModifyInvoiceV4(unittest.TestCase):
 
         q22_InvoiceList = ods_client.Q22InvoiceList(invoice_list)
         tns_modifyinvoicev4 = ods_client.TnsModifyInvoiceV4(q22_InvoiceList)
-        body = ods_client.ModifyInvoiceV4Body(tns_modifyinvoicev4) # ModifyInvoiceV4Body | 
+        body = ods_client.ModifyInvoiceV4(tns_modifyinvoicev4) # ModifyInvoiceV4Body | 
 
         try:
             # ModifyInvoiceV4

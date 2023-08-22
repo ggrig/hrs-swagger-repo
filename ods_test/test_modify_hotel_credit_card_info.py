@@ -52,7 +52,7 @@ class TestModifyHotelCreditCardInfo(unittest.TestCase):
 
         q26_hotelcreditcardinfolist = ods_client.Q26HotelCreditCardInfoList(hotelcreditcardinfo_list)
         tns_modifyhotelcreditcardinfo = ods_client.TnsModifyHotelCreditCardInfo(q26_hotelcreditcardinfolist)
-        body = ods_client.ModifyHotelCreditCardInfoBody(tns_modifyhotelcreditcardinfo) # ModifyHotelCreditCardInfo |
+        body = ods_client.ModifyHotelCreditCardInfo(tns_modifyhotelcreditcardinfo) # ModifyHotelCreditCardInfo |
 
         try:
             # ModifyHotelCreditCardInfo
