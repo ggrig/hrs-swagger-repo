@@ -111,7 +111,16 @@ def testAccountingDocument(api_instance):
     return True
 
 def testBankaccountinfoBody(api_instance):
-    body = oip_client.BankaccountinfoBody() # BankaccountinfoBody | 
+
+    body = oip_client.BankaccountinfoBody(
+        mandate_id = 'LS-000002636',
+        auto_pay_enabled = True,
+        customer_no = '10021',
+        iban = 'DE12270727240018046300',
+        swift_code = 'DEUTDEDB276',
+        owner = 'Nadxxx Kanyy',
+        company = 'HRS'      
+    ) # BankaccountinfoBody | 
 
     try:
         # Create Bank Accout Source
@@ -124,7 +133,13 @@ def testBankaccountinfoBody(api_instance):
     return True
 
 def testBookingsourceBody(api_instance):
-    body = oip_client.BookingsourceBody() # BookingsourceBody | 
+        
+    body = oip_client.BookingsourceBody(
+        no = 'str',
+        category = 'str',
+        name = 'str',
+        tenant = 'str'            
+    ) # BookingsourceBody | 
 
     try:
         # Create Booking Source
@@ -137,7 +152,39 @@ def testBookingsourceBody(api_instance):
     return True
 
 def testCountriesBody(api_instance):
-    body = oip_client.CountriesBody() # CountriesBody | 
+
+    body = oip_client.CountriesBody(
+        name = 'str',
+        code = 'str',
+        eu_country_region_code = 'str',
+        intrastat_code = 'str',
+        address_format = 'str',
+        contact_address_format = 'str',
+        global_dimension2_code = 'str',
+        customer_template_code = 'str',
+        income_cost_carrier_code = 'str',
+        eu_affiliation = 'str',
+        continent = 'str',
+        max_iban_length = 'str',
+        length_of_bank_branch_code = 'str',
+        responsibility_center = 'str',
+        iso_code = 'str',
+        culture_info = 'str',
+        signature = 'str',
+        primary_language_code = 'str',
+        bank_country_code = 'str',
+        eu_standard = 'str',
+        invoicing_in_local_currency = 'str',
+        currency_code = 'str',
+        default_length_branch_code = 'str',
+        default_length_account_no = 'str',
+        iso_bank_code = 'str',
+        accounting_period = 'str',
+        vat_registration_obligation = 'str',
+        vend_gen_bus_posting_group = 'str',
+        cust_gen_bus_posting_group = 'str',
+        tenant = 'str'            
+    ) # CountriesBody | 
 
     try:
         # Create Countries Source
@@ -150,7 +197,65 @@ def testCountriesBody(api_instance):
     return True
 
 def testHotelsBody(api_instance):
-    body = oip_client.HotelsBody() # HotelsBody | 
+
+    body = oip_client.HotelsBody(
+        vat_registration_number = 'str',
+        no_corrections = 'str',
+        invoice_address_no = 'str',
+        hotel_address_no = 'str',
+        company_no = 'str',
+        invoice_address_name = 'str',
+        invoice_address_name2 = 'str',
+        invoice_address_line1 = 'str',
+        invoice_address_line2 = 'str',
+        primary_contact_no = 'str',
+        brand_no = 'str',
+        brand_name = 'str',
+        invoice_address_city = 'str',
+        contract_status = 'str',
+        contract_status_name = 'str',
+        chain_no = 'str',
+        chain_name = 'str',
+        invoice_address_country_region_code = 'str',
+        hotel_status = 'str',
+        invoice_address_email = 'str',
+        invoice_address_email_copy = 'str',
+        invoice_address_fax_no = 'str',
+        invoice_address_fax_no_copy = 'str',
+        invoice_address_language_code = 'str',
+        reason_code = 'str',
+        no_sepa_core = 'str',
+        reason_name = 'str',
+        reason_date = 'str',
+        phone_no = 'str',
+        hrs_contact = 'str',
+        invoioce_address_zip = 'str',
+        ccpkn = 'str',
+        cc_name = 'str',
+        cc_valid_to = 'str',
+        contact_person_first_name = 'str',
+        contact_person_middle_name = 'str',
+        contact_person_last_name = 'str',
+        contact_person_email = 'str',
+        contact_person_phone = 'str',
+        contact_person_fax = 'str',
+        hotel_address_name = 'str',
+        hotel_address_country_region_code = 'str',
+        hotel_address_language_code = 'str',
+        hotel_address_name2 = 'str',
+        hotel_address_line1 = 'str',
+        hotel_address_line2 = 'str',
+        hotel_address_city = 'str',
+        hotel_address_zip = 'str',
+        hotel_address_phone_no = 'str',
+        hotel_address_fax_no = 'str',
+        hotel_address_email = 'str',
+        web_portal_enabled = True,
+        correspondence_type = 'str',
+        accounting_contact = 'str',
+        deduction_type = 'str',
+        tenant = 'str'            
+    ) # HotelsBody |
 
     try:
         # Create Hotels Source
@@ -163,7 +268,35 @@ def testHotelsBody(api_instance):
     return True
 
 def testPaymentmethodsBody(api_instance):
-    body = oip_client.PaymentmethodsBody() # PaymentmethodsBody | 
+
+    body = oip_client.PaymentmethodsBody(
+        code = 'str',
+        description = 'str',
+        bal_account_type = 'str',
+        bal_account_no = 'str',
+        surcharge_variable = 'str',
+        surcharge_fix = 'str',
+        cutoff_amount_variable = 'str',
+        fee_account = 'str',
+        pay_view_code = 'str',
+        cutoff_amount_fee = 'str',
+        default_payment_type_code = 'str',
+        single_payment = 'str',
+        default_pmt_bank_account_no = 'str',
+        separate_pmt_proposal_head = 'str',
+        vendor_purpose_text = 'str',
+        customer_purpose_text = 'str',
+        payment_note_purpose_text = 'str',
+        vendor_purpose_text_header = 'str',
+        purpose_text_footer = 'str',
+        limit_payment_amount_lcy = 'str',
+        customer_purpose_text_header = 'str',
+        limit_lines_per_head = 'str',
+        min_pos_payment_note = 'str',
+        limit_lines_per_head_x = 'str',
+        min_pos_payment_note_x = 'str',
+        tenant = 'str'            
+    ) # PaymentmethodsBody |
 
     try:
         # Create Payment Methods Source
@@ -176,7 +309,16 @@ def testPaymentmethodsBody(api_instance):
     return True
 
 def testSalespersonBody(api_instance):
-    body = oip_client.SalespersonBody() # SalespersonBody |
+
+    body = oip_client.SalespersonBody(
+        timestamp = 'str',
+        code = 'str',
+        description = 'str',
+        fax_extension = 'str',
+        phone_extension = 'str',
+        contact_mail = 'str',
+        tenant = 'str'            
+    ) # SalespersonBody |
 
     try:
         # Create Salesperson Source
@@ -199,37 +341,37 @@ def run(event, context):
             'api': 'accountingdocuments_document_id_put'
         }
 
-    if not test(api_instance):
+    if not testBankaccountinfoBody(api_instance):
         return {
             'statusCode': 500,
             'api': 'bank_account_info_post'
         }
 
-    if not test(api_instance):
+    if not testBookingsourceBody(api_instance):
         return {
             'statusCode': 500,
             'api': 'booking_source_post'
         }
 
-    if not test(api_instance):
+    if not testCountriesBody(api_instance):
         return {
             'statusCode': 500,
             'api': 'countries_post'
         }
 
-    if not test(api_instance):
+    if not testHotelsBody(api_instance):
         return {
             'statusCode': 500,
             'api': 'hotels_post'
         }
 
-    if not test(api_instance):
+    if not testPaymentmethodsBody(api_instance):
         return {
             'statusCode': 500,
             'api': 'payment_methods_post'
         }
 
-    if not test(api_instance):
+    if not testSalespersonBody(api_instance):
         return {
             'statusCode': 500,
             'api': 'salesperson_post'
