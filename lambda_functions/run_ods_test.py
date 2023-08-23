@@ -25,6 +25,7 @@ def testChangeInvoiceAddress():
 
     try:
         api_response = api_instance.change_invoice_address(body)
+        print("<<testChangeInvoiceAddress response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -65,6 +66,7 @@ def testChangeCustomerAddressV2():
 
     try:
         api_response = api_instance.change_customer_address_v2(body)
+        print("<<testChangeCustomerAddressV2 response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -90,6 +92,7 @@ def testConfirmInvoice():
 
     try:
         api_response = api_instance.confirm_invoice(body)
+        print("<<testConfirmInvoice response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -121,6 +124,7 @@ def testChangeContactInformation():
 
     try:
         api_response = api_instance.change_contact_information(body)
+        print("<<testChangeContactInformation response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -162,6 +166,7 @@ def testInsertPaymentV3():
 
     try:
         api_response = api_instance.insert_payment_v3(body)
+        print("<<testInsertPaymentV3 response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -197,6 +202,7 @@ def testInsertPaymentPC():
     try:
         # InsertPayment
         api_response = api_instance.insert_payment_pc(body)
+        print("<<testInsertPaymentPC response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -261,6 +267,7 @@ def testModifyInvoiceV4():
     try:
         # ModifyInvoiceV4
         api_response = api_instance.modify_invoice_v4(body)
+        print("<<testModifyInvoiceV4 response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -289,6 +296,7 @@ def testModifyHotelCreditCardInfo():
 
     try:
         api_response = api_instance.modify_hotel_credit_card_info(body)
+        print("<<testModifyHotelCreditCardInfo response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -316,6 +324,7 @@ def testModifyHotelBankAccountInfo():
 
     try:
         api_response = api_instance.modify_hotel_bank_account_info(body)
+        print("<<testModifyHotelBankAccountInfo response received!")
     except Exception as e:
         print(str(e))
         return False
@@ -382,3 +391,6 @@ def run(event, context):
         'statusCode': 200,
         'error': 'OK'
     }
+
+if __name__ == '__main__':
+    run(None, None)
