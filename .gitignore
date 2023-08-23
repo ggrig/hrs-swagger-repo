@@ -90,3 +90,5 @@ python/python_dotenv*/
 .env
 
 notes.txt
+
+lambda_layer/*
