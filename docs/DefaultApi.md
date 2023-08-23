@@ -76,7 +76,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
 configuration = swagger_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
@@ -128,7 +127,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
 configuration = swagger_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
@@ -180,7 +178,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
 configuration = swagger_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
@@ -232,7 +229,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
 configuration = swagger_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
@@ -284,7 +280,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
 configuration = swagger_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))
@@ -336,7 +331,6 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
 configuration = swagger_client.Configuration()
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = swagger_client.DefaultApi(swagger_client.ApiClient(configuration))

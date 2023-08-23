@@ -37,7 +37,6 @@ class TestAccountingDocument(unittest.TestCase):
 
         # Configure OAuth2 access token for authorization: oauth2
         configuration = oip_client.Configuration()
-        configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
         api_instance = oip_client.DefaultApi()
 

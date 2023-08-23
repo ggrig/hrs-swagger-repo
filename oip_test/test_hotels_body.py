@@ -35,7 +35,6 @@ class TestHotelsBody(unittest.TestCase):
 
         # Configure OAuth2 access token for authorization: oauth2
         configuration = oip_client.Configuration()
-        configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
         # create an instance of the API class
         api_instance = oip_client.DefaultApi(oip_client.ApiClient(configuration))

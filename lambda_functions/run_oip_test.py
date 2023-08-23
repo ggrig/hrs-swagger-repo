@@ -1,10 +1,12 @@
 import json
 import oip_client
 
+
+
+
 def run(event, context):
 
     configuration = oip_client.Configuration()
-    configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
     api_instance = oip_client.DefaultApi()
     body = oip_client.AccountingDocument() # AccountingDocument | 
@@ -107,3 +109,6 @@ def run(event, context):
         'statusCode': 200,
         'error': 'OK'
     }
+
+if __name__ == '__main__':
+    run(None, None)
