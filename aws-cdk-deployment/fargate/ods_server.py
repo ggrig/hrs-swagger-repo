@@ -6,7 +6,7 @@ from aws_cdk import (core as cdk,
 from fargate.api_server_base import APIServerBase
 
 SERVER_NAME         = 'ODS_MOCK'
-SERVER_PORT         = 8000
+SERVER_PORT         = '8000'
 REPO_ARN            = "arn:aws:ecr:eu-central-1:431647458188:repository/ods_mock"
 
 class ODSServerConstruct(APIServerBase):

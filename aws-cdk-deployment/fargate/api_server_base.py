@@ -7,7 +7,7 @@ class APIServerBase(cdk.Construct):
 
     def __init__(self, scope: cdk.Construct, id:str,
                 server_name:str,
-                server_port:int,
+                server_port:str,
                 repo_arn:str,
                 cluster:ecs.Cluster,
                 disctinct_id: str,

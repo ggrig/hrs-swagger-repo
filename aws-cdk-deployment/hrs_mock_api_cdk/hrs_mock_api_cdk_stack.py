@@ -12,21 +12,19 @@ from aws_cdk import (core as cdk,
                      aws_iam as iam,
                      )
 
-from fargate.binance    import ODSServerConstruct
+from fargate.ods_server    import ODSServerConstruct
 
 class HRSMockAPIStack(cdk.Stack):
 
     def ODSServerDelpoyment(self, bucket, vpc, cluster, role=None):
         # Binance @aggTrade
 
-        binance_aggTrade_btcusdt = ODSServerConstruct(self, "binance-aggTrade-btcusdt",
-                                    bucket=bucket,
+        binance_aggTrade_btcusdt = ODSServerConstruct(self, 
+                                    id = "ods_mock_server",
                                     cluster=cluster,
-                                    topic='aggTrade',
-                                    symbol='BTCUSDT',
+                                    disctinct_id="001",
                                     role=role
                                 )
-
 
     def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
