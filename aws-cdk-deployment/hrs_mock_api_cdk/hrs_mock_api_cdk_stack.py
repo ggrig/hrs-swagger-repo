@@ -16,10 +16,10 @@ from fargate.ods_server    import ODSServerConstruct
 
 class HRSMockAPIStack(cdk.Stack):
 
-    def ODSServerDelpoyment(self, bucket, vpc, cluster, role=None):
+    def ODSServerDelpoyment(self, vpc, cluster, role=None):
         # Binance @aggTrade
 
-        binance_aggTrade_btcusdt = ODSServerConstruct(self, 
+        ods_server = ODSServerConstruct(self, 
                                     id = "ods_mock_server",
                                     cluster=cluster,
                                     disctinct_id="001",
@@ -29,32 +29,16 @@ class HRSMockAPIStack(cdk.Stack):
     def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        bucket = s3.Bucket(self, "GDADataLake",
-            versioned=True,
-            removal_policy=cdk.RemovalPolicy.DESTROY,
-            auto_delete_objects=True)
+        vpc = ec2.Vpc(self, "APIServersVpc", max_azs=3)
 
-        vpc = ec2.Vpc(self, "GDADataLakeVpc", max_azs=3)
-
-        cluster = ecs.Cluster(self, "GDADataLakeCluster", vpc=vpc)
+        cluster = ecs.Cluster(self, "APIServersCluster", vpc=vpc)
 
         # Create a Role for ESC tasks
         ecs_tasks_role = iam.Role(self,
             id='ecs-s3-access-role',
             assumed_by=iam.ServicePrincipal("ecs-tasks.amazonaws.com"))
 
-        # Create and attach policy that gives permissions to write to the S3 bucket.
-        iam.Policy(
-            self, 's3_attr',
-            policy_name='s3_access',
-            statements=[iam.PolicyStatement(
-                actions=['s3:*'],
-                resources=['arn:aws:s3:::' + bucket.bucket_name + '/*'])],
-                # resources=['*'])],
-            roles=[ecs_tasks_role],
-        )
-
-        self.ODSServerDelpoyment  (bucket=bucket, vpc=vpc, cluster=cluster, role=ecs_tasks_role)
+        self.ODSServerDelpoyment  (vpc=vpc, cluster=cluster, role=ecs_tasks_role)
 
 
         # task_switcher_lambda = _lambda.Function(
