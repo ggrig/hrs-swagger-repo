@@ -18,33 +18,33 @@ The OIP Client supports OIP endpoints as per [the swagger specification](https:/
 ### Windows PowerShell
 
 ``
-python -m venv lambda_layer
-cp -r python lambda_layer/
-cp -r ods_client lambda_layer/python/
-cp -r oip_client lambda_layer/python/
-cd lambda_layer/
-Scripts\activate
-cd python/
-python.exe -m pip install --upgrade pip
-pip3 install --target=. -r requirements.txt --no-user --no-cache
-cd ..
-deactivate
+python -m venv lambda_layer  
+cp -r python lambda_layer/  
+cp -r ods_client lambda_layer/python/  
+cp -r oip_client lambda_layer/python/  
+cd lambda_layer/  
+Scripts\activate  
+cd python/  
+python.exe -m pip install --upgrade pip  
+pip3 install --target=. -r requirements.txt --no-user --no-cache  
+cd ..  
+deactivate  
 ``
 Then ZIP the `lambda_layer/python/` folder to python.zip
 
 ### AWS Linux Terminal
 
 ``
-python3 -m venv lambda_layer
-cp -r python lambda_layer/
-cp -r ods_client lambda_layer/python/
-cp -r oip_client lambda_layer/python/
-cd lambda_layer/
-source bin/activate
-cd python
-python3 -m pip install --upgrade pip
-pip3 install --target=. -r requirements.txt --no-user --no-cache
-cd ..
-deactivate
-zip -r lambda_layer.zip python
+python3 -m venv lambda_layer  
+cp -r python lambda_layer/  
+cp -r ods_client lambda_layer/python/  
+cp -r oip_client lambda_layer/python/  
+cd lambda_layer/  
+source bin/activate  
+cd python  
+python3 -m pip install --upgrade pip  
+pip3 install --target=. -r requirements.txt --no-user --no-cache  
+cd ..  
+deactivate  
+zip -r lambda_layer.zip python  
 ``
