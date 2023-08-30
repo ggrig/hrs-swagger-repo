@@ -92,7 +92,5 @@ python/python_dotenv*/
 notes.txt
 
 lambda_layer/*
-ecs_sample/*
-cdk-ecs-example/*
-aws-cdk-deployment/*
+cdk/*
 
