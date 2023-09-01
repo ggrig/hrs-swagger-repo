@@ -23,20 +23,19 @@ import json
 
 ####################################
 
+import os
+from dotenv import load_dotenv
+
 class PostgreSqlStack(Stack):
 
-    def __init__(self, scope: Construct, construct_id: str, 
-                db_name:str,                ## database name
-                 **kwargs) -> None:
+    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # The code that defines your stack goes here
+        load_dotenv(override=True)
+        cidr = os.getenv ("CIDR" , "")
+        db_name = os.getenv ("DB_NAME" , "")
 
-        # example resource
-        # queue = sqs.Queue(
-        #     self, "PostgreSqlQueue",
-        #     visibility_timeout=Duration.seconds(300),
-        # )
+        # The code that defines your stack goes here
 
         secret_db_creds = secretsmanager.Secret(
             self,
@@ -50,23 +49,11 @@ class PostgreSqlStack(Stack):
             ),
         )
 
-        # aurora_cluster_secret = secretsmanager.Secret(self, "AuroraClusterCredentials",
-        #     secret_name =db_name + "AuroraClusterCredentials",
-        #     description =db_name + "Aurora Cluster Credentials",
-        #     generate_secret_string=secretsmanager.SecretStringGenerator(
-        #         exclude_characters ="\"@/\\ '",
-        #         generate_string_key ="password",
-        #         password_length =30,
-        #         secret_string_template='{"username":"'+aurora_cluster_username+'"}'),
-        #     )  
-
         vpc_ifm = ec2.Vpc(
             self,
             "vpc_ifm",
-            availability_zones=["eu-central-1c"],
-            # max_azs=1,
-            # cidr="10.5.0.0/16",
-            ip_addresses=ec2.IpAddresses.cidr("10.5.0.0/16"),
+            max_azs=3,
+            ip_addresses=ec2.IpAddresses.cidr(cidr),
             subnet_configuration=[
                 ec2.SubnetConfiguration(
                     subnet_type=ec2.SubnetType.PUBLIC,
@@ -82,16 +69,16 @@ class PostgreSqlStack(Stack):
             nat_gateways=1,
         )
 
-        # subnet_group_ifm = rds.SubnetGroup((
-        #     self,
-        #     "subnet_group_ifm",
-        #     vpc=vpc_ifm,
-        #     vpc_subnets=ec2.SubnetSelection(
-        #         subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
-        #     ),
-        #     subnet_group_name="ifm-postgres-subnet-group",
-        #     description="Subnet group for ifm postgres",
-        # )
+        subnet_group_ifm = rds.SubnetGroup(
+            self,
+            "subnet_group_ifm",
+            vpc=vpc_ifm,
+            vpc_subnets=ec2.SubnetSelection(
+                subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
+            ),
+            subnet_group_name="ifm-postgres-subnet-group",
+            description="Subnet group for ifm postgres",
+        )
 
         security_group_ifm_db = ec2.SecurityGroup(
             self,
@@ -130,33 +117,31 @@ class PostgreSqlStack(Stack):
             },
         )
 
-#####################################
-
-        # self.rds_db_postgres = rds.DatabaseInstance(
-        #     self,
-        #     "rds_db_postgres",
-        #     instance_identifier="ifm-postgres",
-        #     engine=rds.DatabaseInstanceEngine.postgres(
-        #         version=rds.PostgresEngineVersion.VER_14
-        #     ),
-        #     instance_type=ec2.InstanceType.of(
-        #         ec2.InstanceClass.M6G, ec2.InstanceSize.LARGE
-        #     ),
-        #     parameter_group=parameter_group_postgres,
-        #     allocated_storage=200,
-        #     max_allocated_storage=500,
-        #     credentials=rds.Credentials.from_secret(secret_db_creds),
-        #     database_name="ifmdb",
-        #     vpc=vpc_ifm,
-        #     # subnet_group=subnet_group_ifm,
-        #     enable_performance_insights=True,
-        #     performance_insight_retention=rds.PerformanceInsightRetention.DEFAULT,
-        #     monitoring_interval=Duration.seconds(60),
-        #     publicly_accessible=False,
-        #     monitoring_role=role_enhanced_monitoring,
-        #     backup_retention=Duration.days(7),
-        #     security_groups=[
-        #         security_group_ifm_db,
-        #     ],
-        # )
+        self.rds_db_postgres = rds.DatabaseInstance(
+            self,
+            "rds_db_postgres",
+            instance_identifier="ifm-postgres",
+            engine=rds.DatabaseInstanceEngine.postgres(
+                version=rds.PostgresEngineVersion.VER_14
+            ),
+            instance_type=ec2.InstanceType.of(
+                ec2.InstanceClass.M6G, ec2.InstanceSize.LARGE
+            ),
+            parameter_group=parameter_group_postgres,
+            allocated_storage=200,
+            max_allocated_storage=500,
+            credentials=rds.Credentials.from_secret(secret_db_creds),
+            database_name="ifmdb",
+            vpc=vpc_ifm,
+            subnet_group=subnet_group_ifm,
+            enable_performance_insights=True,
+            performance_insight_retention=rds.PerformanceInsightRetention.DEFAULT,
+            monitoring_interval=Duration.seconds(60),
+            publicly_accessible=False,
+            monitoring_role=role_enhanced_monitoring,
+            backup_retention=Duration.days(7),
+            security_groups=[
+                security_group_ifm_db,
+            ],
+        )
 
