@@ -21,8 +21,6 @@ from constructs import Construct
 
 import json
 
-####################################
-
 import os
 from dotenv import load_dotenv
 
@@ -144,4 +142,19 @@ class PostgreSqlStack(Stack):
                 security_group_ifm_db,
             ],
         )
+
+        # Create Bastion
+        key_name = os.getenv ("KEY_NAME" , "")
+        bastion = ec2.BastionHostLinux(self, "myBastion",
+                                       vpc=vpc_ifm,
+                                       subnet_selection=ec2.SubnetSelection(
+                                           subnet_type=ec2.SubnetType.PUBLIC),
+                                       instance_name="myBastionHostLinux",
+                                       instance_type=ec2.InstanceType(instance_type_identifier="t2.micro"))
+
+        # Setup key_name for EC2 instance login if you don't use Session Manager
+        # bastion.instance.instance.add_property_override("KeyName", key_name)
+
+        bastion.connections.allow_from_any_ipv4(
+            ec2.Port.tcp(22), "Internet access SSH")
 
