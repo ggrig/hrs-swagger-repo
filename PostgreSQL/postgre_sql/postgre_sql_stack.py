@@ -118,33 +118,33 @@ class PostgreSqlStack(Stack):
             },
         )
 
-        # self.rds_db_postgres = rds.DatabaseInstance(
-        #     self,
-        #     "rds_db_postgres",
-        #     instance_identifier="hrs-postgres",
-        #     engine=rds.DatabaseInstanceEngine.postgres(
-        #         version=rds.PostgresEngineVersion.VER_14
-        #     ),
-        #     instance_type=ec2.InstanceType.of(
-        #         ec2.InstanceClass.M6G, ec2.InstanceSize.LARGE
-        #     ),
-        #     parameter_group=parameter_group_postgres,
-        #     allocated_storage=200,
-        #     max_allocated_storage=500,
-        #     credentials=rds.Credentials.from_secret(secret_db_creds),
-        #     database_name=db_name,
-        #     vpc=vpc_hrs,
-        #     subnet_group=subnet_group_hrs,
-        #     enable_performance_insights=True,
-        #     performance_insight_retention=rds.PerformanceInsightRetention.DEFAULT,
-        #     monitoring_interval=Duration.seconds(60),
-        #     publicly_accessible=False,
-        #     monitoring_role=role_enhanced_monitoring,
-        #     backup_retention=Duration.days(7),
-        #     security_groups=[
-        #         security_group_hrs_db,
-        #     ],
-        # )
+        self.rds_db_postgres = rds.DatabaseInstance(
+            self,
+            "rds_db_postgres",
+            instance_identifier="hrs-postgres",
+            engine=rds.DatabaseInstanceEngine.postgres(
+                version=rds.PostgresEngineVersion.VER_14
+            ),
+            instance_type=ec2.InstanceType.of(
+                ec2.InstanceClass.M6G, ec2.InstanceSize.LARGE
+            ),
+            parameter_group=parameter_group_postgres,
+            allocated_storage=200,
+            max_allocated_storage=500,
+            credentials=rds.Credentials.from_secret(secret_db_creds),
+            database_name=db_name,
+            vpc=vpc_hrs,
+            subnet_group=subnet_group_hrs,
+            enable_performance_insights=True,
+            performance_insight_retention=rds.PerformanceInsightRetention.DEFAULT,
+            monitoring_interval=Duration.seconds(60),
+            publicly_accessible=False,
+            monitoring_role=role_enhanced_monitoring,
+            backup_retention=Duration.days(7),
+            security_groups=[
+                security_group_hrs_db,
+            ],
+        )
 
         # # Create Bastion
         # key_name = os.getenv ("KEY_NAME" , "")
