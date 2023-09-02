@@ -70,53 +70,53 @@ class PostgreSqlStack(Stack):
         #     nat_gateways=1,
         # )
 
-        # subnet_group_hrs = rds.SubnetGroup(
-        #     self,
-        #     "subnet_group_hrs",
-        #     vpc=vpc_hrs,
-        #     vpc_subnets=ec2.SubnetSelection(
-        #         subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
-        #     ),
-        #     subnet_group_name="hrs-postgres-subnet-group",
-        #     description="Subnet group for hrs postgres",
-        # )
+        subnet_group_hrs = rds.SubnetGroup(
+            self,
+            "subnet_group_hrs",
+            vpc=vpc_hrs,
+            vpc_subnets=ec2.SubnetSelection(
+                subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
+            ),
+            subnet_group_name="hrs-postgres-subnet-group",
+            description="Subnet group for hrs postgres",
+        )
 
-        # security_group_hrs_db = ec2.SecurityGroup(
-        #     self,
-        #     "security_group_hrs_db",
-        #     vpc=vpc_hrs,
-        #     security_group_name="security_group_hrs_db",
-        #     allow_all_outbound=True,
-        # )
+        security_group_hrs_db = ec2.SecurityGroup(
+            self,
+            "security_group_hrs_db",
+            vpc=vpc_hrs,
+            security_group_name="security_group_hrs_db",
+            allow_all_outbound=True,
+        )
 
-        # security_group_hrs_db.add_ingress_rule(
-        #     peer=ec2.Peer.ipv4(vpc_hrs.vpc_cidr_block),
-        #     connection=ec2.Port.tcp(5432),
-        # )
+        security_group_hrs_db.add_ingress_rule(
+            peer=ec2.Peer.ipv4(vpc_hrs.vpc_cidr_block),
+            connection=ec2.Port.tcp(5432),
+        )
 
-        # role_enhanced_monitoring = iam.Role(
-        #     self,
-        #     "role_enhanced_monitoring",
-        #     assumed_by=iam.ServicePrincipal("monitoring.rds.amazonaws.com"),
-        #     managed_policies=[
-        #         iam.ManagedPolicy.from_aws_managed_policy_name(
-        #             "service-role/AmazonRDSEnhancedMonitoringRole"
-        #         ),
-        #     ],
-        #     role_name="rds_enhanced_monitoring",
-        # )
+        role_enhanced_monitoring = iam.Role(
+            self,
+            "role_enhanced_monitoring",
+            assumed_by=iam.ServicePrincipal("monitoring.rds.amazonaws.com"),
+            managed_policies=[
+                iam.ManagedPolicy.from_aws_managed_policy_name(
+                    "service-role/AmazonRDSEnhancedMonitoringRole"
+                ),
+            ],
+            role_name="rds_enhanced_monitoring",
+        )
 
-        # parameter_group_postgres = rds.ParameterGroup(
-        #     self,
-        #     "parameter_group_postgres",
-        #     engine=rds.DatabaseInstanceEngine.postgres(
-        #         version=rds.PostgresEngineVersion.VER_14
-        #     ),
-        #     parameters={
-        #         "max_standby_streaming_delay": "600000",  # milliseconds (5 minutes)
-        #         "max_standby_archive_delay": "600000",  # milliseconds (5 minutes)
-        #     },
-        # )
+        parameter_group_postgres = rds.ParameterGroup(
+            self,
+            "parameter_group_postgres",
+            engine=rds.DatabaseInstanceEngine.postgres(
+                version=rds.PostgresEngineVersion.VER_14
+            ),
+            parameters={
+                "max_standby_streaming_delay": "600000",  # milliseconds (5 minutes)
+                "max_standby_archive_delay": "600000",  # milliseconds (5 minutes)
+            },
+        )
 
         # self.rds_db_postgres = rds.DatabaseInstance(
         #     self,
