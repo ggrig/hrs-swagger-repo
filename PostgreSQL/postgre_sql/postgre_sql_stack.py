@@ -38,18 +38,18 @@ class PostgreSqlStack(Stack):
         secret_db_creds = secretsmanager.Secret(
             self,
             "secret_db_creds",
-            secret_name="ifm/db_creds",
+            secret_name="hrs/db_creds",
             description =db_name + "PostgreSQL Credentials",
             generate_secret_string=secretsmanager.SecretStringGenerator(
-                secret_string_template=json.dumps({"username": "ifm"}),
+                secret_string_template=json.dumps({"username": "hrs"}),
                 exclude_punctuation=True,
                 generate_string_key="password",
             ),
         )
 
-        vpc_ifm = ec2.Vpc(
+        vpc_hrs = ec2.Vpc(
             self,
-            "vpc_ifm",
+            "vpc_hrs",
             max_azs=3,
             ip_addresses=ec2.IpAddresses.cidr(cidr),
             subnet_configuration=[
@@ -67,27 +67,27 @@ class PostgreSqlStack(Stack):
             nat_gateways=1,
         )
 
-        subnet_group_ifm = rds.SubnetGroup(
+        subnet_group_hrs = rds.SubnetGroup(
             self,
-            "subnet_group_ifm",
-            vpc=vpc_ifm,
+            "subnet_group_hrs",
+            vpc=vpc_hrs,
             vpc_subnets=ec2.SubnetSelection(
                 subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
             ),
-            subnet_group_name="ifm-postgres-subnet-group",
-            description="Subnet group for ifm postgres",
+            subnet_group_name="hrs-postgres-subnet-group",
+            description="Subnet group for hrs postgres",
         )
 
-        security_group_ifm_db = ec2.SecurityGroup(
+        security_group_hrs_db = ec2.SecurityGroup(
             self,
-            "security_group_ifm_db",
-            vpc=vpc_ifm,
-            security_group_name="security_group_ifm_db",
+            "security_group_hrs_db",
+            vpc=vpc_hrs,
+            security_group_name="security_group_hrs_db",
             allow_all_outbound=True,
         )
 
-        security_group_ifm_db.add_ingress_rule(
-            peer=ec2.Peer.ipv4(vpc_ifm.vpc_cidr_block),
+        security_group_hrs_db.add_ingress_rule(
+            peer=ec2.Peer.ipv4(vpc_hrs.vpc_cidr_block),
             connection=ec2.Port.tcp(5432),
         )
 
@@ -118,7 +118,7 @@ class PostgreSqlStack(Stack):
         self.rds_db_postgres = rds.DatabaseInstance(
             self,
             "rds_db_postgres",
-            instance_identifier="ifm-postgres",
+            instance_identifier="hrs-postgres",
             engine=rds.DatabaseInstanceEngine.postgres(
                 version=rds.PostgresEngineVersion.VER_14
             ),
@@ -129,9 +129,9 @@ class PostgreSqlStack(Stack):
             allocated_storage=200,
             max_allocated_storage=500,
             credentials=rds.Credentials.from_secret(secret_db_creds),
-            database_name="ifmdb",
-            vpc=vpc_ifm,
-            subnet_group=subnet_group_ifm,
+            database_name=db_name,
+            vpc=vpc_hrs,
+            subnet_group=subnet_group_hrs,
             enable_performance_insights=True,
             performance_insight_retention=rds.PerformanceInsightRetention.DEFAULT,
             monitoring_interval=Duration.seconds(60),
@@ -139,14 +139,14 @@ class PostgreSqlStack(Stack):
             monitoring_role=role_enhanced_monitoring,
             backup_retention=Duration.days(7),
             security_groups=[
-                security_group_ifm_db,
+                security_group_hrs_db,
             ],
         )
 
         # Create Bastion
         key_name = os.getenv ("KEY_NAME" , "")
         bastion = ec2.BastionHostLinux(self, "myBastion",
-                                       vpc=vpc_ifm,
+                                       vpc=vpc_hrs,
                                        subnet_selection=ec2.SubnetSelection(
                                            subnet_type=ec2.SubnetType.PUBLIC),
                                        instance_name="myBastionHostLinux",
