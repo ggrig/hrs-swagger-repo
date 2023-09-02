@@ -4,7 +4,12 @@ import os
 import aws_cdk as cdk
 
 from postgre_sql.postgre_sql_stack import PostgreSqlStack
+from dotenv import load_dotenv
 
+load_dotenv(override=True)
+
+aws_account_num = os.getenv ("AWS_ACCOUNT_NUM" , "")
+aws_region = os.getenv ("AWS_REGION" , "")
 
 app = cdk.App()
 PostgreSqlStack(app, "PostgreSqlStack",
@@ -20,7 +25,7 @@ PostgreSqlStack(app, "PostgreSqlStack",
     # Uncomment the next line if you know exactly what Account and Region you
     # want to deploy the stack to. */
 
-    #env=cdk.Environment(account='123456789012', region='us-east-1'),
+    env=cdk.Environment(account=aws_account_num, region=aws_region),
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
