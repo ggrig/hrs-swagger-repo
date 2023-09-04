@@ -110,7 +110,7 @@ class PostgreSqlStack(Stack):
             self,
             "parameter_group_postgres",
             engine=rds.DatabaseInstanceEngine.postgres(
-                version=rds.PostgresEngineVersion.VER_14
+                version=rds.PostgresEngineVersion.VER_15
             ),
             parameters={
                 "max_standby_streaming_delay": "600000",  # milliseconds (5 minutes)
@@ -123,7 +123,7 @@ class PostgreSqlStack(Stack):
             "rds_db_postgres",
             instance_identifier="hrs-postgres",
             engine=rds.DatabaseInstanceEngine.postgres(
-                version=rds.PostgresEngineVersion.VER_14
+                version=rds.PostgresEngineVersion.VER_15
             ),
             instance_type=ec2.InstanceType.of(
                 ec2.InstanceClass.M5, ec2.InstanceSize.LARGE
@@ -144,6 +144,8 @@ class PostgreSqlStack(Stack):
             security_groups=[
                 security_group_hrs_db,
             ],
+            allow_major_version_upgrade=True, 
+            iam_authentication=True,
         )
 
         # # Create Bastion
