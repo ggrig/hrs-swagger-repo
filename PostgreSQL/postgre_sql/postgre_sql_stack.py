@@ -148,18 +148,18 @@ class PostgreSqlStack(Stack):
             iam_authentication=True,
         )
 
-        # # Create Bastion
-        # key_name = os.getenv ("KEY_NAME" , "")
-        # bastion = ec2.BastionHostLinux(self, "myBastion",
-        #                                vpc=vpc_hrs,
-        #                                subnet_selection=ec2.SubnetSelection(
-        #                                    subnet_type=ec2.SubnetType.PUBLIC),
-        #                                instance_name="myBastionHostLinux",
-        #                                instance_type=ec2.InstanceType(instance_type_identifier="t2.micro"))
+        # Create Bastion
+        key_name = os.getenv ("KEY_NAME" , "")
+        bastion = ec2.BastionHostLinux(self, "postgresql-bastion-host",
+                                       vpc=vpc_hrs,
+                                       subnet_selection=ec2.SubnetSelection(
+                                           subnet_type=ec2.SubnetType.PUBLIC),
+                                       instance_name="postgresql-bastion-host",
+                                       instance_type=ec2.InstanceType(instance_type_identifier="t2.micro"))
 
-        # # Setup key_name for EC2 instance login if you don't use Session Manager
-        # # bastion.instance.instance.add_property_override("KeyName", key_name)
+        # Setup key_name for EC2 instance login if you don't use Session Manager
+        bastion.instance.instance.add_property_override("KeyName", key_name)
 
-        # bastion.connections.allow_from_any_ipv4(
-        #     ec2.Port.tcp(22), "Internet access SSH")
+        bastion.connections.allow_from_any_ipv4(
+            ec2.Port.tcp(22), "Internet access SSH")
 
