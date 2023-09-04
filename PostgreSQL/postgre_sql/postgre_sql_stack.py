@@ -126,11 +126,11 @@ class PostgreSqlStack(Stack):
                 version=rds.PostgresEngineVersion.VER_14
             ),
             instance_type=ec2.InstanceType.of(
-                ec2.InstanceClass.M6G, ec2.InstanceSize.LARGE
+                ec2.InstanceClass.M5, ec2.InstanceSize.LARGE
             ),
             parameter_group=parameter_group_postgres,
-            allocated_storage=200,
-            max_allocated_storage=500,
+            allocated_storage=30,
+            max_allocated_storage=30,
             credentials=rds.Credentials.from_secret(secret_db_creds),
             database_name=db_name,
             vpc=vpc_hrs,
