@@ -33,6 +33,9 @@ class PostgreSqlStack(Stack):
         cidr = os.getenv ("CIDR" , "")
         db_name = os.getenv ("DB_NAME" , "")
         vpc_id = os.getenv ("VPC_ID" , "")
+        az = os.getenv ("AZA" , "")
+        subnet_id_a = os.getenv ("SUBNETA" , "")
+        subnet_id_b = os.getenv ("SUBNETB" , "")
 
         # The code that defines your stack goes here
 
@@ -70,13 +73,20 @@ class PostgreSqlStack(Stack):
         #     nat_gateways=1,
         # )
 
+
+        subnetid_a = ec2.Subnet.from_subnet_attributes(self,'subnetid_a', availability_zone = az, subnet_id = subnet_id_a)
+        subnetid_b = ec2.Subnet.from_subnet_attributes(self,'subnetid_b', availability_zone = az, subnet_id = subnet_id_b)
+
+        vpc_subnets_selection = ec2.SubnetSelection(subnets = [subnetid_a, subnetid_b])
+
         subnet_group_hrs = rds.SubnetGroup(
             self,
             "subnet_group_hrs",
             vpc=vpc_hrs,
-            vpc_subnets=ec2.SubnetSelection(
-                subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
-            ),
+            # vpc_subnets=ec2.SubnetSelection(
+            #     subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
+            # ),
+            vpc_subnets = vpc_subnets_selection,
             subnet_group_name="hrs-postgres-subnet-group",
             description="Subnet group for hrs postgres",
         )
@@ -160,6 +170,6 @@ class PostgreSqlStack(Stack):
         # Setup key_name for EC2 instance login if you don't use Session Manager
         bastion.instance.instance.add_property_override("KeyName", key_name)
 
-        bastion.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(22), "Internet access SSH")
+        # bastion.connections.allow_from_any_ipv4(
+        #     ec2.Port.tcp(22), "Internet access SSH")
 
