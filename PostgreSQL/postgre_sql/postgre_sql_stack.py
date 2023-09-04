@@ -167,8 +167,6 @@ class PostgreSqlStack(Stack):
         key_name = os.getenv ("KEY_NAME" , "")
         bastion = ec2.BastionHostLinux(self, "postgresql-bastion-host",
                                        vpc=vpc_hrs,
-                                    #    subnet_selection=ec2.SubnetSelection(
-                                    #        subnet_type=ec2.SubnetType.PUBLIC),
                                        subnet_selection=vpc_pub_subnet_selection,
                                        instance_name="postgresql-bastion-host",
                                        instance_type=ec2.InstanceType(instance_type_identifier="t2.micro"))
@@ -176,6 +174,6 @@ class PostgreSqlStack(Stack):
         # Setup key_name for EC2 instance login if you don't use Session Manager
         bastion.instance.instance.add_property_override("KeyName", key_name)
 
-        # bastion.connections.allow_from_any_ipv4(
-        #     ec2.Port.tcp(22), "Internet access SSH")
 
+        bastion_allowed_cidr = os.getenv("BASTION_ALLOWED_CIDR","")
+        bastion.allow_ssh_access_from(ec2.Peer.ipv4(bastion_allowed_cidr))
