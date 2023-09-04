@@ -158,12 +158,18 @@ class PostgreSqlStack(Stack):
             iam_authentication=True,
         )
 
+        pub_subnet_id_a = os.getenv("PUB_SUBNETA","")
+        pub_subnetid_a = ec2.Subnet.from_subnet_attributes(self,'pub_subnetid_a', availability_zone = az, subnet_id = pub_subnet_id_a)
+        vpc_pub_subnet_selection = ec2.SubnetSelection(subnets = [pub_subnetid_a])
+
+
         # Create Bastion
         key_name = os.getenv ("KEY_NAME" , "")
         bastion = ec2.BastionHostLinux(self, "postgresql-bastion-host",
                                        vpc=vpc_hrs,
-                                       subnet_selection=ec2.SubnetSelection(
-                                           subnet_type=ec2.SubnetType.PUBLIC),
+                                    #    subnet_selection=ec2.SubnetSelection(
+                                    #        subnet_type=ec2.SubnetType.PUBLIC),
+                                       subnet_selection=vpc_pub_subnet_selection,
                                        instance_name="postgresql-bastion-host",
                                        instance_type=ec2.InstanceType(instance_type_identifier="t2.micro"))
 
