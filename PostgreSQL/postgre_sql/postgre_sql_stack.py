@@ -24,12 +24,27 @@ import json
 import os
 from dotenv import load_dotenv
 
+load_dotenv(override=True)
+
+def tagResource(resource, name:str):
+
+    owner = os.getenv("OWNER","")
+    application = os.getenv("APPLICATION","")
+    environment = os.getenv("ENVIRONMENT","")
+    administrator_email = os.getenv("ADMINISTRATOR_EMAIL","")
+
+    Tags.of(resource).add("Owner", owner)
+    Tags.of(resource).add("Application", application)
+    Tags.of(resource).add("Name", name)
+    Tags.of(resource).add("Environment", environment)
+    Tags.of(resource).add("AdministratorEmail", administrator_email)
+
+
 class PostgreSqlStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        load_dotenv(override=True)
         cidr = os.getenv ("CIDR" , "")
         db_name = os.getenv ("DB_NAME" , "")
         vpc_id = os.getenv ("VPC_ID" , "")
@@ -158,6 +173,8 @@ class PostgreSqlStack(Stack):
             iam_authentication=True,
         )
 
+        tagResource(self.rds_db_postgres, name=db_name)
+
         pub_subnet_id_a = os.getenv("PUB_SUBNETA","")
         pub_subnetid_a = ec2.Subnet.from_subnet_attributes(self,'pub_subnetid_a', availability_zone = az, subnet_id = pub_subnet_id_a)
         vpc_pub_subnet_selection = ec2.SubnetSelection(subnets = [pub_subnetid_a])
@@ -177,3 +194,5 @@ class PostgreSqlStack(Stack):
 
         bastion_allowed_cidr = os.getenv("BASTION_ALLOWED_CIDR","")
         bastion.allow_ssh_access_from(ec2.Peer.ipv4(bastion_allowed_cidr))
+
+        tagResource(bastion, name="postgresql-bastion-host")
